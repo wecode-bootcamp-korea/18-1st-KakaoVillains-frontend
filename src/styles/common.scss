@@ -1,0 +1,26 @@
+$theme_color: rgb(254, 225, 0);
+
+* {
+  box-sizing: border-box;
+  font-family: "Nanum Gothic", sans-serif;
+}
+
+a {
+  color: #1e1e1e;
+  text-decoration: none;
+}
+
+input,
+button,
+textarea {
+  outline: none;
+  border: none;
+  cursor: pointer;
+  background-color: white;
+}
+
+ul,
+li,
+ol {
+  list-style: none;
+}
