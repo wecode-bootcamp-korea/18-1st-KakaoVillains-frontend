@@ -1,0 +1,124 @@
+@import "../../Styles/common.scss";
+
+.feedPage{
+    // margin-top: 90px;
+    .feedBox {
+        max-width: 640px;
+        margin: 0px auto;
+        padding: 20px 20px 30px;
+
+        .feedBoxHeader {
+            display: flex;
+            margin-top: 90px;
+
+            .feedBoxHeaderImg {
+                width: 40px;
+                height: 40px;
+                margin-right: 10px;
+
+                .headerImg {
+                    width: 100%;
+                }
+            }
+
+            .nameAndTime {
+                display: flex;
+                flex-direction: column;
+
+                .name {
+                    margin-top: 3px;
+                }
+
+                .time {
+                    margin-top: 3px;
+                }
+            }
+        }
+
+        .feedBoxImg {
+            margin-top: 15px;
+            
+            .mainImg {
+                width: 100%;
+            }
+        }
+
+        .feedBoxIcon {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            margin-top: 13px;
+
+            .heartIcon{
+                margin-left: -5px;
+            }
+            .replyIcon {
+                margin-left: auto;
+            }
+
+        }
+
+        .feedLikeCount {
+            margin-top: 13px;
+
+            .feedLikeCountUpDown {
+                font-weight: bold;
+            }
+        }
+
+        .feedContentTitle {
+            margin-top: 10px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .feedContent {
+            margin-top: 13px;
+        }
+
+        .reply {
+            margin-top: 13px;
+        }
+        
+        .replyList {
+            margin-top: 13px;
+        }
+
+        .feedReplyBox {
+            margin-top: 13px;
+
+            .feedReplyBoxBtn {
+                width: 100%;
+                margin-left: -6px;
+            }
+
+            .feedReplyCount {
+                text-align: start;
+            }
+            .reply {
+                text-align: start;
+            }
+            .replyInput {
+                background-color: #F0F1F4;
+                margin-top: 13px;
+                height: 60px;
+                text-align: start;
+                border-radius: 0px 6.4vw 6.4vw;
+
+                textarea{
+                    width: 100%;
+                    padding: 20px 10px;
+                    height: 60px;
+                    font-size: 16px;
+                    resize: none;
+                    background-color: #F0F1F4;
+                    border-radius: 0px 6.4vw 6.4vw;
+                } 
+            }
+
+        }
+
+
+    }
+}
+
