@@ -1,0 +1,166 @@
+%box-Routine {
+	margin-top: 40px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+%input-Routine {
+	width: 440px;
+  height: 47px;
+  border-bottom: 1px solid #cccccc;
+  font-size: 15px;
+  font-weight: bold;
+          
+  &::placeholder {
+    color: #cccccc;
+  }
+}
+
+.signUpWrap {
+  padding-bottom: 50px;
+
+  article {
+    display: flex;
+    flex-direction: column;    
+    
+    .headName {
+      margin: 40px auto;
+      font-size: 35px;    
+    } 
+
+    .inforBox {
+      width: 580px;      
+      margin: auto;
+      margin-bottom: 30px;
+      padding: 60px 70px 30px; 
+      border: 1px solid #cccccc;
+      border-radius: 3px;  
+      
+      .necessary {
+        color: red;
+      }
+      
+      .headText {
+        font-size: 24px;
+        font-weight: bold;
+      }
+
+      .borderColorChange {
+        border-bottom: 1px solid red;
+      }
+
+      .idBox {        
+        @extend %box-Routine;
+
+        .id {
+          @extend %input-Routine;
+        }
+      }
+
+      .pwBox {        
+        @extend %box-Routine;
+
+        .pw {
+          @extend %input-Routine;
+        }
+
+        .pwR {
+          width: 440px;
+          height: 47px;
+          border-bottom: 1px solid #cccccc;
+          font-size: 15px;
+          font-weight: bold;
+
+          &::placeholder {
+            color: #cccccc;
+          }
+        }
+      }
+
+      .userNameBox {
+        @extend %box-Routine;
+
+        .user {
+          @extend %input-Routine;
+        }
+      }
+
+      .phoneNumBox {
+        @extend %box-Routine;
+
+        .number {
+          @extend %input-Routine;
+        }
+      }
+
+      .birthAndSexBox {
+        @extend %box-Routine;        
+
+        .birthDay {
+          margin-top: 10px; 
+          border-bottom: 1px solid #cccccc;
+          
+          .year {
+            width: 120px;
+            border: none;
+            outline: none;
+            font-size: 16px;
+          }
+
+          .month {
+            width: 100px;
+            border: none;
+            outline: none;
+            font-size: 16px;
+          }
+
+          .date {
+            width: 40px;
+            border: none;
+            outline: none;
+            font-size: 16px;
+          }
+        }
+        
+        .sex {          
+          height: 52px;
+          font-size: 15px;
+          font-weight: 400;
+
+          #male {
+            margin: 18px 0 18px 0;
+          }
+
+          #female {
+            margin: 18px 0 18px 54px;
+          }
+
+          #noSelect {
+            margin: 18px 0 18px 54px;
+          }
+        }
+      }
+      .finishBtn {
+        width: 440px;
+        height: 50px;
+        margin: 20px 0;
+        border-radius: 5px;
+        background-color: #eeeeee;
+        font-size: 15px;
+        font-weight: bold;        
+
+        &:hover {
+          background-color: rgba(0, 0, 0, 0.1);
+        }
+      }
+
+      .changeBtnColor {
+        background-color: #fee500;
+
+        &:hover {
+          background-color: #fec300;
+        }
+      }
+    }
+  }
+}
