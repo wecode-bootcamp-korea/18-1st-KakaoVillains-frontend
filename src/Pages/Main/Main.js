@@ -1,12 +1,14 @@
 import React from 'react';
+import MainPageNav from './Components/mainPageNav';
+import MainPageFeed from './Components/mainPageFeed';
 import './Main.scss';
 
 class Main extends React.Component {
   render() {
     return (
-      <div>
-        <div className="mainContainer">123</div>
-        <button>클릭</button>
+      <div className="todayPage">
+        <MainPageNav />
+        <MainPageFeed />
       </div>
     );
   }
