@@ -1,0 +1,31 @@
+.wrapMain {
+  position: relative;
+  margin-bottom: 50px;
+
+  .mainNav {
+    position: fixed;
+    z-index: 10;
+    width: 640px;
+    background-color: white;
+    border-bottom: solid 1px rgb(216, 216, 216);
+
+    .navBarFirst {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 0px auto;
+      padding: 10px 10px;
+
+      .homeIcon {
+        margin-left: 5px;
+      }
+
+      .title {
+        padding: 5px 10px;
+        color: black;
+        font-weight: bold;
+        font-size: 16px;
+      }
+    }
+  }
+}

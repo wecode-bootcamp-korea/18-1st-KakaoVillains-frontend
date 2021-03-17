@@ -1,0 +1,66 @@
+.FooterContainer {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 640px;
+  height: 80px;
+  margin-top: 20px;
+  background-color: red;
+  border-top: solid 1px rgb(216, 216, 216);
+
+  .Footer {
+    display: flex;
+    align-items: center;
+    width: 640px;
+    height: 40px;
+    margin-top: 70px;
+    margin-bottom: 30px;
+    background-color: white;
+
+    .info1,
+    .info2,
+    .info3 {
+      margin-left: 5px;
+      color: gray;
+      font-size: 12px;
+    }
+
+    .line {
+      margin-left: 5px;
+      color: rgb(221, 221, 221);
+      font-size: 12px;
+    }
+
+    .info4 {
+      margin-left: 5px;
+      color: gray;
+      font-size: 12px;
+      font-weight: bold;
+    }
+  }
+
+  .Footer2 {
+    display: flex;
+    justify-content: space-around;
+    width: 640px;
+    height: 30px;
+    margin-top: 10px;
+    background-color: white;
+
+    .Kakao {
+      font-size: 13px;
+      color: gray;
+    }
+
+    .commerce {
+      margin-left: -200px;
+      font-size: 13px;
+      color: rgb(56, 50, 50);
+      font-weight: bold;
+    }
+
+    .downIcon {
+      margin-bottom: 100px;
+    }
+  }
+}
