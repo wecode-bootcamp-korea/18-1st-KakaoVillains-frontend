@@ -1,0 +1,15 @@
+.productsWrap {
+  display: flex;
+  flex-direction: column;
+
+  article {
+    margin: auto;
+
+    .fuck {    
+      width: 640px;
+      height: 640px;
+      background-color: black;
+    }
+  }
+  
+}
