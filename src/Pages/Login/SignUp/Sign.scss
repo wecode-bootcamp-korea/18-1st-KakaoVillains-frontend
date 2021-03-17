@@ -12,8 +12,13 @@
   font-weight: bold;
           
   &::placeholder {
-    color: #cccccc;
+    color: #cccccc;  
   }
+
+  &:focus {
+    border-bottom: 3px solid #fec300;
+    border-radius: 3px;
+  }  
 }
 
 .signUpWrap {
@@ -55,7 +60,7 @@
         .id {
           @extend %input-Routine;
         }
-      }
+      }      
 
       .pwBox {        
         @extend %box-Routine;
@@ -65,15 +70,7 @@
         }
 
         .pwR {
-          width: 440px;
-          height: 47px;
-          border-bottom: 1px solid #cccccc;
-          font-size: 15px;
-          font-weight: bold;
-
-          &::placeholder {
-            color: #cccccc;
-          }
+          @extend %input-Routine;
         }
       }
 
@@ -147,11 +144,7 @@
         border-radius: 5px;
         background-color: #eeeeee;
         font-size: 15px;
-        font-weight: bold;        
-
-        &:hover {
-          background-color: rgba(0, 0, 0, 0.1);
-        }
+        font-weight: bold; 
       }
 
       .changeBtnColor {

@@ -13,14 +13,8 @@ class SignUp extends React.Component {
       user: '',
       pwR: '',
       btnColor: false,
-      borderColor: false,
     };
   }
-
-  signUpFinish = () => {
-    this.props.history.push('/login');
-    alert('회원가입이 완료되었습니다.');
-  };
 
   handleInputValue = e => {
     const { name, value } = e.target;
@@ -31,7 +25,7 @@ class SignUp extends React.Component {
       () => {
         if (
           this.state.id.includes('@') &&
-          this.state.pw.length >= 6 &&
+          this.state.pw.length >= 8 &&
           this.state.user.length >= 2
         ) {
           this.setState({ btnColor: true });
@@ -42,21 +36,45 @@ class SignUp extends React.Component {
     );
   };
 
-  // borderColorChange = () => {
-  //   this.setState({ borderColor: !this.state.borderColor });
-  // };
+  signUpFinish = () => {
+    fetch('http://10.58.1.220:8000/account/signup', {
+      method: 'POST',
+      body: JSON.stringify({
+        email: this.state.id,
+        username: this.state.user,
+        password: this.state.pw,
+      }),
+    })
+      .then(res => res.json())
+      .then(res => {
+        console.log(res);
+        if (
+          res.message === `email must contain the '@' symbol and the period'.'`
+        ) {
+          alert('이메일을 다시 확인해 주세요.');
+        }
 
-  // borderColorChange = e => {
-  //   if (this.state.id.onClick) {
-  //     this.setState({ btnColor: true });
-  //   } else if (!this.state.id.onClick) {
-  //     this.setState({ btnColor: false });
-  //   }
-  //   console.log(e);
-  // };
+        if (res.message === 'password must be at least 8 characters') {
+          alert('비밀번호는 8자리 이상이여야 합니다.');
+        }
+
+        if (res.message === 'That email is taken. Try another') {
+          alert('이미 존재하는 이메일입니다.');
+        }
+
+        if (res.message === 'Please provide username') {
+          alert('닉네임을 확인해 주세요');
+        }
+
+        if (res.message === 'SUCCESS') {
+          this.props.history.push('/login');
+          alert('회원가입이 완료되었습니다.');
+        }
+      });
+  };
 
   render() {
-    console.log(this.state.borderColor);
+    console.log(this.state.btnColor);
     return (
       <div className="signUpWrap">
         <article>

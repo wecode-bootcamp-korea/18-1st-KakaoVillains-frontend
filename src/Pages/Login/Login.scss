@@ -19,16 +19,26 @@
         font-size: 32px;
       }
 
-      .idBox {      
+      .id {      
         border-bottom: 1px solid #cccccc;
         width: 278px;
         height: 47px;
+
+        &:focus {
+          border-bottom: 3px solid #fec300;
+          border-radius: 3px;
+        }
       }
 
-      .pwBox {      
+      .pw {      
         border-bottom: 1px solid #cccccc;
         width: 278px;
         height: 47px;
+
+        &:focus {
+          border-bottom: 3px solid #fec300;
+          border-radius: 3px;
+        }
       }
 
       .keepLogin {     
@@ -45,9 +55,17 @@
         height: 50px;
         margin-top: 40px;
         border-radius: 5px;
-        background-color: #fee500;
+        background-color: #fff6a9;
         font-size: 15px;
         font-weight: bold;
+      }
+
+      .changeBtnColor {
+        background-color: #fee500;
+
+        &:hover {
+          background-color: #fec300;
+        }
       }
 
       .orBar {      
