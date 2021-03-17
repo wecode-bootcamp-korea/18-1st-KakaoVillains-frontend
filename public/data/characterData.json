@@ -1,0 +1,77 @@
+[
+  {
+    "id": 1,
+    "productName": "어피치 토스터기",
+    "price": 20000,
+    "productImg": "https://i.imgur.com/0D7b1Gt.jpeg",
+    "discount": false
+  },
+  {
+    "id": 2,
+    "productName": "죠르디 토스터기상품명이길다면어떻게되는거지",
+    "price": 30000,
+    "productImg": "https://i.imgur.com/zsRgvbU.jpeg",
+    "discount": true,
+    "rate": 20,
+    "discountPrice": 24000
+  },
+  {
+    "id": 3,
+    "productName": "네오 토스터기",
+    "price": 40000,
+    "productImg": "https://i.imgur.com/0D7b1Gt.jpeg",
+    "discount": false
+  },
+  {
+    "id": 4,
+    "productName": "라이언 토스터기",
+    "price": 50000,
+    "productImg": "https://i.imgur.com/Qn3dhMl.jpeg",
+    "discount": false
+  },
+  {
+    "id": 5,
+    "productName": "죠르디 토스터기",
+    "price": 30000,
+    "productImg": "https://i.imgur.com/zsRgvbU.jpeg",
+    "discount": true,
+    "rate": 20,
+    "discountPrice": 24000
+  },
+  {
+    "id": 6,
+    "productName": "죠르디 토스터기",
+    "price": 30000,
+    "productImg": "https://i.imgur.com/zsRgvbU.jpeg",
+    "discount": true,
+    "rate": 20,
+    "discountPrice": 24000
+  },
+  {
+    "id": 7,
+    "productName": "죠르디 토스터기",
+    "price": 30000,
+    "productImg": "https://i.imgur.com/zsRgvbU.jpeg",
+    "discount": true,
+    "rate": 20,
+    "discountPrice": 24000
+  },
+  {
+    "id": 8,
+    "productName": "죠르디 토스터기",
+    "price": 30000,
+    "productImg": "https://i.imgur.com/zsRgvbU.jpeg",
+    "discount": true,
+    "rate": 20,
+    "discountPrice": 24000
+  },
+  {
+    "id": 9,
+    "productName": "죠르디 토스터기",
+    "price": 30000,
+    "productImg": "https://i.imgur.com/zsRgvbU.jpeg",
+    "discount": true,
+    "rate": 20,
+    "discountPrice": 24000
+  }
+]

@@ -1,0 +1,23 @@
+select {
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+.character {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 640px;
+
+  .filter {
+    height: 50px;
+    border-bottom: 0.5px solid lightgray;
+    text-align: center;
+    padding: 15px;
+
+    select {
+      font-size: 15px;
+    }
+  }
+}
