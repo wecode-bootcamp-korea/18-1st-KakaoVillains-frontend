@@ -1,8 +1,8 @@
 import React from 'react';
 import { FaArrowAltCircleUp, FaSort } from 'react-icons/fa';
 import SubNav from '../../Components/SubNav';
-import CommentFeed from '../Comment/CommentComponent/CommentFeed';
-import CommentBox from '../Comment/CommentComponent/CommetBox';
+import CommentFeed from '../Comment/Components/CommentFeed/CommentFeed';
+import CommentBox from '../Comment/Components/CommentBox/CommetBox';
 import Footer from '../../Components/Footer';
 import './Comment.scss';
 
@@ -43,6 +43,7 @@ class Comment extends React.Component {
               <FaSort className="sortIcon" />
             </span>
           </button>
+          <CommentBox />
           <CommentBox />
           <CommentBox />
           <div className="moreContainer">

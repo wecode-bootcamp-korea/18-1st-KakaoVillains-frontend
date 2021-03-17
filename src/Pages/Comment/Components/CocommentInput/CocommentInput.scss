@@ -1,0 +1,36 @@
+.replyForm {
+  margin-top: 20px;
+
+  .deleteBtn {
+    background-color: white;
+  }
+
+  .deleteIcon {
+    font-size: 20px;
+    color: rgb(172, 170, 170);
+    margin-bottom: 25px;
+  }
+
+  .replyBox {
+    position: relative;
+    cursor: auto;
+    width: 335px;
+    height: 40px;
+    resize: none;
+    margin-left: 5px;
+    background-color: rgb(240, 241, 244);
+    border-radius: 0px 6.4vw 6.4vw;
+  }
+
+  .cicleBtn2 {
+    background-color: white;
+
+    .commentBtn2 {
+      position: absolute;
+      font-size: 25px;
+      margin-top: -33px;
+      margin-left: -40px;
+      color: rgb(172, 170, 170);
+    }
+  }
+}

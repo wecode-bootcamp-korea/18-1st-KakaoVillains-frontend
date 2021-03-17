@@ -1,158 +1,61 @@
 body {
   display: flex;
   justify-content: center;
-}
 
-.commentContainer {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  width: 640px;
-  height: 70px;
-  margin-top: 20px;
-  border-bottom: solid 1px rgb(216, 216, 216);
-}
+  .commentContainer {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: 640px;
+    height: 70px;
+    margin-top: 20px;
+    border-bottom: solid 1px rgb(216, 216, 216);
 
-.inputBox {
-  cursor: auto;
-  width: 600px;
-  height: 50px;
-  margin: auto;
-  resize: none;
-  background-color: rgb(240, 241, 244);
-  border-radius: 0px 6.4vw 6.4vw;
-}
+    .inputBox {
+      cursor: auto;
+      width: 600px;
+      height: 50px;
+      margin: auto;
+      resize: none;
+      background-color: rgb(240, 241, 244);
+      border-radius: 0px 6.4vw 6.4vw;
+    }
 
-.commentBtn {
-  position: absolute;
-  cursor: pointer;
-  top: 13px;
-  right: 23px;
-  font-size: 30px;
-}
+    .commentBtn {
+      position: absolute;
+      cursor: pointer;
+      top: 13px;
+      right: 23px;
+      font-size: 30px;
+    }
+  }
 
-.textBox {
-  display: inline-block;
-  background-color: rgb(240, 241, 244);
-  font-size: 12px;
-  margin-bottom: 10px;
-  padding: 14px;
-  border-radius: 0px 6.4vw 6.4vw;
-}
+  .replyContainer {
+    width: 640px;
+    margin-top: 25px;
 
-.replyContainer {
-  width: 640px;
-  margin-top: 25px;
-}
+    .replyBtn {
+      margin-bottom: 10px;
+      background-color: white;
 
-.replyBtn {
-  margin-bottom: 10px;
-  background-color: white;
-}
+      .recently {
+        font-size: 14px;
+        font-weight: bold;
+      }
+    }
 
-.recently {
-  font-size: 14px;
-  font-weight: bold;
-}
+    .moreContainer {
+      display: block;
+      text-align: center;
+      margin-top: 50px;
 
-.textContainer {
-  display: block;
-}
-
-.name {
-  margin-left: 7px;
-  margin-bottom: 10px;
-  font-size: 12px;
-  font-weight: bold;
-}
-
-.commentInfo {
-  margin-left: 15px;
-  margin-bottom: 20px;
-}
-
-.time {
-  font-size: 13px;
-  color: lightslategray;
-  margin-right: 10px;
-}
-
-.heartBtn {
-  background-color: white;
-  color: gray;
-  font-size: 13px;
-  font-weight: bold;
-}
-
-.heart {
-  display: inline-block;
-  font-size: 17px;
-  margin-bottom: -4px;
-}
-
-.likeCount {
-  margin-left: 5px;
-}
-
-.rereply {
-  background-color: white;
-  color: gray;
-  font-size: 13px;
-  font-weight: bold;
-}
-
-.replyForm {
-  margin-top: 20px;
-}
-
-.deleteBtn {
-  background-color: white;
-}
-
-.deleteIcon {
-  font-size: 20px;
-  color: rgb(172, 170, 170);
-  margin-bottom: 25px;
-}
-
-.replyBox {
-  position: relative;
-  cursor: auto;
-  width: 335px;
-  height: 40px;
-  resize: none;
-  margin-left: 5px;
-  background-color: rgb(240, 241, 244);
-  border-radius: 0px 6.4vw 6.4vw;
-}
-
-.cicleBtn2 {
-  background-color: white;
-}
-
-.commentBtn2 {
-  position: absolute;
-  font-size: 25px;
-  margin-top: -33px;
-  margin-left: -40px;
-  color: rgb(172, 170, 170);
-}
-
-.rereplyContainer {
-  margin-top: 20px;
-  margin-left: 30px;
-}
-
-.moreContainer {
-  display: block;
-  text-align: center;
-  margin-top: 50px;
-}
-
-#moreBtn {
-  width: 640px;
-  height: 60px;
-  font-size: 17px;
-  background-color: white;
-  border: solid 1px rgb(216, 216, 216);
+      #moreBtn {
+        width: 640px;
+        height: 60px;
+        font-size: 17px;
+        background-color: white;
+        border: solid 1px rgb(216, 216, 216);
+      }
+    }
+  }
 }
