@@ -10,16 +10,16 @@ class SubNav extends React.Component {
         <div className="mainNav">
           <div className="navBarFirst">
             <button>
-              <FaChevronLeft size="24" />
-              <FaHome className="homeIcon" size="24" />
+              <FaChevronLeft size="18" />
+              <FaHome className="homeIcon" size="18" />
             </button>
             <h1 className="title"> {this.props.title} </h1>
             <div>
               <button className="navIcon">
-                <FaSearch size="20" />
+                <FaSearch size="18" />
               </button>
               <button className="navIcon">
-                <FiGlobe size="20" />
+                <FiGlobe size="18" />
               </button>
             </div>
           </div>
