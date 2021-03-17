@@ -16,11 +16,11 @@ class Footer extends React.Component {
           <span className="info4">개인정보처리방침</span>
         </div>
         <div className="Footer2">
-          <span className="Kakao">kakao</span>
-          <span className="commerce">commerce</span>
-          <button>
+          <div className="FooterSuper">
+            <div className="Kakao">kakao</div>
+            <div className="commerce">commerce</div>
             <FaAngleDown className="downIcon" />
-          </button>
+          </div>
           <img
             src="https://t1.kakaocdn.net/friends/new_store/3.0/common/logo-footer-best-family.png"
             alt="가족친화기업 로고"
