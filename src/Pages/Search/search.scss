@@ -1,9 +1,9 @@
 $border-style: solid 1px rgb(239, 240, 244);
 
 .search {
-  max-width: 640px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  max-width: 640px;
 }
