@@ -1,6 +1,6 @@
 import React from 'react';
 import CharacterBox from './CharacterBox/CharacterBox';
-import Category from './Category/Category';
+import CategoryBox from './CategoryBox/CategoryBox';
 import SearchBox from './SearchBox/SearchBox';
 import './search.scss';
 
@@ -10,7 +10,7 @@ class Search extends React.Component {
       <main className="search">
         <SearchBox />
         <CharacterBox />
-        <Category />
+        <CategoryBox />
       </main>
     );
   }
