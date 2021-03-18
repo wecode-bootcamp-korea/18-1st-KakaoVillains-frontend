@@ -1,12 +1,12 @@
 import React from 'react';
+import MainPageFeed from './mainPageFeed';
 import './Main.scss';
 
 class Main extends React.Component {
   render() {
     return (
       <div>
-        <div className="mainContainer">123</div>
-        <button>클릭</button>
+        <MainPageFeed />
       </div>
     );
   }
