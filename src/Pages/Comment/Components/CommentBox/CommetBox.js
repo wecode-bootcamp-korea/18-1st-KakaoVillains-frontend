@@ -6,11 +6,13 @@ import './CommentBox.scss';
 
 class CommentBox extends React.Component {
   render() {
+    const { name, text } = this.props;
+    //console.log(text);
     return (
       <div className="textContainer">
-        <div className="name">양지은</div>
+        <div className="name">양지은{name}</div>
         <div className="textBox">
-          <span>둘 다 최애캐ㅠㅠ</span>
+          <span>{text}</span>
         </div>
         <div className="commentInfo">
           <span className="time">41분 전</span>
@@ -22,7 +24,6 @@ class CommentBox extends React.Component {
           </button>
           <button className="rereply">답글달기</button>
           <CocomentInput />
-          <ReplyBox />
           <ReplyBox />
         </div>
       </div>
