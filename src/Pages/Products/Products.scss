@@ -1,0 +1,299 @@
+.productsWrap {
+  display: flex;
+
+  article {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto 62px;
+    width: 640px;
+
+    header {
+      position: relative;
+      margin-bottom: 50px;
+
+      img {
+        margin: -6px 0;
+        width: 640px;
+      }
+
+      .headTitle {
+        margin: 20px 0 0 20px;
+        font-size: 30px;
+        font-weight: bold;
+      }
+
+      .headShareBtn {
+        position: absolute;
+        right: 50px;
+        bottom: 50px;
+        width: 46px;
+        height: 46px;
+        border: 2px solid #eeeeee;
+        border-radius: 50%;
+
+        .shareIcon {
+          font-size: 20px;
+        }
+      }
+
+      .headPrice {
+        margin: 20px 0 0 20px;
+        font-size: 18px;
+      }
+
+      .productGrade {
+        display: flex;
+        margin: 20px 0 0 20px;
+      }
+    }
+
+    .productInfor {
+      padding-bottom: 30px;
+      border-bottom: 1px solid #dddddd;
+    }
+
+    .productDetail {
+      height: 80px;
+      border-bottom: 1px solid #dddddd;
+      font-size: 18px;
+      font-weight: bold;
+
+      .detailBtn {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: auto;
+        width: 600px;
+        height: 80px;
+
+        .downArrowIcon {
+          font-size: 20px;
+        }
+      }
+    }
+
+    .productDelivery {
+      height: 80px;
+      border-bottom: 1px solid #dddddd;
+      font-size: 18px;
+      font-weight: bold;
+
+      .deliveryBtn {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: auto;
+        width: 600px;
+        height: 80px;
+
+        .downArrowIcon {
+          font-size: 20px;
+        }
+      }
+    }
+
+    .productConsult {
+      height: 80px;
+      border-bottom: 1px solid #dddddd;
+      font-size: 18px;
+      font-weight: bold;
+
+      .consultBox {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: auto;
+        width: 600px;
+        height: 80px;
+
+        .consultBtn {
+          display: flex;
+          align-items: center;
+          color: #bbbbbb;
+          font-size: 17px;
+        }
+      }
+    }
+
+    .productReview {
+      padding: 35px 20px 40px;
+      border-bottom: 1px solid #dddddd;
+      border-top: 10px solid #eeeeee;
+
+      .reviewCount {
+        display: flex;
+        justify-content: space-between;
+
+        .countTitle {
+          font-size: 24px;
+          font-weight: bold;
+        }
+      }
+
+      .reviewBtn {
+        margin: 20px auto 40px;
+        width: 600px;
+        height: 50px;
+        border-radius: 5px;
+        background-color: #3c404b;
+        color: white;
+        font-size: 15px;
+        font-weight: bold;
+
+        .pencilIcon {
+          vertical-align: middle;
+          color: white;
+          font-size: 20px;
+        }
+      }
+
+      .productSort {
+        .sortLike {
+          margin: 0 10px 20px 0;
+          width: 64px;
+          height: 30px;
+          border-radius: 25px;
+          background-color: #8d92a1;
+          color: white;
+          font-weight: 13px;
+        }
+
+        .sortNew {
+          margin: 0 10px 20px 0;
+          width: 64px;
+          height: 30px;
+          border: 1px solid #8d92a1;
+          border-radius: 25px;
+          background-color: white;
+          color: #8d92a1;
+          font-weight: 13px;
+        }
+      }
+
+      .productComment {
+        border-top: 1px solid #dddddd;
+        padding: 30px 0;
+
+        .commentUser {
+          font-size: 17px;
+          font-weight: bold;
+        }
+
+        .productUserGrade {
+          margin-top: 10px;
+
+          .commentDate {
+            font-size: 13px;
+          }
+        }
+
+        .commentValue {
+          margin-top: 15px;
+        }
+
+        .commentLike {
+          display: flex;
+          align-items: center;
+          margin-top: 20px;
+
+          button {
+            display: flex;
+            align-items: center;
+            padding: 0;
+            width: 135px;
+            height: 25px;
+            font-size: 14px;
+            color: #cccccc;
+
+            .likeBtnIcon {
+              display: flex;
+              align-items: center;
+              margin-right: 5px;
+              font-size: 25px;
+              color: #cccccc;
+            }
+
+            &:hover {
+              background-color: #eeeeee;
+            }
+          }
+        }
+      }
+    }
+
+    .productRecommend {
+      border-top: 10px solid #eeeeee;
+      padding: 30px 20px 0;
+
+      .recommendTitle {
+        margin-bottom: 20px;
+        line-height: 25px;
+        font-size: 22px;
+        font-weight: bold;
+      }
+
+      .recommendProduct {
+        position: relative;
+        width: 290px;
+        height: 390px;
+
+        img {
+          width: 290px;
+          height: 290px;
+        }
+        .nameBuyBox {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin: 15px 0 5px;
+          color: #aaaaaa;
+
+          .recommendName {
+            width: 220px;
+          }
+
+          .shoppingIcon {
+            margin-right: 5px;
+            font-size: 20px;
+          }
+        }
+
+        .recommendPrice {
+          font-weight: bold;
+        }
+      }
+    }
+
+    .buyBtn {
+      position: fixed;
+      bottom: 0;
+      display: flex;
+      width: 640px;
+      height: 62px;
+      background-color: rgba(251, 57, 87, 0.9);
+
+      .orderBox {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 580px;
+
+        .orderBtn {
+          width: 172px;
+          height: 62px;
+          background-color: rgba(251, 57, 87, 0.1);
+          color: white;
+          font-size: 18px;
+          font-weight: bold;
+        }
+      }
+
+      .basketBtn {
+        width: 60px;
+        background-color: rgba(251, 57, 87, 0.1);
+        color: white;
+        font-size: 20px;
+      }
+    }
+  }
+}
