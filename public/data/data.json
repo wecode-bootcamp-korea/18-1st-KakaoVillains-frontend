@@ -11,19 +11,15 @@
         "reply": "adsf",
         "img_url": [
             {
-                "id": 1,
                 "img_url": "https://t1.kakaocdn.net/friends/prod/main_tab/feed/media/media_0_20210317160433.jpg"
             },
             {
-                "id": 2,
                 "img_url": "https://t1.kakaocdn.net/friends/prod/main_tab/feed/media/media_1_20210317160433.jpg"
             },
             {
-                "id": 3,
                 "img_url": "https://t1.kakaocdn.net/friends/prod/main_tab/feed/media/media_2_20210317160433.jpg"
             },
             {
-                "id": 4,
                 "img_url": "https://t1.kakaocdn.net/friends/prod/main_tab/feed/media/media_6_20210317160434.jpg"
             }
         ]
@@ -40,7 +36,6 @@
         "reply": "adsf",
         "img_url": [
             {
-                "id": 1,
                 "img_url": "https://t1.kakaocdn.net/friends/prod/main_tab/feed/media/media_0_20210218165255.jpg"
             }
         ]
@@ -57,11 +52,9 @@
         "reply": "adsf",
         "img_url": [
             {
-                "id": 1,
                 "img_url": "https://t1.kakaocdn.net/friends/prod/main_tab/feed/media/media_0_20210315175259.jpg"
             },
             {
-                "id": 2,
                 "img_url": "https://t1.kakaocdn.net/friends/prod/main_tab/feed/media/media_1_20210315175259.jpg"
             }
         ]
@@ -78,7 +71,6 @@
         "reply": "adsf",
         "img_url": [
             {
-                "id": 1,
                 "img_url": "https://t1.kakaocdn.net/friends/prod/main_tab/feed/media/media_0_20201210105805.jpg"
             }
         ]
