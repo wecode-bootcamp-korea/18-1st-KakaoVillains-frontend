@@ -1,13 +1,13 @@
-footer {    
+footer.publicFooter {
   display: flex;
+  flex-direction: column;
   margin: auto;
-  flex-direction: column;  
   color: #4c4c4c;
 
-  .footContents {     
+  .footContents {
     display: flex;
     flex-direction: row;
-    align-items: center;      
+    align-items: center;
     margin: auto;
     padding-top: 20px;
     font-size: 12px;
@@ -21,15 +21,15 @@ footer {
       outline: none;
       font-size: 12px;
       color: #4c4c4c;
-      cursor: pointer;  
+      cursor: pointer;
     }
-  } 
+  }
 
   address {
     margin: auto;
     padding: 8px 0 0;
     font-size: 11px;
     font-weight: bold;
-    color: #7c7c7c;      
-  }  
+    color: #7c7c7c;
+  }
 }

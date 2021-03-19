@@ -1,9 +1,7 @@
 import React from 'react';
-import '../../Styles/reset.scss';
-import '../../Styles/common.scss';
-import './Login.scss';
-import { FaQrcode } from 'react-icons/fa';
 import PublicFooter from './Components/PublicFooter';
+import { FaQrcode } from 'react-icons/fa';
+import './Login.scss';
 import './Components/PublicFooter.scss';
 
 class Login extends React.Component {
@@ -12,51 +10,40 @@ class Login extends React.Component {
     this.state = {
       id: '',
       pw: '',
-      btnColor: false,
     };
   }
 
   handleInputValue = e => {
     const { name, value } = e.target;
-    this.setState(
-      {
-        [name]: value,
-      },
-      () => {
-        if (this.state.id.includes('@') && this.state.pw.length >= 8) {
-          this.setState({ btnColor: true });
-        } else {
-          this.setState({ btnColor: false });
-        }
-      }
-    );
+    this.setState({
+      [name]: value,
+    });
   };
 
   goToSignUp = () => {
     this.props.history.push('/signup');
   };
 
-  goToMain = () => {
-    fetch('http://10.58.59.83:8000/account/signin', {
-      method: 'POST',
-      body: JSON.stringify({
-        email: this.state.id,
-        password: this.state.pw,
-      }),
-    })
-      .then(res => res.json())
-      .then(res => {
-        console.log(res);
-        if (res.message === 'SUCCESS') {
-          localStorage.setItem('키값', res.access_token);
-          // 메인 페이지로 이동
-          //this.props.history.push('/');
-        }
-      });
-  };
+  // goToMain = () => {
+  //   fetch('http://10.58.59.83:8000/account/signin', {
+  //     method: 'POST',
+  //     body: JSON.stringify({
+  //       email: this.state.id,
+  //       password: this.state.pw,
+  //     }),
+  //   })
+  //     .then(res => res.json())
+  //     .then(res => {
+  //       if (res.message === 'SUCCESS') {
+  //         localStorage.setItem('키값', res.access_token);
+  //         this.props.history.push('/');
+  //       }
+  //     });
+  // };
 
   render() {
-    console.log(this.state.btnColor);
+    const isValidInput =
+      this.state.id.includes('@') && this.state.pw.length >= 8;
     return (
       <div className="loginWrap">
         <article>
@@ -68,21 +55,21 @@ class Login extends React.Component {
               type="email"
               placeholder="카카오메일 아이디, 이메일, 전화번호"
               onChange={this.handleInputValue}
-            ></input>
+            />
             <input
               className="pw"
               name="pw"
               type="password"
               placeholder="비밀번호"
               onChange={this.handleInputValue}
-            ></input>
+            />
             <div className="keepLogin">
-              <input type="checkbox"></input>
+              <input type="checkbox" />
               <p>로그인 상태 유지</p>
             </div>
             <button
               className={`loginBtn ${
-                this.state.btnColor ? 'changeBtnColor' : 'originBtnColor'
+                isValidInput ? 'changeBtnColor' : 'originBtnColor'
               }`}
               onClick={this.goToMain}
             >

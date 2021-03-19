@@ -1,8 +1,6 @@
 import React from 'react';
-import './Sign.scss';
-import '../../../Styles/reset.scss';
-import '../../../Styles/common.scss';
 import PublicFooter from '../Components/PublicFooter';
+import './SignUp.scss';
 
 class SignUp extends React.Component {
   constructor() {
@@ -12,69 +10,57 @@ class SignUp extends React.Component {
       pw: '',
       user: '',
       pwR: '',
-      btnColor: false,
     };
   }
 
   handleInputValue = e => {
     const { name, value } = e.target;
-    this.setState(
-      {
-        [name]: value,
-      },
-      () => {
-        if (
-          this.state.id.includes('@') &&
-          this.state.pw.length >= 8 &&
-          this.state.user.length >= 2
-        ) {
-          this.setState({ btnColor: true });
-        } else {
-          this.setState({ btnColor: false });
-        }
-      }
-    );
+    this.setState({
+      [name]: value,
+    });
   };
 
-  signUpFinish = () => {
-    fetch('http://10.58.1.220:8000/account/signup', {
-      method: 'POST',
-      body: JSON.stringify({
-        email: this.state.id,
-        username: this.state.user,
-        password: this.state.pw,
-      }),
-    })
-      .then(res => res.json())
-      .then(res => {
-        console.log(res);
-        if (
-          res.message === `email must contain the '@' symbol and the period'.'`
-        ) {
-          alert('이메일을 다시 확인해 주세요.');
-        }
+  // signUpFinish = () => {
+  //   fetch('http://10.58.1.220:8000/account/signup', {
+  //     method: 'POST',
+  //     body: JSON.stringify({
+  //       email: this.state.id,
+  //       username: this.state.user,
+  //       password: this.state.pw,
+  //     }),
+  //   })
+  //     .then(res => res.json())
+  //     .then(res => {
+  //       if (
+  //         res.message === `email must contain the '@' symbol and the period'.'`
+  //       ) {
+  //         alert('이메일을 다시 확인해 주세요.');
+  //       }
 
-        if (res.message === 'password must be at least 8 characters') {
-          alert('비밀번호는 8자리 이상이여야 합니다.');
-        }
+  //       if (res.message === 'password must be at least 8 characters') {
+  //         alert('비밀번호는 8자리 이상이여야 합니다.');
+  //       }
 
-        if (res.message === 'That email is taken. Try another') {
-          alert('이미 존재하는 이메일입니다.');
-        }
+  //       if (res.message === 'That email is taken. Try another') {
+  //         alert('이미 존재하는 이메일입니다.');
+  //       }
 
-        if (res.message === 'Please provide username') {
-          alert('닉네임을 확인해 주세요');
-        }
+  //       if (res.message === 'Please provide username') {
+  //         alert('닉네임을 확인해 주세요');
+  //       }
 
-        if (res.message === 'SUCCESS') {
-          this.props.history.push('/login');
-          alert('회원가입이 완료되었습니다.');
-        }
-      });
-  };
+  //       if (res.message === 'SUCCESS') {
+  //         this.props.history.push('/login');
+  //         alert('회원가입이 완료되었습니다.');
+  //       }
+  //     });
+  // };
 
   render() {
-    console.log(this.state.btnColor);
+    const isValidInput =
+      this.state.id.includes('@') &&
+      this.state.pw.length >= 8 &&
+      this.state.user.length >= 2;
     return (
       <div className="signUpWrap">
         <article>
@@ -98,7 +84,7 @@ class SignUp extends React.Component {
                 placeholder="이메일 주소 입력"
                 onChange={this.handleInputValue}
                 onClick={this.borderColorChange}
-              ></input>
+              />
             </div>
             <div className="pwBox">
               <p>
@@ -110,14 +96,14 @@ class SignUp extends React.Component {
                 type="password"
                 placeholder="비밀번호(8~32자리)"
                 onChange={this.handleInputValue}
-              ></input>
+              />
               <input
                 className="pwR"
                 name="pw"
                 type="password"
                 placeholder="비밀번호 재입력"
                 onChange={this.handleInputValue}
-              ></input>
+              />
             </div>
             <div className="userNameBox">
               <p>
@@ -129,7 +115,7 @@ class SignUp extends React.Component {
                 type="text"
                 placeholder="닉네임을 입력해 주세요."
                 onChange={this.handleInputValue}
-              ></input>
+              />
             </div>
             <div className="phoneNumBox">
               <p>휴대폰</p>
@@ -138,7 +124,7 @@ class SignUp extends React.Component {
                 type="text"
                 placeholder="전화번호 입력"
                 maxLength="11"
-              ></input>
+              />
             </div>
             <div className="birthAndSexBox">
               <p>생일/성별</p>
@@ -154,16 +140,16 @@ class SignUp extends React.Component {
                 </select>
               </div>
               <div className="sex">
-                <input type="checkbox" id="male" name="male"></input>
+                <input type="checkbox" id="male" name="male" />
                 <label for="male">남자</label>
-                <input type="checkbox" id="female" name="female"></input>
+                <input type="checkbox" id="female" name="female" />
                 <label for="female">여자</label>
-                <input type="checkbox" id="noSelect" name="noSelect"></input>
+                <input type="checkbox" id="noSelect" name="noSelect" />
                 <label for="noSelect">선택안함</label>
               </div>
               <button
                 className={`finishBtn ${
-                  this.state.btnColor ? 'changeBtnColor' : 'originBtnColor'
+                  isValidInput ? 'changeBtnColor' : 'originBtnColor'
                 }`}
                 onClick={this.signUpFinish}
               >

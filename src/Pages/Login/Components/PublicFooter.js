@@ -3,7 +3,7 @@ import React from 'react';
 class PublicFooter extends React.Component {
   render() {
     return (
-      <footer>
+      <footer className="publicFooter">
         <div className="footContents">
           <p>이용약관</p>
           <p>개인정보 처리방침</p>
