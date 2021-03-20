@@ -14,6 +14,7 @@ class Comment extends React.Component {
       id: '',
       value: '',
       commentList: [],
+      btnChangeValue: '',
     };
   }
 
@@ -23,6 +24,11 @@ class Comment extends React.Component {
   };
 
   pressEnter = e => {
+    e.preventDefault();
+    if (this.state.value === '') {
+      alert('내용을 입력해주세요');
+      return;
+    }
     // console.log(this.state.CommentList);
     this.setState({
       commentList: this.state.commentList.concat([
@@ -34,10 +40,15 @@ class Comment extends React.Component {
     });
   };
 
+  changeHandleBtnColor = () => {
+    return this.state.btnChangeValue ? 'trueColor' : 'falseColor';
+  };
+
   render() {
     const title = '게시물';
+    const changeHandleBtnColor = this.state.value.length >= 1;
     //console.log(this.state.value);
-    console.log(this.state.commentList);
+    //console.log(this.state.commentList);
     return (
       <>
         <SubNav title={title} />
@@ -50,7 +61,9 @@ class Comment extends React.Component {
             value={this.state.value}
           />
           <FaArrowAltCircleUp
-            className="commentBtn"
+            className={`${
+              changeHandleBtnColor ? 'trueColor' : 'falseColor'
+            } commentBtn`}
             onClick={this.pressEnter}
           />
         </div>

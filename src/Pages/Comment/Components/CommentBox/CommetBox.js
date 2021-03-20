@@ -5,6 +5,18 @@ import { FaRegHeart } from 'react-icons/fa';
 import './CommentBox.scss';
 
 class CommentBox extends React.Component {
+  constructor() {
+    super();
+
+    this.state = {
+      changeLikedColor: false,
+    };
+  }
+
+  changeLikedColor = () => {
+    this.setState({ changeLikedColor: !this.state.changeLikedColor });
+  };
+
   render() {
     const { name, text } = this.props;
     //console.log(text);
@@ -16,11 +28,14 @@ class CommentBox extends React.Component {
         </div>
         <div className="commentInfo">
           <span className="time">41분 전</span>
-          <button className="heartBtn">
+          <button className="heartBtn" onClick={this.changeLikedColor}>
             <span>
-              <FaRegHeart className="heart" />
+              <FaRegHeart
+                className="heart"
+                fill={this.state.changeLikedColor === true ? 'red' : 'gray'}
+              />
             </span>
-            <span className="likeCount">좋아요 1개</span>
+            <span className="likeCount">좋아요</span>
           </button>
           <button className="rereply">답글달기</button>
           <CocomentInput />

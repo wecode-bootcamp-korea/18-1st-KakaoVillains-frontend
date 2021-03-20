@@ -24,9 +24,18 @@ body {
     .commentBtn {
       position: absolute;
       cursor: pointer;
-      top: 13px;
-      right: 23px;
+      top: 18px;
+      right: 25px;
       font-size: 30px;
+      color: #acaaaa;
+    }
+
+    .trueColor {
+      color: black;
+    }
+
+    .falseColor {
+      color: #acaaaa;
     }
   }
 
