@@ -1,9 +1,9 @@
 import React from 'react';
-import { FaArrowAltCircleUp, FaSort } from 'react-icons/fa';
 import SubNav from '../../Components/SubNav';
 import CommentFeed from '../Comment/Components/CommentFeed/CommentFeed';
 import CommentBox from '../Comment/Components/CommentBox/CommetBox';
 import Footer from '../../Components/Footer';
+import { FaArrowAltCircleUp, FaSort } from 'react-icons/fa';
 import './Comment.scss';
 
 class Comment extends React.Component {
@@ -13,12 +13,7 @@ class Comment extends React.Component {
     this.state = {
       id: '',
       value: '',
-      commentList: [
-        {
-          name: '',
-          text: '',
-        },
-      ],
+      commentList: [],
     };
   }
 
@@ -68,10 +63,13 @@ class Comment extends React.Component {
           </button>
         </div>
         <div className="textBox">
-          {this.state.commentList.map(el => {
-            // console.log(el);
-            return <CommentBox key={el.key} name={el.name} text={el.text} />;
-          })}
+          {this.state.commentList
+            .slice(0)
+            .reverse()
+            .map(el => {
+              // console.log(el);
+              return <CommentBox key={el.key} name={el.name} text={el.text} />;
+            })}
         </div>
         <div className="moreContainer">
           <button id="moreBtn">더보기+</button>

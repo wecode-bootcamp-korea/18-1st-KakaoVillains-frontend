@@ -1,8 +1,8 @@
 /* eslint-disable prettier/prettier */
 import React from 'react';
-import { FaRegHeart } from 'react-icons/fa';
 import { BsChat } from 'react-icons/bs';
 import { BsReply } from 'react-icons/bs';
+import { FaRegHeart } from 'react-icons/fa';
 import './CommentFeed.scss';
 
 class CommentFeed extends React.Component {
