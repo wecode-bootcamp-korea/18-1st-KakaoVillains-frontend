@@ -1,0 +1,25 @@
+.searchDataList {
+  ul {
+    width: 640px;
+    height: 876px;
+    padding: 16.5px 0px 46px;
+    overflow: scroll;
+  }
+
+  li {
+    display: block;
+    padding: 6.5px 20px;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  .noResult {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 640px;
+    height: 876px;
+    font-size: 16px;
+    color: rgb(154, 154, 158);
+  }
+}
