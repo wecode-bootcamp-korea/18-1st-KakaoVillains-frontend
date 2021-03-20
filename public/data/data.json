@@ -3,24 +3,23 @@
         "id": 1,
         "profile_picture": "https://t1.kakaocdn.net/friends/prod/main_tab/feed/npc_20210303144557.png",
         "username": "죠르디",
+        "datetime": "2021.03.19",
         "like_count": 165,
         "title": "나만의 멋진 사원증 언젠간 꼭 걸고 말꺼죨",
         "content": "(웅성웅성) 3월 19일 죠르디 사원증이 출시된다구!",
         "reply_count": 100,
-        "reply_username": "asdf",
-        "reply": "adsf",
-        "img_url": [
+        "reply_username": "tjdgns503",
+        "reply": "아하하",
+        "image_url": ["https://t1.kakaocdn.net/friends/prod/main_tab/feed/media/media_0_20210317160433.jpg","https://t1.kakaocdn.net/friends/prod/main_tab/feed/media/media_1_20210317160433.jpg","https://t1.kakaocdn.net/friends/prod/main_tab/feed/media/media_2_20210317160433.jpg","https://t1.kakaocdn.net/friends/prod/main_tab/feed/media/media_6_20210317160434.jpg"],
+        "recommend_products": [
             {
-                "img_url": "https://t1.kakaocdn.net/friends/prod/main_tab/feed/media/media_0_20210317160433.jpg"
-            },
-            {
-                "img_url": "https://t1.kakaocdn.net/friends/prod/main_tab/feed/media/media_1_20210317160433.jpg"
-            },
-            {
-                "img_url": "https://t1.kakaocdn.net/friends/prod/main_tab/feed/media/media_2_20210317160433.jpg"
-            },
-            {
-                "img_url": "https://t1.kakaocdn.net/friends/prod/main_tab/feed/media/media_6_20210317160434.jpg"
+                "name": "왕록님라이언",
+                "price": "300000.00",
+                "image_url": "https://t1.daumcdn.net/friends/prod/product/20210308161640247_8809721507544_AW_00.jpg"
+            },            {
+                "name": "왕록님라이언",
+                "price": "300000.00",
+                "image_url": "https://t1.daumcdn.net/friends/prod/product/20210308161640247_8809721507544_AW_00.jpg"
             }
         ]
     },
@@ -28,51 +27,42 @@
         "id": 2,
         "profile_picture": "https://t1.kakaocdn.net/friends/prod/main_tab/feed/npc_20210303144557.png",
         "username": "라이언",
+        "datetime": "2021.03.19",
         "like_count": 165,
         "title": "나만의 멋진 사원증 언젠간 꼭 걸고 말꺼죨",
         "content": "(웅성웅성) 3월 19일 죠르디 사원증이 출시된다구!",
         "reply_count": 100,
-        "reply_username": "asdf",
-        "reply": "adsf",
-        "img_url": [
-            {
-                "img_url": "https://t1.kakaocdn.net/friends/prod/main_tab/feed/media/media_0_20210218165255.jpg"
-            }
-        ]
+        "reply_username": "tjdgns503",
+        "reply": "아하하",
+        "image_url": ["https://t1.kakaocdn.net/friends/prod/main_tab/feed/media/media_0_20210218165255.jpg"],
+        "recommend_products": []
     },
     {
         "id": 3,
         "profile_picture": "https://t1.kakaocdn.net/friends/prod/main_tab/feed/npc_20210303144557.png",
         "username": "프로도",
+        "datetime": "2021.03.19",
         "like_count": 165,
         "title": "나만의 멋진 사원증 언젠간 꼭 걸고 말꺼죨",
         "content": "(웅성웅성) 3월 19일 죠르디 사원증이 출시된다구!",
         "reply_count": 100,
-        "reply_username": "asdf",
-        "reply": "adsf",
-        "img_url": [
-            {
-                "img_url": "https://t1.kakaocdn.net/friends/prod/main_tab/feed/media/media_0_20210315175259.jpg"
-            },
-            {
-                "img_url": "https://t1.kakaocdn.net/friends/prod/main_tab/feed/media/media_1_20210315175259.jpg"
-            }
-        ]
+        "reply_username": "tjdgns503",
+        "reply": "아하하",
+        "image_url": ["https://t1.kakaocdn.net/friends/prod/main_tab/feed/media/media_0_20210315175259.jpg","https://t1.kakaocdn.net/friends/prod/main_tab/feed/media/media_1_20210315175259.jpg"],
+        "recommend_products": []
     },
     {
         "id": 4,
         "profile_picture": "https://t1.kakaocdn.net/friends/prod/main_tab/feed/npc_20210303144557.png",
         "username": "죠르디",
+        "datetime": "2021.03.19",
         "like_count": 165,
         "title": "나만의 멋진 사원증 언젠간 꼭 걸고 말꺼죨",
         "content": "(웅성웅성) 3월 19일 죠르디 사원증이 출시된다구!",
         "reply_count": 100,
-        "reply_username": "asdf",
-        "reply": "adsf",
-        "img_url": [
-            {
-                "img_url": "https://t1.kakaocdn.net/friends/prod/main_tab/feed/media/media_0_20201210105805.jpg"
-            }
-        ]
+        "reply_username": "tjdgns503",
+        "reply": "아하하",
+        "image_url": ["https://t1.kakaocdn.net/friends/prod/main_tab/feed/media/media_0_20201210105805.jpg"],
+        "recommend_products": []
     }
 ]

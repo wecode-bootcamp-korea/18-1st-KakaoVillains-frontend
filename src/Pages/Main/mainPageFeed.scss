@@ -1,4 +1,4 @@
-.feedPage{
+
 
     .feedBox {
         max-width: 640px;
@@ -29,6 +29,8 @@
 
                 .time {
                     margin-top: 3px;
+                    font-size: 13px;
+                    color: #9A9A9E;
                 }
             }
         }
@@ -44,12 +46,22 @@
         .feedBoxIcon {
             display: flex;
             align-items: center;
+            position: relative;
             width: 100%;
             margin-top: 13px;
 
             .heartIcon{
                 margin-left: -5px;
             }
+
+            .heartIconColorChange {
+                margin-left: -5px;
+            }
+
+            .chatIcon {
+                margin-left: 5px;
+            }
+
             .replyIcon {
                 margin-left: auto;
             }
@@ -80,6 +92,15 @@
         
         .replyList {
             margin-top: 13px;
+
+            .userNAme {
+                font-weight: bold;
+                font-size: 14px;
+            }
+
+            .content {
+                font-size: 14px;
+            }
         }
 
         .feedReplyBox {
@@ -92,6 +113,7 @@
 
             .feedReplyCount {
                 text-align: start;
+                color: #9A9A9E;
             }
             .reply {
                 text-align: start;
@@ -148,5 +170,5 @@
 
 
     }
-}
+
 

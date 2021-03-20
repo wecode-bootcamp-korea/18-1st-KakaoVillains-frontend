@@ -3,6 +3,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Slider from "react-slick"; 
 import { FaRegHeart } from 'react-icons/fa';
+import { FaHeart } from 'react-icons/fa';
 import { BsChat } from 'react-icons/bs';
 import { BsReply } from 'react-icons/bs';
 import { FiShoppingBag } from 'react-icons/fi';
@@ -41,15 +42,19 @@ const StyledSlider = styled(Slider)`
     
 `;
 
-class FeedList extends React.Component {
+class FeedList extends React.Component {  
 
-  // constructor(){
-  //   super();
-  //   this.state = {
-  //     feedList: [],
-  //   }
-  // }
-  
+  constructor() {
+    super();
+    this.state= {
+      heartColor: true,
+    }
+  }
+
+  colorChangeBtn = () => {
+    this.setState({ heartColor: !this.state.heartColor })
+  }
+
   render() {
 
   const settings = {
@@ -59,27 +64,33 @@ class FeedList extends React.Component {
     slidesToShow: 1,
     slidesToScroll: 1
   }
-
     return (
-      <div className="feedPage">
+      <>
         <div className="feedBox">
           <div className="feedBoxHeader">
             <div className="feedBoxHeaderImg">
-              <img  className="headerImg" src={this.props.profile_picture} alt="이미지" />
+              <img className="headerImg" src={this.props.profile_picture} alt="이미지" />
             </div>
             <div className="nameAndTime">
               <div className="characterName">{this.props.username}</div>
-              <div className="time">시간</div>
+              <div className="time">{this.props.datetime}</div>
             </div>
           </div>
           <StyledSlider className="feedBoxImg" {...settings}>
-             {this.props.img_url.map((img) => <img className="mainImg" src={img.img_url} alt="이미지" /> )}
+             {this.props.image_url.map(list => (
+               <img className="mainImg" src={list} alt="이미지" />
+             ))}
           </StyledSlider>
           <div className="feedBoxIcon">
-            <div className="heartIcon">
-              <button><FaRegHeart size="24" /></button>
-            </div>
-            <div  className="chatIcon">   
+            {this.state.heartColor ? 
+                <div className="heartIcon">
+                  <button onClick={this.colorChangeBtn}><FaRegHeart size="24" /></button>
+                </div> :
+                <div className="heartIconColorChange">
+                  <button onClick={this.colorChangeBtn}><FaHeart color="red" size="24" /></button>
+                </div>
+            }   
+            <div className="chatIcon">   
               <button><BsChat size="24" /></button>
             </div>
             <div  className="replyIcon">
@@ -94,47 +105,38 @@ class FeedList extends React.Component {
             <button className="feedReplyBoxBtn">
               <div className="feedReplyCount">댓글 <span className="feedReplyCountUpDown">{this.props.reply_count}</span>개</div> 
               <ul className="replyList">
-                <li className="reply">{this.props.reply_username} {this.props.reply}</li>
+                <span className="userName">{this.props.reply_username}</span>
+                <p className="content">{this.props.reply}</p>
+                {/* <li className="reply">{this.props.reply_username} {this.props.reply}</li> */}
               </ul>
               <div className="replyInput">
                 <textarea placeholder="댓글을 달아주세요." />
               </div>
-            </button>
-            <div className="productList">
-              <ul>
-                <li>
-                  <div className="product">
-                    <div className="productImgInfo">
-                      <img className="productImg" src="https://t1.daumcdn.net/friends/prod/product/20210308161640247_8809721507544_AW_00.jpg" alt="상품 이미지" />
-                      <div className="productInfo">
-                        <div>피치피치 토스터기</div>
-                        <div>49,000원</div>
-                      </div>
-                    </div> 
-                    <div className="shoppingBtn">
-                      <button><FiShoppingBag size="28" /></button>
-                    </div>
-                  </div>
-                </li>
-                <li>
-                  <div className="product">
-                    <div className="productImgInfo">
-                      <img className="productImg" src="https://t1.daumcdn.net/friends/prod/product/20210308161640247_8809721507544_AW_00.jpg" alt="상품 이미지" />
-                      <div className="productInfo">
-                        <div>피치피치 토스터기</div>
-                        <div>49,000원</div>
-                      </div>
-                    </div> 
-                    <div className="shoppingBtn">
-                      <button><FiShoppingBag size="28" /></button>
-                    </div>
-                  </div>
-                </li>
-              </ul>
+              </button>
             </div>
-           </div>
+              {this.props.recommend_products.length > 0 && (<div className="productList">
+                <ul>
+                  {this.props.recommend_products.map((data,index) => (
+                    <li>
+                      <div className="product">
+                        <div className="productImgInfo">
+                          <img className="productImg" src={data.image_url} alt="상품 이미지" />
+                          <div className="productInfo">
+                            <div>{data.name}</div>
+                            <div>{data.price}</div>
+                          </div>
+                        </div> 
+                        <div className="shoppingBtn">
+                          <button><FiShoppingBag size="28" /></button>
+                        </div>
+                      </div>
+                    </li>
+                  ))}
+                </ul>
+              </div>)}
+            
         </div>
-      </div>
+      </>
     );
   }
 }

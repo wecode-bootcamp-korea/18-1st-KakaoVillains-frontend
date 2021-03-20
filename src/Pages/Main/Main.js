@@ -5,7 +5,7 @@ import './Main.scss';
 class Main extends React.Component {
   render() {
     return (
-      <div>
+      <div className="feedPage">
         <MainPageFeed />
       </div>
     );
