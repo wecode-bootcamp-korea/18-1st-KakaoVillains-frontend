@@ -1,0 +1,25 @@
+[
+  {
+    "id": 1,
+    "name": "아몬드",
+    "img": "https://i.imgur.com/g6EO7M8.jpeg",
+    "product": [
+      {
+        "id": 1,
+        "img": "https://i.imgur.com/g6EO7M8.jpeg",
+        "name": "아몬드 마우스",
+        "discount": true,
+        "rate": 20,
+        "discountPrice": 8000,
+        "price": 10000
+      },
+      {
+        "id": 3,
+        "name": "아몬드 키보드",
+        "img": "https://i.imgur.com/PxvSATF.jpg",
+        "discount": false,
+        "price": 10000
+      }
+    ]
+  }
+]
