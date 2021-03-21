@@ -1,4 +1,5 @@
 import React from 'react';
+import uuid from 'react-uuid';
 import SubNav from '../../Components/SubNav';
 import CommentFeed from '../Comment/Components/CommentFeed/CommentFeed';
 import CommentBox from '../Comment/Components/CommentBox/CommetBox';
@@ -13,9 +14,27 @@ class Comment extends React.Component {
     this.state = {
       id: '',
       value: '',
-      commentList: [],
+      commentList: [{ id: uuid() }],
       btnChangeValue: '',
     };
+  }
+
+  componentWillMount() {
+    const commentList = localStorage.commentList;
+    if (commentList) {
+      this.setState({
+        commentList: JSON.parse(commentList),
+      });
+    }
+  }
+
+  componentDidUpdate(prevprops, prevState) {
+    if (
+      JSON.stringify(prevState.commentList) !==
+      JSON.stringify(this.state.commentList)
+    ) {
+      localStorage.commentList = JSON.stringify(this.state.commentList);
+    }
   }
 
   inputComment = e => {
@@ -29,7 +48,6 @@ class Comment extends React.Component {
       alert('내용을 입력해주세요');
       return;
     }
-    // console.log(this.state.CommentList);
     this.setState({
       commentList: this.state.commentList.concat([
         {
@@ -42,6 +60,12 @@ class Comment extends React.Component {
 
   changeHandleBtnColor = () => {
     return this.state.btnChangeValue ? 'trueColor' : 'falseColor';
+  };
+
+  handleCommentDelete = index => {
+    this.setState({
+      commentList: this.state.commentList.filter((_, idx) => idx !== index),
+    });
   };
 
   render() {
@@ -79,9 +103,17 @@ class Comment extends React.Component {
           {this.state.commentList
             .slice(0)
             .reverse()
-            .map(el => {
+            .map((el, idx) => {
               // console.log(el);
-              return <CommentBox key={el.key} name={el.name} text={el.text} />;
+              return (
+                <CommentBox
+                  key={idx}
+                  name={el.name}
+                  text={el.text}
+                  index={idx}
+                  handleCommentDelete={this.handleCommentDelete}
+                />
+              );
             })}
         </div>
         <div className="moreContainer">

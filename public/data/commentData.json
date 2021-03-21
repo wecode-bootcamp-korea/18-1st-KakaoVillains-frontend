@@ -1,0 +1,46 @@
+[
+  {
+    "id": 1,
+    "userId": "양지은",
+    "content": "죠르디는 귀여워.",
+    "likeCount": "좋아요 1개",
+    "createdAt": "30분 전",
+    "replyId": "죠르디"
+  },
+
+  {
+    "id": 2,
+    "userId": "양지은",
+    "content": "죠르디는 귀여워.",
+    "likeCount": "좋아요 1개",
+    "created_at": "20분 전",
+    "replyId": "죠르디"
+  },
+
+  {
+    "id": 3,
+    "userId": "양지은",
+    "content": "죠르디는 귀여워.",
+    "likeCount": "좋아요 1개",
+    "created_at": "10분 전",
+    "replyId": "죠르디"
+  },
+
+  {
+    "id": 4,
+    "userId": "양지은",
+    "content": "죠르디는 귀여워.",
+    "likeCount": "좋아요 1개",
+    "created_at": "방금",
+    "replyId": "죠르디"
+  },
+
+  {
+    "id": 5,
+    "userId": "양지은",
+    "content": "죠르디는 귀여워.",
+    "likeCount": "좋아요 1개",
+    "created_at": "방금",
+    "replyId": "죠르디"
+  }
+]

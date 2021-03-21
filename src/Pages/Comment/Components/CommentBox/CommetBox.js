@@ -23,6 +23,12 @@ class CommentBox extends React.Component {
     return (
       <div className="textContainer">
         <div className="name">양지은{name}</div>
+        <div
+          className="delete"
+          onClick={() => this.props.handleCommentDelete(this.props.index)}
+        >
+          x
+        </div>
         <div className="textBox">
           <span>{text}</span>
         </div>
@@ -35,7 +41,9 @@ class CommentBox extends React.Component {
                 fill={this.state.changeLikedColor === true ? 'red' : 'gray'}
               />
             </span>
-            <span className="likeCount">좋아요</span>
+            <span className="likeCount">
+              좋아요 {this.changeLikedColor ? +1 : 0}개
+            </span>
           </button>
           <button className="rereply">답글달기</button>
           <CocomentInput />
