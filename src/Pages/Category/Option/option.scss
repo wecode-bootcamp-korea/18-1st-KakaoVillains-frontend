@@ -1,0 +1,19 @@
+.option {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 220px;
+  background-color: green;
+
+  select {
+    background-color: green;
+    color: white;
+    font-size: 25px;
+    font-weight: bold;
+  }
+
+  img {
+    height: 150px;
+    width: auto;
+  }
+}
