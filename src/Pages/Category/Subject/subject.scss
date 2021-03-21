@@ -1,0 +1,12 @@
+select {
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+.subject {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 640px;
+}
