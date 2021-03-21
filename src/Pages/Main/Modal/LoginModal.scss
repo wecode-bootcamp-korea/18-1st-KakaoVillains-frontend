@@ -1,0 +1,42 @@
+.modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 999;
+  background-color: rgba(0, 0, 0, 0.6);
+
+  .modalBox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    width: 310px;
+    border: 1px solid none;
+    background-color: white;
+
+    .xMark {
+      position: absolute;
+      margin-top: 10px;
+      margin-left: 250px;
+    }
+    .img {
+      width: 128px;
+      height: 128px;
+      margin: 40px auto 8px;
+    }
+
+    .title {
+      font-weight: bold;
+    }
+
+    .content {
+      text-align: center;
+      margin-top: 15px;
+    }
+  }
+}
