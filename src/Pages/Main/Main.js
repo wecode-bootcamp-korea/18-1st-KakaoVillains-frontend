@@ -1,13 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
+import Rating from './Rating/Rating';
 import './Main.scss';
 
 class Main extends React.Component {
   render() {
     return (
-      <div>
-        <div className="mainContainer">123</div>
-        <button>클릭</button>
-      </div>
+      <>
+        <Rating value={4.5} />
+      </>
     );
   }
 }

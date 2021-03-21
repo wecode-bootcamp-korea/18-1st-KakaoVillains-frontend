@@ -1,0 +1,31 @@
+
+    {
+        "name": "라이언텀블러",
+        "price": "20000.00",
+        "average_rating": "3.5",
+        "description": "htmlhtmlhtmlhtmlhtml",
+        "review_count": 2,
+        "image_list": [
+            "url1",
+            "url2",
+            "url3"
+        ],
+        "review_list": [
+            {
+                "reviewer": "허정원",
+                "rating": 3,
+                "created_at": "2021-03-18",
+                "content": "짱짱맨라이언",
+                "like_count": 0
+            },
+            {
+                "reviewer": "허정원",
+                "rating": 4,
+                "created_at": "2021-03-18",
+                "content": "라이언노란색",
+                "like_count": 0
+            }
+        ]
+    }
+
+
