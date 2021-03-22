@@ -1,9 +1,29 @@
 import React from 'react';
 import Rating from '../Rating/Rating';
-import { FaShareAlt } from 'react-icons/fa';
+import {
+  FaShareAlt,
+  FaFacebookF,
+  FaTwitter,
+  FaGithubAlt,
+} from 'react-icons/fa';
+import { RiKakaoTalkFill } from 'react-icons/ri';
 import Slider from 'react-slick';
+import './Product.scss';
 
 class Product extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      showModal: false,
+    };
+  }
+
+  openModal = () => {
+    this.setState({
+      showModal: !this.state.showModal,
+    });
+  };
+
   render() {
     const settings = {
       dots: true,
@@ -15,6 +35,23 @@ class Product extends React.Component {
       autoplaySpeed: 2000,
     };
 
+    const Modal = this.state.showModal ? (
+      <div className="snsBtn">
+        <button className="snsIcon">
+          <FaFacebookF />
+        </button>
+        <button className="snsIcon">
+          <FaTwitter />
+        </button>
+        <button className="snsIcon">
+          <FaGithubAlt />
+        </button>
+        <button className="snsIcon">
+          <RiKakaoTalkFill />
+        </button>
+      </div>
+    ) : null;
+
     return (
       <div>
         <header>
@@ -24,9 +61,12 @@ class Product extends React.Component {
             })}
           </Slider>
           <p className="headTitle">{this.props.name}</p>
-          <button className="headShareBtn">
-            <FaShareAlt className="shareIcon" />
-          </button>
+          <div className="modalBox">
+            <div className="snsModal">{Modal}</div>
+            <button className="headShareBtn" onClick={this.openModal}>
+              <FaShareAlt className="shareIcon" />
+            </button>
+          </div>
           <p className="headPrice">{this.props.price}원</p>
           <div className="productGrade">
             <Rating value={this.props.average_rating} />

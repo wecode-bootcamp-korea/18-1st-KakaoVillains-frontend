@@ -1,11 +1,27 @@
 import React from 'react';
 import Rating from '../Rating/Rating';
 import { FaFreebsd } from 'react-icons/fa';
+import { BsPencil } from 'react-icons/bs';
 
 class ReviewList extends React.Component {
   render() {
     return (
-      <div>
+      <div className="productReview">
+        <div className="reviewCount">
+          <p className="countTitle">리뷰 {this.props.review_count}개</p>
+          <div className="productGrade">
+            <Rating value={this.props.average_rating} />
+            <p>{this.props.average_rating}/5</p>
+          </div>
+        </div>
+        <button className="reviewBtn">
+          <BsPencil className="pencilIcon" />
+          리뷰를 남겨주세요
+        </button>
+        <div className="productSort">
+          <button className="sortLike">좋아요순</button>
+          <button className="sortNew">최신순</button>
+        </div>
         {this.props.review_list.map(product => (
           <div className="productComment">
             <p className="commentUser">{product.reviewer}</p>
