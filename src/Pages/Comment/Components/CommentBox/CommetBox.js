@@ -22,7 +22,7 @@ class CommentBox extends React.Component {
     //console.log(text);
     return (
       <div className="textContainer">
-        <div className="name">양지은{name}</div>
+        <div className="name">{name}</div>
         <div
           className="delete"
           onClick={() => this.props.handleCommentDelete(this.props.index)}

@@ -16,8 +16,25 @@ class Comment extends React.Component {
       value: '',
       commentList: [],
       btnChangeValue: '',
+      page: 1,
     };
   }
+
+  componentDidMount = () => {
+    fetch(`http://10.58.5.183:8000/feed/${this.state.page}`, {
+      method: 'GET',
+      //   body: JSON.stringify({
+      //     : this.state.id,
+      //     password: this.state.password,
+      //   }),
+    })
+      .then(res => res.json())
+      .then(data =>
+        this.setState({
+          commentList: data,
+        })
+      );
+  };
 
   componentWillMount() {
     const commentList = localStorage.commentList;
@@ -69,10 +86,9 @@ class Comment extends React.Component {
   };
 
   render() {
+    console.log(this.state.commentList);
     const title = '게시물';
     const changeHandleBtnColor = this.state.value.length >= 1;
-    //console.log(this.state.value);
-    //console.log(this.state.commentList);
     return (
       <>
         <SubNav title={title} />
@@ -100,21 +116,20 @@ class Comment extends React.Component {
           </button>
         </div>
         <div className="textBox">
-          {this.state.commentList
-            .slice(0)
-            .reverse()
-            .map((el, idx) => {
-              // console.log(el);
-              return (
+          {!this.state.commentList &&
+            this.state.commentList
+              .map(comment => {
+                return console.log(comment.reply);
+              })
+              .map((comment, idx) => (
                 <CommentBox
                   key={idx}
-                  name={el.name}
-                  text={el.text}
+                  name={comment.reply_username}
+                  text={comment.reply_content}
                   index={idx}
                   handleCommentDelete={this.handleCommentDelete}
                 />
-              );
-            })}
+              ))}
         </div>
         <div className="moreContainer">
           <button id="moreBtn">더보기+</button>
