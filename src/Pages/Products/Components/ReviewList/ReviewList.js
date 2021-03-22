@@ -1,23 +1,27 @@
 import React from 'react';
-import Review from '../Review/Review';
-import './ReviewList.scss';
+import Rating from '../Rating/Rating';
+import { FaFreebsd } from 'react-icons/fa';
 
 class ReviewList extends React.Component {
   render() {
-    //console.log(this.props.productInfo);
     return (
-      <div className="ReviewList">
-        {this.props.productInfo.map(product => {
-          return (
-            <Review
-              reviewer={product.reviewer}
-              rating={product.rating}
-              created_at={product.created_at}
-              content={product.content}
-              like_count={product.like_count}
-            />
-          );
-        })}
+      <div>
+        {this.props.review_list.map(product => (
+          <div className="productComment">
+            <p className="commentUser">{product.reviewer}</p>
+            <div className="productUserGrade">
+              <Rating value={product.rating} />
+              <span className="commentDate">{product.created_at}</span>
+            </div>
+            <p className="commentValue">{product.content}</p>
+            <div className="commentLike">
+              <button>
+                <FaFreebsd className="likeBtnIcon" />
+                좋아요 {product.like_count}명
+              </button>
+            </div>
+          </div>
+        ))}
       </div>
     );
   }

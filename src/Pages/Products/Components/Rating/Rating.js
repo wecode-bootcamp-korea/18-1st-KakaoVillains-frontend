@@ -11,7 +11,7 @@ function getStars(value) {
 
 export default function Rating({ value }) {
   return (
-    <div>
+    <div className="star">
       {getStars(value).map(value => (
         <img src={`/images/${value}.png`} alt="stars" />
       ))}

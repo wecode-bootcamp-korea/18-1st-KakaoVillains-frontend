@@ -44,6 +44,16 @@
       .productGrade {
         display: flex;
         margin: 20px 0 0 20px;
+
+        .star {
+          display: flex;
+          align-items: center;
+
+          img {
+            margin-right: 5px;
+            width: 15px;
+          }
+        }
       }
     }
 
@@ -130,6 +140,21 @@
           font-size: 24px;
           font-weight: bold;
         }
+
+        .productGrade {
+          display: flex;
+          align-items: center;
+
+          .star {
+            display: flex;
+            align-items: center;
+
+            img {
+              margin-right: 5px;
+              width: 15px;
+            }
+          }
+        }
       }
 
       .reviewBtn {
@@ -182,9 +207,21 @@
         }
 
         .productUserGrade {
+          display: flex;
           margin-top: 10px;
 
+          .star {
+            display: flex;
+            align-items: center;
+
+            img {
+              margin-right: 5px;
+              width: 13px;
+            }
+          }
+
           .commentDate {
+            margin-left: 5px;
             font-size: 13px;
           }
         }

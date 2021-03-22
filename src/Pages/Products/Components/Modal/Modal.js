@@ -1,9 +1,5 @@
 import React from 'react';
 
-export const Modal = () => {
-  return (
-    <>
-      <div>Modal</div>
-    </>
-  );
+export const Modal = ({ showModal, setShowModal }) => {
+  return <>{showModal ? <div>modal</div> : null}</>;
 };

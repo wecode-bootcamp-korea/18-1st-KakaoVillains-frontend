@@ -1,4 +1,4 @@
-
+[
     {
         "name": "라이언텀블러",
         "price": "20000.00",
@@ -6,9 +6,9 @@
         "description": "htmlhtmlhtmlhtmlhtml",
         "review_count": 2,
         "image_list": [
-            "url1",
-            "url2",
-            "url3"
+            "https://t1.daumcdn.net/friends/prod/product/20210308161640410_8809721507544_AW_02.jpg",
+            "https://t1.daumcdn.net/friends/prod/product/20210308161640410_8809721507544_AW_02.jpg",
+            "https://t1.daumcdn.net/friends/prod/product/20210308161640410_8809721507544_AW_02.jpg"
         ],
         "review_list": [
             {
@@ -27,5 +27,5 @@
             }
         ]
     }
-
+]
 
