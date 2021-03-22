@@ -7,7 +7,7 @@ class SearchDataList extends React.Component {
     const { keyWordList } = this.props;
     return (
       <section className="searchDataList">
-        {!false ? (
+        {!keyWordList ? (
           <div className="noResult">검색결과가 없습니다.</div>
         ) : (
           <ul>

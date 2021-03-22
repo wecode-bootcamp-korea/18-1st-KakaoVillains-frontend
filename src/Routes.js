@@ -2,6 +2,9 @@ import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Search from './Pages/Search/Search';
 import Test from './Pages/Search/Test';
+import Main from './Pages/Main/Main';
+import Login from './Pages/Login/Login';
+import SignUp from './Pages/Login/SignUp/SignUp';
 
 class Routes extends React.Component {
   render() {
@@ -12,6 +15,9 @@ class Routes extends React.Component {
           <Route exact path="/category/subject/:id" component={Test} />
           <Route exact path="/category/character/:id" component={Test} />
           <Route exact path="/product/:id" component={Test} />
+          <Route exact path="/" component={Main} />
+          <Route exact path="/login" component={Login} />
+          <Route exact path="/signup" component={SignUp} />
         </Switch>
       </Router>
     );

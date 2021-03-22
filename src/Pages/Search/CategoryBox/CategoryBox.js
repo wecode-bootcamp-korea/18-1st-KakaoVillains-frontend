@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import './categoryBox.scss';
 
 class CategoryBox extends React.Component {
@@ -7,11 +6,17 @@ class CategoryBox extends React.Component {
     return (
       <section className="category">
         <h4>카테고리</h4>
-        {CATEGORY.map(data => (
-          <Link to={`/category/subject/${data.id}`}>
-            <button key={data.id}>{data.name}</button>
-          </Link>
-        ))}
+        <ul>
+          {CATEGORY.map(data => (
+            <button
+              id={data.id}
+              key={data.id}
+              onClick={this.props.goToCategory}
+            >
+              {data.name}
+            </button>
+          ))}
+        </ul>
       </section>
     );
   }

@@ -1,18 +1,15 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import './characterBox.scss';
 
 class CharacterBox extends React.Component {
   render() {
     return (
       <section className="characterBox">
-        {character.map(data => (
-          <div className="character" key={data.id}>
-            <Link to={`/category/character/${data.id}`}>
-              <button>
-                <img alt={data.name} src={data.img} />
-              </button>
-            </Link>
+        {CHARACTER.map(data => (
+          <div className="character" id={data.id} key={data.id}>
+            <button onClick={this.props.goToCharacter}>
+              <img alt={data.name} src={data.img} />
+            </button>
             <p>{data.name}</p>
           </div>
         ))}
@@ -23,7 +20,7 @@ class CharacterBox extends React.Component {
 
 export default CharacterBox;
 
-const character = [
+const CHARACTER = [
   {
     id: 1,
     name: '아몬드',

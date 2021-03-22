@@ -11,7 +11,6 @@ class Search extends React.Component {
     this.state = {
       keyWord: '',
       keyWordList: [],
-      toggleOff: false,
     };
   }
 
@@ -19,6 +18,7 @@ class Search extends React.Component {
     this.setState({
       keyWord: e.target.value,
     });
+    this.filterKeyword();
   };
 
   keyWordDelete = () => {
@@ -28,7 +28,8 @@ class Search extends React.Component {
   };
 
   filterKeyword = () => {
-    fetch(`/data/searchData.json?filter${this.state.keyword}`)
+    fetch('/data/searchData.json')
+      // ?filter=${this.state.keyword}*/
       .then(res => res.json())
       .then(res =>
         this.setState({
@@ -37,29 +38,33 @@ class Search extends React.Component {
       );
   };
 
-  goToBack = () => {
-    this.setState({
-      toggleOff: true,
-    });
+  goToCharacter = e => {
+    const id = e.target.parentNode.parentNode.id;
+    this.props.history.push(`/category/character?characterSeq=${id}`);
+  };
+
+  goToCategory = e => {
+    const id = e.target.id;
+    this.props.history.push(`/category/subject?categorySeq=${id}`);
   };
 
   render() {
-    const { keyWord, keyWordList, toggleOff } = this.state;
-    const { keyWordDelete, keyWordInput, goToBack } = this;
+    const { keyWord, keyWordList } = this.state;
+    const { keyWordDelete, keyWordInput, goToCharacter, goToCategory } = this;
     return (
-      <main className={toggleOff ? 'searchOff' : 'search'}>
+      <main className="search">
         <SearchBox
           keyWordDelete={keyWordDelete}
           keyWordInput={keyWordInput}
           keyWord={keyWord}
-          goToBack={goToBack}
+          toggleOff={this.props.toggleOff}
         />
-        {keyWord !== '' ? (
+        {keyWord ? (
           <SearchDataList keyWordList={keyWordList} />
         ) : (
-          <div>
-            <CharacterBox />
-            <CategoryBox />
+          <div className="CategoryBox">
+            <CharacterBox goToCharacter={goToCharacter} />
+            <CategoryBox goToCategory={goToCategory} />
           </div>
         )}
       </main>
