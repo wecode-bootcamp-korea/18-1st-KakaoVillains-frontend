@@ -2,7 +2,7 @@
 import React from "react";
 import FeedList from "./FeedList";
 import InfiniteScroll from "react-infinite-scroll-component";
-import "./mainPageFeed.scss";
+// import "./mainPageFeed.scss";
 
 class MainPageFeed extends React.Component {
   constructor() {

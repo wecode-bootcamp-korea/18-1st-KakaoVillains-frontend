@@ -1,6 +1,6 @@
 import React from "react";
 
-class Feed extends React.Component {
+class Feed2 extends React.Component {
   render() {
     return (
       <>
@@ -11,4 +11,4 @@ class Feed extends React.Component {
   }
 }
 
-export default Feed;
+export default Feed2;

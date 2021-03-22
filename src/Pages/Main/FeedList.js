@@ -10,7 +10,7 @@ import { FaHeart } from "react-icons/fa";
 import { BsChat } from "react-icons/bs";
 import { BsReply } from "react-icons/bs";
 import { FiShoppingBag } from "react-icons/fi";
-import "./mainPageFeed.scss";
+import "./FeedList.scss";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 

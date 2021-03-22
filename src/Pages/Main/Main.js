@@ -1,6 +1,7 @@
 import React from "react";
 import MainPageNav from "../../Components/MainNav";
 import MainPageFeed from "./mainPageFeed";
+// import Cart from "../Cart/Cart";
 import "./Main.scss";
 
 class Main extends React.Component {

@@ -1,5 +1,5 @@
 import React from "react";
-import MainPageFeed from "../Pages/Main/mainPageFeed";
+import { withRouter } from "react-router-dom";
 import "./MainNav.scss";
 import { FaSearch } from "react-icons/fa";
 import { FiMenu } from "react-icons/fi";
@@ -9,21 +9,16 @@ class MainPageNav extends React.Component {
   constructor() {
     super();
     this.state = {
-      menuId: 0,
+      id: 0,
     };
   }
 
-  handlerBtn = id => {
-    this.setState({ menuId: id });
+  handlerBtn = num => {
+    this.setState({ id: num });
+    console.log(this.state.id);
   };
   render() {
-    console.log(this.state.menuId);
-    const Menu = {
-      1: <MainPageFeed />,
-    };
-
     const MenuList = ["오늘", "신규", "인기", "마이"];
-
     return (
       <div className="wrapMain">
         <div className="mainNav">
@@ -42,20 +37,21 @@ class MainPageNav extends React.Component {
             </div>
           </div>
           <div className="navBarSecond">
-            {MenuList.map(list => {
+            {MenuList.map((list, index) => {
               return (
-                <div onClick={() => this.handlerBtn(1)} className="today">
+                <div
+                  onClick={() => this.handlerBtn(index + 1)}
+                  className="width"
+                >
                   {list}
                 </div>
               );
             })}
-            ;
           </div>
         </div>
-        <>{this.state.menuId === 1 && <MainPageFeed />}</>
       </div>
     );
   }
 }
 
-export default MainPageNav;
+export default withRouter(MainPageNav);

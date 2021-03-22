@@ -1,0 +1,9 @@
+.ShoppingBasketBox {
+  display: flex;
+  justify-content: center;
+  border: 1px solid black;
+
+  .box {
+    width: 640px;
+  }
+}

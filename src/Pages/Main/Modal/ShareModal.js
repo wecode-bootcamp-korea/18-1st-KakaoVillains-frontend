@@ -1,5 +1,5 @@
-import React from 'react';
-import './ShareModal.scss';
+import React from "react";
+import "./ShareModal.scss";
 
 class ShareModal extends React.Component {
   render() {
