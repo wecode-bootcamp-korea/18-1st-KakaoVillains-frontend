@@ -12,7 +12,7 @@ class Comment extends React.Component {
     super();
 
     this.state = {
-      id: '',
+      id: '아무개',
       value: '',
       commentList: [],
       btnChangeValue: '',
@@ -21,13 +21,13 @@ class Comment extends React.Component {
   }
 
   componentDidMount = () => {
-    fetch(`http://10.58.5.183:8000/feed/${this.state.page}`, {
-      method: 'GET',
+    fetch('/data/commentData.json')
+      //`http://10.58.5.183:8000/feed/${this.state.page}`, {
+      // method: 'GET',
       //   body: JSON.stringify({
       //     : this.state.id,
       //     password: this.state.password,
       //   }),
-    })
       .then(res => res.json())
       .then(data =>
         this.setState({
@@ -68,8 +68,8 @@ class Comment extends React.Component {
     this.setState({
       commentList: this.state.commentList.concat([
         {
-          name: this.state.id,
-          text: this.state.value,
+          userId: this.state.id,
+          content: this.state.value,
         },
       ]),
     });
@@ -116,20 +116,19 @@ class Comment extends React.Component {
           </button>
         </div>
         <div className="textBox">
-          {!this.state.commentList &&
-            this.state.commentList
-              .map(comment => {
-                return console.log(comment.reply);
-              })
-              .map((comment, idx) => (
-                <CommentBox
-                  key={idx}
-                  name={comment.reply_username}
-                  text={comment.reply_content}
-                  index={idx}
-                  handleCommentDelete={this.handleCommentDelete}
-                />
-              ))}
+          {this.state.commentList.map((comment, index) => {
+            return (
+              <CommentBox
+                index={index}
+                key={comment.id}
+                name={comment.userId}
+                text={comment.content}
+                likeCount={comment.likeCount}
+                createdAt={comment.createdAt}
+                handleCommentDelete={this.handleCommentDelete}
+              />
+            );
+          })}
         </div>
         <div className="moreContainer">
           <button id="moreBtn">더보기+</button>

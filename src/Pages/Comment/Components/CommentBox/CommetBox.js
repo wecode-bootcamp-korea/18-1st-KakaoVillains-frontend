@@ -1,6 +1,6 @@
 import React from 'react';
-import CocomentInput from '../CocommentInput/CocomentInput';
-import ReplyBox from '../ReplyBox/ReplyBox';
+//import CocomentInput from '../CocommentInput/CocomentInput';
+//import ReplyBox from '../ReplyBox/ReplyBox';
 import { FaRegHeart } from 'react-icons/fa';
 import './CommentBox.scss';
 
@@ -18,7 +18,7 @@ class CommentBox extends React.Component {
   };
 
   render() {
-    const { name, text } = this.props;
+    const { name, text, createdAt } = this.props;
     //console.log(text);
     return (
       <div className="textContainer">
@@ -33,7 +33,7 @@ class CommentBox extends React.Component {
           <span>{text}</span>
         </div>
         <div className="commentInfo">
-          <span className="time">41분 전</span>
+          <span className="time">{createdAt}</span>
           <button className="heartBtn" onClick={this.changeLikedCount}>
             <span>
               <FaRegHeart
@@ -46,8 +46,6 @@ class CommentBox extends React.Component {
             </span>
           </button>
           <button className="rereply">답글달기</button>
-          <CocomentInput />
-          <ReplyBox />
         </div>
       </div>
     );
