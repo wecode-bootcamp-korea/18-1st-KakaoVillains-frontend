@@ -1,8 +1,9 @@
 import React from 'react';
-import './MainNav.scss';
+import { Link } from 'react-router-dom';
 import { FaSearch } from 'react-icons/fa';
 import { FiMenu } from 'react-icons/fi';
 import { FiGlobe } from 'react-icons/fi';
+import './MainNav.scss';
 
 class MainPageNav extends React.Component {
   render() {
