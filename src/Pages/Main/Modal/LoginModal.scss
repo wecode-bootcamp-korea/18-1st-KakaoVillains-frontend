@@ -38,5 +38,27 @@
       text-align: center;
       margin-top: 15px;
     }
+
+    .loginBtnBox {
+      position: relative;
+      margin-top: 20px;
+      margin-bottom: 30px;
+      text-align: center;
+
+      .chatIcon {
+        position: absolute;
+        left: 50px;
+        bottom: 12px;
+      }
+
+      .loginBtn {
+        border-radius: 30px;
+        color: #3C1E1E;
+        font-weight: bold;
+        background-color: #FFEB00;
+        padding: 15px 80px;
+        font-size: 16px;
+      }
+    }
   }
 }

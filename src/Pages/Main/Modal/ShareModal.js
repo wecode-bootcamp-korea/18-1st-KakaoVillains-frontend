@@ -12,7 +12,7 @@ class ShareModal extends React.Component {
             <div>2</div>
             <div>3</div>
           </div>
-          <button onClick={this.props.handleModal} className="close">
+          <button onClick={this.props.shareHandleModal} className="close">
             닫기
           </button>
         </div>

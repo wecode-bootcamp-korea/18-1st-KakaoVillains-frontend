@@ -3,6 +3,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Slider from 'react-slick';
 import ShareModal from './Modal/ShareModal';
+// import LoginModal from './Modal/LoginModal';
 import { FaRegHeart } from 'react-icons/fa';
 import { FaHeart } from 'react-icons/fa';
 import { BsChat } from 'react-icons/bs';
@@ -48,6 +49,7 @@ class FeedList extends React.Component {
     this.state = {
       heartColor: true,
       isShareModalView: false,
+      isLoginModalView: false,
     };
   }
 
@@ -55,13 +57,21 @@ class FeedList extends React.Component {
     this.setState({ heartColor: !this.state.heartColor });
   };
 
-  handleModal = () => {
+  shareHandleModal = () => {
     this.setState({ isShareModalView: !this.state.isShareModalView }, () => {
       document.body.style.overflow = this.state.isShareModalView
         ? 'hidden'
         : 'unset';
     });
   };
+
+  loginHandleModal = () => {
+    this.setState({ isLoginModalView: !this.state.isLoginModalView }, () => {
+      document.body.style.overflow = this.state.isLoginModalView
+        ? 'hidden'
+        : 'unset';
+    });
+  }
 
   render() {
     const settings = {
@@ -94,6 +104,7 @@ class FeedList extends React.Component {
             ))}
           </StyledSlider>
           <div className="feedBoxIcon">
+            {this.state.isLoginModalView ? "" : ""}
             {this.state.heartColor ? (
               <div className="heartIcon">
                 <button onClick={this.colorChangeBtn}>
@@ -114,9 +125,9 @@ class FeedList extends React.Component {
             </div>
             <div className="replyIcon">
               {this.state.isShareModalView && (
-                <ShareModal handleModal={this.handleModal} />
+                <ShareModal shareHandleModal={this.shareHandleModal} />
               )}
-              <button onClick={this.handleModal}>
+              <button onClick={this.shareHandleModal}>
                 <BsReply size="32" />
               </button>
             </div>

@@ -1,6 +1,5 @@
 import React from 'react';
 import MainPageFeed from './mainPageFeed';
-// import LoginModal from './Modal/LoginModal';
 import './Main.scss';
 
 class Main extends React.Component {
@@ -8,7 +7,6 @@ class Main extends React.Component {
     return (
       <>
         <div className="feedPage">
-          {/* <LoginModal /> */}
           <MainPageFeed />
         </div>
       </>

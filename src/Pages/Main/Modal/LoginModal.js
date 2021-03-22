@@ -1,5 +1,6 @@
 import React from 'react';
 import { BsX } from 'react-icons/bs';
+import { BsFillChatFill } from 'react-icons/bs';
 import './LoginModal.scss';
 
 class LoginModal extends React.Component {
@@ -21,6 +22,10 @@ class LoginModal extends React.Component {
           <p className="content">
             여러분의 좋아요 그리고 댓글은 <br /> 저에게 큰 힘이 될거에요.
           </p>
+          <div className="loginBtnBox">
+            <BsFillChatFill className="chatIcon" size="24" color="#3C1E1E" />
+            <button className="loginBtn">로그인하기</button>
+          </div>
         </div>
       </section>
     );
