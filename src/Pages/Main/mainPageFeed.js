@@ -1,8 +1,8 @@
 /* eslint-disable prettier/prettier */
-import React from 'react';
-import FeedList from './FeedList';
-import InfiniteScroll from 'react-infinite-scroll-component';
-import './mainPageFeed.scss';
+import React from "react";
+import FeedList from "./FeedList";
+import InfiniteScroll from "react-infinite-scroll-component";
+import "./mainPageFeed.scss";
 
 class MainPageFeed extends React.Component {
   constructor() {
@@ -16,30 +16,30 @@ class MainPageFeed extends React.Component {
   componentDidMount() {
     this.nextData();
   }
-  // nextData = () => {
-  //   fetch(`http://localhost:3000/data/data${this.state.page}.json`, {
-  //     method: 'GET',
-  //   })
-  //     .then(res => res.json())
-  //     .then(data =>
-  //       this.setState({
-  //         feedList: this.state.feedList.concat(data),
-  //         page: this.state.page + 1,
-  //       })
-  //     );
-  // };
-    nextData = () => {
-      fetch(`http://10.58.5.183:8000/feed/feeds/${this.state.page}`, {
-        method: 'GET'
-      })
+  nextData = () => {
+    fetch(`http://localhost:3000/data/data${this.state.page}.json`, {
+      method: "GET",
+    })
       .then(res => res.json())
-      .then(data => 
+      .then(data =>
         this.setState({
-          feedList: this.state.feedList.concat(data.result),
+          feedList: this.state.feedList.concat(data),
           page: this.state.page + 1,
         })
       );
-    };
+  };
+  // nextData = () => {
+  //   fetch(`http://10.58.5.183:8000/feed/feeds/${this.state.page}`, {
+  //     method: 'GET'
+  //   })
+  //   .then(res => res.json())
+  //   .then(data =>
+  //     this.setState({
+  //       feedList: this.state.feedList.concat(data.result),
+  //       page: this.state.page + 1,
+  //     })
+  //   );
+  // };
 
   render() {
     return (
