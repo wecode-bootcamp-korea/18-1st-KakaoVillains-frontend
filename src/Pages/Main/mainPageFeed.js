@@ -55,6 +55,7 @@ class MainPageFeed extends React.Component {
                 return (
                   <FeedList
                     key={list.id}
+                    id={list.id}
                     profile_picture={list.profile_picture}
                     username={list.username}
                     datetime={list.datetime}

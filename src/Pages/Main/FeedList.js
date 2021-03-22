@@ -3,6 +3,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Slider from 'react-slick';
 import ShareModal from './Modal/ShareModal';
+import { withRouter } from 'react-router-dom';
 // import LoginModal from './Modal/LoginModal';
 import { FaRegHeart } from 'react-icons/fa';
 import { FaHeart } from 'react-icons/fa';
@@ -73,6 +74,11 @@ class FeedList extends React.Component {
     });
   }
 
+  goToFeedDetail = () => {
+    console.log(this.props.id)
+    this.props.history.push(`/today/feed/${this.props.id}`);
+  }
+
   render() {
     const settings = {
       dots: true,
@@ -140,7 +146,7 @@ class FeedList extends React.Component {
           <p className="feedContentTitle"> {this.props.title}</p>
           <p className="feedContent">{this.props.content}</p>
           <div className="feedReplyBox">
-            <button className="feedReplyBoxBtn">
+            <button onClick={this.goToFeedDetail} className="feedReplyBoxBtn">
               <div className="feedReplyCount">
                 댓글{' '}
                 <span className="feedReplyCountUpDown">
@@ -192,4 +198,4 @@ class FeedList extends React.Component {
   }
 }
 
-export default FeedList;
+export default withRouter(FeedList);
