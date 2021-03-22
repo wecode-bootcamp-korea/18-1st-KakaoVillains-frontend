@@ -9,12 +9,12 @@ class CommentBox extends React.Component {
     super();
 
     this.state = {
-      changeLikedColor: false,
+      changeLikedCount: false,
     };
   }
 
-  changeLikedColor = () => {
-    this.setState({ changeLikedColor: !this.state.changeLikedColor });
+  changeLikedCount = () => {
+    this.setState({ changeLikedCount: !this.state.changeLikedCount });
   };
 
   render() {
@@ -34,15 +34,15 @@ class CommentBox extends React.Component {
         </div>
         <div className="commentInfo">
           <span className="time">41분 전</span>
-          <button className="heartBtn" onClick={this.changeLikedColor}>
+          <button className="heartBtn" onClick={this.changeLikedCount}>
             <span>
               <FaRegHeart
                 className="heart"
-                fill={this.state.changeLikedColor === true ? 'red' : 'gray'}
+                fill={this.state.changeLikedCount === true ? 'red' : 'gray'}
               />
             </span>
-            <span className="likeCount">
-              좋아요 {this.changeLikedColor ? +1 : 0}개
+            <span className="likeCount" onClick={this.changeLikedCount}>
+              {this.state.changeLikedCount === true ? '좋아요 1개' : '좋아요'}
             </span>
           </button>
           <button className="rereply">답글달기</button>

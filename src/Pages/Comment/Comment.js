@@ -1,5 +1,5 @@
 import React from 'react';
-import uuid from 'react-uuid';
+//import uuid from 'react-uuid';
 import SubNav from '../../Components/SubNav';
 import CommentFeed from '../Comment/Components/CommentFeed/CommentFeed';
 import CommentBox from '../Comment/Components/CommentBox/CommetBox';
@@ -14,7 +14,7 @@ class Comment extends React.Component {
     this.state = {
       id: '',
       value: '',
-      commentList: [{ id: uuid() }],
+      commentList: [],
       btnChangeValue: '',
     };
   }
