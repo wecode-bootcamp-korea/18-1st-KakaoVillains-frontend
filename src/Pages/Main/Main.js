@@ -1,9 +1,15 @@
 import React from 'react';
-import './Main.scss';
+import MainPageFeed from './mainPageFeed';
 
 class Main extends React.Component {
   render() {
-    return <></>;
+    return (
+      <>
+        <div className="feedPage">
+          <MainPageFeed />
+        </div>
+      </>
+    );
   }
 }
 

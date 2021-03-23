@@ -1,21 +1,46 @@
 import React from 'react';
-import './MainNav.scss';
+import { Link } from 'react-router-dom';
 import { FaSearch } from 'react-icons/fa';
 import { FiMenu } from 'react-icons/fi';
 import { FiGlobe } from 'react-icons/fi';
+import './MainNav.scss';
 
 class MainPageNav extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      btnChange: '',
+      toggleOn: false,
+    };
+  }
+
+  changeHandleBtn = () => {
+    return this.state.btnChangeValue ? 'trueColor' : 'falseColor';
+  };
+
+  toggleOn = () => {
+    this.setState({
+      toggleOn: true,
+    });
+  };
+  toggleOff = () => {
+    this.setState({
+      toggleOn: false,
+    });
+  };
+
   render() {
     return (
       <div className="wrapMain">
         <div className="mainNav">
           <div className="navBarFirst">
-            <button>
+            <Link to="/login">
               <FiMenu size="24" />
-            </button>
-            <h1 className="title"> Kakao Villains </h1>
+            </Link>
+            <h1 className="name"> Kakao Villains </h1>
             <div>
-              <button className="navIcon">
+              <button className="navIcon" onClick={this.toggleOn}>
+                {this.state.toggleOn && <div>ddd</div>}
                 <FaSearch size="20" />
               </button>
               <button className="navIcon">
@@ -23,12 +48,15 @@ class MainPageNav extends React.Component {
               </button>
             </div>
           </div>
-          <div className="navBarSecond">
-            <button className="width">오늘</button>
-            <button className="width">신규</button>
-            <button className="width">인기</button>
-            <button className="width">마이</button>
-          </div>
+          <ul className="navBarSecond">
+            {menuList.map(menu => (
+              <Link to="/">
+                <li className="width" onClick={this.changeHandleBtn}>
+                  {menu}
+                </li>
+              </Link>
+            ))}
+          </ul>
         </div>
       </div>
     );
@@ -36,3 +64,5 @@ class MainPageNav extends React.Component {
 }
 
 export default MainPageNav;
+
+const menuList = ['오늘', '신규', '인기', '마이'];

@@ -8,16 +8,13 @@
 
     .navBarFirst {
       display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin: 0px auto;
-      padding: 10px 10px;
 
-      .title {
-        border: 1px solid black;
-        padding: 5px 10px;
+      .name {
+        margin-left: 40px;
+        border: 10px solid black;
         border-radius: 15px;
         font-size: 16px;
+        font-weight: bold;
         color: #f7f7f7;
         background-color: #1e1e1e;
       }
@@ -25,20 +22,26 @@
 
     .navBarSecond {
       display: flex;
+      justify-content: space-around;
       width: 100%;
       max-width: 640px;
-      margin: 0px auto;
-      margin-top: -5px;
-      height: 50px;
-      border-bottom: 1px solid #e3e5e8;
-      padding: 0px 10px;
+      margin-top: 20px;
+      height: 40px;
+
+      ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
 
       .width {
         display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 25%;
+        width: 125%;
         font-size: 16px;
+      }
+
+      .truecolor {
+        background-color: red;
       }
     }
   }
