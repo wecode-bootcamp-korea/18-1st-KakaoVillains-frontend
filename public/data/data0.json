@@ -14,11 +14,11 @@
         "recommend_products": [
             {
                 "name": "왕록님라이언",
-                "price": "300000.00",
+                "price": 30000000.00,
                 "image_url": "https://t1.daumcdn.net/friends/prod/product/20210308161640247_8809721507544_AW_00.jpg"
             },            {
                 "name": "왕록님라이언",
-                "price": "300000.00",
+                "price": 30000000.00,
                 "image_url": "https://t1.daumcdn.net/friends/prod/product/20210308161640247_8809721507544_AW_00.jpg"
             }
         ]

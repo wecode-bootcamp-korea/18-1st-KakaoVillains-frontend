@@ -178,7 +178,7 @@ class FeedList extends React.Component {
                         />
                         <div className="productInfo">
                           <div>{data.name}</div>
-                          <div>{data.price}</div>
+                          <div>{data.price.toLocaleString()}</div>
                         </div>
                       </div>
                       <div className="shoppingBtn">
