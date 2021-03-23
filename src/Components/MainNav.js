@@ -50,7 +50,14 @@ class MainPageNav extends React.Component {
             </div>
           </div>
           <ul className="navBarSecond">
-            <Link to="/">
+            {menuList.map(menu => (
+              <Link to="/">
+                <li className="width" onClick={this.changeHandleBtn}>
+                  {menu}
+                </li>
+              </Link>
+            ))}
+            {/* <Link to="/">
               <li className="width" onClick={this.changeHandleBtn}>
                 오늘
               </li>
@@ -69,7 +76,7 @@ class MainPageNav extends React.Component {
               <li className="width" onClick={this.changeHandleBtn}>
                 마이
               </li>
-            </Link>
+            </Link> */}
           </ul>
         </div>
       </div>
@@ -78,3 +85,5 @@ class MainPageNav extends React.Component {
 }
 
 export default MainPageNav;
+
+const menuList = ['오늘', '신규', '인기', '마이'];
