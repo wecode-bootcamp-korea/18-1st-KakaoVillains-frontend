@@ -4,13 +4,15 @@ import './searchBox.scss';
 
 class SearchBox extends React.Component {
   render() {
+    const { keyWord, keyWordInput, keyWordDelete, toggleOff } = this.props;
     return (
       <section className="searchBox">
         <div className="iconBox">
           <BiSearch className="searchIcon" />
-          <input type="text" />
+          <input type="text" onChange={keyWordInput} value={keyWord} />
+          {keyWord && <button onClick={keyWordDelete}>X</button>}
         </div>
-        <button>취소</button>
+        <button onClick={toggleOff}>취소</button>
       </section>
     );
   }

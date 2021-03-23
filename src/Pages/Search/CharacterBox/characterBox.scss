@@ -9,12 +9,17 @@ $border-style: solid 1px rgb(239, 240, 244);
 
   .character {
     padding: 10px 0;
-    img {
-      height: 71px;
-      border-radius: 50px;
-      border: $border-style;
-    }
+    button {
+      :hover {
+        border: solid 3px rgb(254, 225, 0);
+      }
 
+      img {
+        height: 71px;
+        border-radius: 50px;
+        border: $border-style;
+      }
+    }
     p {
       color: #777777;
       font-size: 12px;

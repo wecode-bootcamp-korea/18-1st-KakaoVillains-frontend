@@ -1,9 +1,11 @@
-$border-style: solid 1px rgb(239, 240, 244);
-
 .search {
+  z-index: 1000001;
+  position: fixed;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  top: 0px;
   max-width: 640px;
+  height: 100%;
+  background-color: white;
 }
