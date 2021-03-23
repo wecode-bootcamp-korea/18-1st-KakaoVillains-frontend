@@ -86,7 +86,7 @@ class Comment extends React.Component {
   };
 
   render() {
-    console.log(this.state.commentList);
+    console.log(this.state.commentList.result);
     const title = '게시물';
     const changeHandleBtnColor = this.state.value.length >= 1;
     return (
