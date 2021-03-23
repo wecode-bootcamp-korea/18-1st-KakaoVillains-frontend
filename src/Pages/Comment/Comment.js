@@ -36,23 +36,23 @@ class Comment extends React.Component {
       );
   };
 
-  componentWillMount() {
-    const commentList = localStorage.commentList;
-    if (commentList) {
-      this.setState({
-        commentList: JSON.parse(commentList),
-      });
-    }
-  }
+  // componentWillMount() {
+  //   const commentList = localStorage.commentList;
+  //   if (commentList) {
+  //     this.setState({
+  //       commentList: JSON.parse(commentList),
+  //     });
+  //   }
+  // }
 
-  componentDidUpdate(prevprops, prevState) {
-    if (
-      JSON.stringify(prevState.commentList) !==
-      JSON.stringify(this.state.commentList)
-    ) {
-      localStorage.commentList = JSON.stringify(this.state.commentList);
-    }
-  }
+  // componentDidUpdate(prevprops, prevState) {
+  //   if (
+  //     JSON.stringify(prevState.commentList) !==
+  //     JSON.stringify(this.state.commentList)
+  //   ) {
+  //     localStorage.commentList = JSON.stringify(this.state.commentList);
+  //   }
+  // }
 
   inputComment = e => {
     //console.log(e.target.value);
@@ -86,7 +86,6 @@ class Comment extends React.Component {
   };
 
   render() {
-    console.log(this.state.commentList.result);
     const title = '게시물';
     const changeHandleBtnColor = this.state.value.length >= 1;
     return (
