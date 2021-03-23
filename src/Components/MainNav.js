@@ -23,7 +23,6 @@ class MainPageNav extends React.Component {
       toggleOn: true,
     });
   };
-  //스테이트 값이 바뀌어야 함,
   toggleOff = () => {
     this.setState({
       toggleOn: false,
@@ -57,26 +56,6 @@ class MainPageNav extends React.Component {
                 </li>
               </Link>
             ))}
-            {/* <Link to="/">
-              <li className="width" onClick={this.changeHandleBtn}>
-                오늘
-              </li>
-            </Link>
-            <Link to="/">
-              <li className="width" onClick={this.changeHandleBtn}>
-                신규
-              </li>
-            </Link>
-            <Link to="/">
-              <li className="width" onClick={this.changeHandleBtn}>
-                인기
-              </li>
-            </Link>
-            <Link to="/">
-              <li className="width" onClick={this.changeHandleBtn}>
-                마이
-              </li>
-            </Link> */}
           </ul>
         </div>
       </div>
