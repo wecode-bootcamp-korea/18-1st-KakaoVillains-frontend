@@ -1,0 +1,20 @@
+$border-style: solid 1px rgb(239, 240, 244);
+
+.category {
+  padding: 9px 10px 20px 20px;
+  border-top: $border-style;
+  margin: auto;
+
+  h4 {
+    margin: 15px 0;
+    font-size: 15px;
+  }
+
+  button {
+    border-radius: 30px;
+    border: $border-style;
+    padding: 6px 13px;
+    margin: 0 7px 9px 0;
+    font-size: 14px;
+  }
+}
