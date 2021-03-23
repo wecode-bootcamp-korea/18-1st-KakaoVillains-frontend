@@ -20,19 +20,15 @@ class Comment extends React.Component {
     };
   }
 
-  componentDidMount = () => {
-    fetch('/data/commentData.json')
-      //`http://10.58.5.183:8000/feed/${this.state.page}`, {
-      // method: 'GET',
-      //   body: JSON.stringify({
-      //     : this.state.id,
-      //     password: this.state.password,
-      //   }),
+  componentDidMount = async () => {
+    await fetch('')
+    method:"POST",
+    body: JSON.stringify({
+      userid:this.state.id,
+      content:this.state.value,
+    })
       .then(res => res.json())
       .then(data =>
-        this.setState({
-          commentList: data,
-        })
       );
   };
 
@@ -86,6 +82,7 @@ class Comment extends React.Component {
   };
 
   render() {
+    console.log(this.state.commentList);
     const title = '게시물';
     const changeHandleBtnColor = this.state.value.length >= 1;
     return (
