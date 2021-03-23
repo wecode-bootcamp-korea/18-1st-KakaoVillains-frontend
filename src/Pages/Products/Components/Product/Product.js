@@ -35,7 +35,16 @@ class Product extends React.Component {
       autoplaySpeed: 2000,
     };
 
-    const Modal = this.state.showModal ? (
+    const {
+      image_list,
+      name,
+      price,
+      average_rating,
+      review_count,
+      description,
+    } = this.props;
+
+    const Modal = this.state.showModal && (
       <div className="snsBtn">
         <button className="snsIcon">
           <FaFacebookF />
@@ -50,30 +59,30 @@ class Product extends React.Component {
           <RiKakaoTalkFill />
         </button>
       </div>
-    ) : null;
+    );
 
     return (
       <div>
         <header>
           <Slider {...settings}>
-            {this.props.image_list.map(imgList => {
+            {image_list.map(imgList => {
               return <img src={imgList} alt="이미지" />;
             })}
           </Slider>
-          <p className="headTitle">{this.props.name}</p>
+          <p className="headTitle">{name}</p>
           <div className="modalBox">
             <div className="snsModal">{Modal}</div>
             <button className="headShareBtn" onClick={this.openModal}>
               <FaShareAlt className="shareIcon" />
             </button>
           </div>
-          <p className="headPrice">{this.props.price}원</p>
+          <p className="headPrice">{price.toLocaleString()}원</p>
           <div className="productGrade">
-            <Rating value={this.props.average_rating} />
-            <p>({this.props.review_count})</p>
+            <Rating value={average_rating} />
+            <p>({review_count})</p>
           </div>
         </header>
-        <div className="productInfor">{this.props.description}</div>
+        <div className="productInfor">{description}</div>
       </div>
     );
   }

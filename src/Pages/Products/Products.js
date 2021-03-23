@@ -3,6 +3,7 @@ import SubNav from '../../Components/SubNav';
 import Footer from '../../Components/Footer';
 import Product from './Components/Product/Product';
 import ReviewList from './Components/ReviewList/ReviewList';
+import BuyBtn from './Components/BuyBtn/BuyBtn';
 import { FaAngleDown } from 'react-icons/fa';
 import { BsDot, BsFillChatFill } from 'react-icons/bs';
 import { FiShoppingBag } from 'react-icons/fi';
@@ -33,7 +34,7 @@ class Products extends React.Component {
   };
 
   componentDidMount() {
-    fetch('http://localhost:3000/data/ProductData.json', {
+    fetch('/data/ProductData.json', {
       methhod: 'GET',
     })
       .then(res => res.json())
@@ -47,17 +48,17 @@ class Products extends React.Component {
   render() {
     const title = '제품상세';
 
-    const detailModal = this.state.detailModal ? (
+    const detailModal = this.state.detailModal && (
       <div className="detailInfo">
         <img src="/images/masimaro.jpg" alt="easter egg" />
       </div>
-    ) : null;
+    );
 
-    const deliveryModal = this.state.deliveryModal ? (
+    const deliveryModal = this.state.deliveryModal && (
       <div className="deliveryInfo">
         <img src="/images/delivery.jpg" alt="easter egg" />
       </div>
-    ) : null;
+    );
 
     return (
       <div className="productsWrap">
@@ -133,14 +134,9 @@ class Products extends React.Component {
             </div>
           </div>
           <Footer />
-          <div className="buyBtn">
-            <div className="orderBox">
-              <button className="orderBtn">바로구매</button>
-            </div>
-            <button className="basketBtn">
-              <FiShoppingBag />
-            </button>
-          </div>
+          {this.state.productInfo.map(info => {
+            return <BuyBtn price={info.price} />;
+          })}
         </article>
       </div>
     );

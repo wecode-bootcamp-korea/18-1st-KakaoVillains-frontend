@@ -5,13 +5,15 @@ import { BsPencil } from 'react-icons/bs';
 
 class ReviewList extends React.Component {
   render() {
+    const { review_count, average_rating, review_list } = this.props;
+
     return (
       <div className="productReview">
         <div className="reviewCount">
-          <p className="countTitle">리뷰 {this.props.review_count}개</p>
+          <p className="countTitle">리뷰 {review_count}개</p>
           <div className="productGrade">
-            <Rating value={this.props.average_rating} />
-            <p>{this.props.average_rating}/5</p>
+            <Rating value={average_rating} />
+            <p>{average_rating}/5</p>
           </div>
         </div>
         <button className="reviewBtn">
@@ -22,7 +24,7 @@ class ReviewList extends React.Component {
           <button className="sortLike">좋아요순</button>
           <button className="sortNew">최신순</button>
         </div>
-        {this.props.review_list.map(product => (
+        {review_list.map(product => (
           <div className="productComment">
             <p className="commentUser">{product.reviewer}</p>
             <div className="productUserGrade">
