@@ -1,15 +1,15 @@
-import React from 'react';
-import PublicFooter from './Components/PublicFooter';
-import { FaQrcode } from 'react-icons/fa';
-import './Login.scss';
-import './Components/PublicFooter.scss';
+import React from "react";
+import PublicFooter from "./Components/PublicFooter";
+import { FaQrcode } from "react-icons/fa";
+import "./Login.scss";
+import "./Components/PublicFooter.scss";
 
 class Login extends React.Component {
   constructor() {
     super();
     this.state = {
-      id: '',
-      pw: '',
+      id: "",
+      pw: "",
     };
   }
 
@@ -21,7 +21,7 @@ class Login extends React.Component {
   };
 
   goToSignUp = () => {
-    this.props.history.push('/signup');
+    this.props.history.push("/signup");
   };
 
   // goToMain = () => {
@@ -43,7 +43,7 @@ class Login extends React.Component {
 
   render() {
     const isValidInput =
-      this.state.id.includes('@') && this.state.pw.length >= 8;
+      this.state.id.includes("@") && this.state.pw.length >= 8;
     return (
       <div className="loginWrap">
         <article>
@@ -69,7 +69,7 @@ class Login extends React.Component {
             </div>
             <button
               className={`loginBtn ${
-                isValidInput ? 'changeBtnColor' : 'originBtnColor'
+                isValidInput ? "changeBtnColor" : "originBtnColor"
               }`}
               onClick={this.goToMain}
             >
