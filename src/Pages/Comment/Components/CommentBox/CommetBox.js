@@ -2,6 +2,7 @@ import React from 'react';
 //import CocomentInput from '../CocommentInput/CocomentInput';
 //import ReplyBox from '../ReplyBox/ReplyBox';
 import { FaRegHeart } from 'react-icons/fa';
+//import { ThemeConsumer } from 'styled-components';
 import './CommentBox.scss';
 
 class CommentBox extends React.Component {
@@ -18,7 +19,8 @@ class CommentBox extends React.Component {
   };
 
   render() {
-    const { name, text, createdAt } = this.props;
+    console.log(this.props.content);
+    const { name, createdAt } = this.props;
     //console.log(text);
     return (
       <div className="textContainer">
@@ -30,7 +32,7 @@ class CommentBox extends React.Component {
           x
         </div>
         <div className="textBox">
-          <span>{text}</span>
+          <span>{this.props.content}</span>
         </div>
         <div className="commentInfo">
           <span className="time">{createdAt}</span>

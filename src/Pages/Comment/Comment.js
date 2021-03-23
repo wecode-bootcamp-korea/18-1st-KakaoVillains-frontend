@@ -1,9 +1,6 @@
 import React from 'react';
-//import uuid from 'react-uuid';
 import SubNav from '../../Components/SubNav';
-import CommentFeed from '../Comment/Components/CommentFeed/CommentFeed';
 import CommentBox from '../Comment/Components/CommentBox/CommetBox';
-import Footer from '../../Components/Footer';
 import { FaArrowAltCircleUp, FaSort } from 'react-icons/fa';
 import './Comment.scss';
 
@@ -19,36 +16,6 @@ class Comment extends React.Component {
       page: 1,
     };
   }
-
-  // componentDidMount = async () => {
-  //   await fetch('')
-  //   method:"POST",
-  //   body: JSON.stringify({
-  //     userid:this.state.id,
-  //     content:this.state.value,
-  //   })
-  //     .then(res => res.json())
-  //     .then(data =>
-  //     );
-  // };
-
-  // componentWillMount() {
-  //   const commentList = localStorage.commentList;
-  //   if (commentList) {
-  //     this.setState({
-  //       commentList: JSON.parse(commentList),
-  //     });
-  //   }
-  // }
-
-  // componentDidUpdate(prevprops, prevState) {
-  //   if (
-  //     JSON.stringify(prevState.commentList) !==
-  //     JSON.stringify(this.state.commentList)
-  //   ) {
-  //     localStorage.commentList = JSON.stringify(this.state.commentList);
-  //   }
-  // }
 
   inputComment = e => {
     //console.log(e.target.value);
@@ -82,13 +49,13 @@ class Comment extends React.Component {
   };
 
   render() {
+    //console.log(this.state.content);
     console.log(this.state.commentList);
     const title = '게시물';
     const changeHandleBtnColor = this.state.value.length >= 1;
     return (
       <>
         <SubNav title={title} />
-        <CommentFeed />
         <div className="commentContainer">
           <textarea
             placeholder="댓글을 달아주세요."
@@ -126,10 +93,6 @@ class Comment extends React.Component {
             );
           })}
         </div>
-        <div className="moreContainer">
-          <button id="moreBtn">더보기+</button>
-        </div>
-        <Footer />
       </>
     );
   }

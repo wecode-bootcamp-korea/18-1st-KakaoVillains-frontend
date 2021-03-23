@@ -1,5 +1,8 @@
 .wrapMain {
   position: relative;
+  display: flex;
+  justify-content: center;
+
   .mainNav {
     position: fixed;
     z-index: 10;
@@ -25,7 +28,6 @@
       justify-content: space-around;
       width: 100%;
       max-width: 640px;
-      margin-top: 20px;
       height: 40px;
 
       ul {
@@ -36,12 +38,13 @@
 
       .width {
         display: flex;
-        width: 125%;
+        justify-content: center;
+        width: 160px;
         font-size: 16px;
-      }
-
-      .truecolor {
-        background-color: red;
+        line-height: 40px;
+        &:hover {
+          border-bottom: black solid 4px;
+        }
       }
     }
   }
