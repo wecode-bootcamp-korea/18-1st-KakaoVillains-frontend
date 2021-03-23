@@ -20,17 +20,17 @@ class Comment extends React.Component {
     };
   }
 
-  componentDidMount = async () => {
-    await fetch('')
-    method:"POST",
-    body: JSON.stringify({
-      userid:this.state.id,
-      content:this.state.value,
-    })
-      .then(res => res.json())
-      .then(data =>
-      );
-  };
+  // componentDidMount = async () => {
+  //   await fetch('')
+  //   method:"POST",
+  //   body: JSON.stringify({
+  //     userid:this.state.id,
+  //     content:this.state.value,
+  //   })
+  //     .then(res => res.json())
+  //     .then(data =>
+  //     );
+  // };
 
   // componentWillMount() {
   //   const commentList = localStorage.commentList;
