@@ -7,6 +7,7 @@ class Footer extends React.Component {
     return (
       <div className="FooterContainer">
         <div className="Footer">
+<<<<<<< HEAD
           <span className="info1">제휴문의 </span>
           <span className="line">|</span>
           <span className="info2">고객문의 </span>
@@ -14,6 +15,17 @@ class Footer extends React.Component {
           <span className="info3">이용약관 </span>
           <span className="line">|</span>
           <span className="info4">개인정보처리방침</span>
+=======
+          <ul>
+            <li className="info1">제휴문의 </li>
+            <li className="line">|</li>
+            <li className="info2">고객문의 </li>
+            <li className="line">|</li>
+            <li className="info3">이용약관 </li>
+            <li className="line">|</li>
+            <li className="info4">개인정보처리방침</li>
+          </ul>
+>>>>>>> 0cac489834dd43b0b7efbac6c12d487ce7947592
         </div>
         <div className="Footer2">
           <div className="FooterSuper">
