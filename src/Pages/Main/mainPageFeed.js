@@ -17,7 +17,7 @@ class MainPageFeed extends React.Component {
     this.nextData();
   }
   nextData = () => {
-    fetch(`http://localhost:3000/data/data${this.state.page}.json`, {
+    fetch(`/data/data${this.state.page}.json`, {
       method: "GET",
     })
       .then(res => res.json())
@@ -45,33 +45,31 @@ class MainPageFeed extends React.Component {
     return (
       <>
         {this.state.feedList.length > 0 && (
-          <>
-            <InfiniteScroll
-              dataLength={this.state.feedList.length}
-              next={this.nextData}
-              hasMore={true}
-            >
-              {this.state.feedList.map(list => {
-                return (
-                  <FeedList
-                    key={list.id}
-                    id={list.id}
-                    profile_picture={list.profile_picture}
-                    username={list.username}
-                    datetime={list.datetime}
-                    like_count={list.like_count}
-                    title={list.title}
-                    content={list.content}
-                    reply_count={list.reply_count}
-                    reply_username={list.reply_username}
-                    reply={list.reply}
-                    image_url={list.image_url}
-                    recommend_products={list.recommend_products}
-                  />
-                );
-              })}
-            </InfiniteScroll>
-          </>
+          <InfiniteScroll
+            dataLength={this.state.feedList.length}
+            next={this.nextData}
+            hasMore={true}
+          >
+            {this.state.feedList.map(list => {
+              return (
+                <FeedList
+                  key={list.id}
+                  id={list.id}
+                  profile_picture={list.profile_picture}
+                  username={list.username}
+                  datetime={list.datetime}
+                  like_count={list.like_count}
+                  title={list.title}
+                  content={list.content}
+                  reply_count={list.reply_count}
+                  reply_username={list.reply_username}
+                  reply={list.reply}
+                  image_url={list.image_url}
+                  recommend_products={list.recommend_products}
+                />
+              );
+            })}
+          </InfiniteScroll>
         )}
       </>
     );

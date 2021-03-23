@@ -89,111 +89,108 @@ class FeedList extends React.Component {
     };
 
     return (
-      <>
-        <div className="feedBox">
-          <div className="feedBoxHeader">
-            <div className="feedBoxHeaderImg">
-              <img
-                className="headerImg"
-                src={this.props.profile_picture}
-                alt="이미지"
-              />
-            </div>
-            <div className="nameAndTime">
-              <div className="characterName">{this.props.username}</div>
-              <div className="time">{this.props.datetime}</div>
-            </div>
+      <div className="feedBox">
+        <div className="feedBoxHeader">
+          <div className="feedBoxHeaderImg">
+            <img
+              className="headerImg"
+              src={this.props.profile_picture}
+              alt="이미지"
+            />
           </div>
-          <StyledSlider className="feedBoxImg" {...settings}>
-            {this.props.image_url.map(list => (
-              <img className="mainImg" src={list} alt="이미지" />
-            ))}
-          </StyledSlider>
-          <div className="feedBoxIcon">
-            {this.state.isLoginModalView ? "" : ""}
-            {this.state.heartColor ? (
-              <div className="heartIcon">
-                <button onClick={this.colorChangeBtn}>
-                  <FaRegHeart size="24" />
-                </button>
-              </div>
-            ) : (
-              <div className="heartIconColorChange">
-                <button onClick={this.colorChangeBtn}>
-                  <FaHeart color="red" size="24" />
-                </button>
-              </div>
-            )}
-            <div className="chatIcon">
-              <button>
-                <BsChat size="24" />
+          <div className="nameAndTime">
+            <div className="characterName">{this.props.username}</div>
+            <div className="time">{this.props.datetime}</div>
+          </div>
+        </div>
+        <StyledSlider className="feedBoxImg" {...settings}>
+          {this.props.image_url.map(list => (
+            <img className="mainImg" src={list} alt="이미지" />
+          ))}
+        </StyledSlider>
+        <div className="feedBoxIcon">
+          {this.state.isLoginModalView ? "" : ""}
+          {this.state.heartColor ? (
+            <div className="heartIcon">
+              <button onClick={this.colorChangeBtn}>
+                <FaRegHeart size="24" />
               </button>
             </div>
-            <div className="replyIcon">
-              {this.state.isShareModalView && (
-                <ShareModal shareHandleModal={this.shareHandleModal} />
-              )}
-              <button onClick={this.shareHandleModal}>
-                <BsReply size="32" />
+          ) : (
+            <div className="heartIconColorChange">
+              <button onClick={this.colorChangeBtn}>
+                <FaHeart color="red" size="24" />
               </button>
-            </div>
-          </div>
-          <div className="feedLikeCount">
-            좋아요{" "}
-            <span className="feedLikeCountUpDown">{this.props.like_count}</span>
-            개
-          </div>
-          <p className="feedContentTitle"> {this.props.title}</p>
-          <p className="feedContent">{this.props.content}</p>
-          <div className="feedReplyBox">
-            <button onClick={this.goToFeedDetail} className="feedReplyBoxBtn">
-              <div className="feedReplyCount">
-                댓글{" "}
-                <span className="feedReplyCountUpDown">
-                  {this.props.reply_count}
-                </span>
-                개
-              </div>
-              <ul className="replyList">
-                <span className="userName">{this.props.reply_username}</span>
-                <p className="content">{this.props.reply}</p>
-                {/* <li className="reply">{this.props.reply_username} {this.props.reply}</li> */}
-              </ul>
-              <div className="replyInput">
-                <textarea placeholder="댓글을 달아주세요." />
-              </div>
-            </button>
-          </div>
-          {this.props.recommend_products.length > 0 && (
-            <div className="productList">
-              <ul>
-                {this.props.recommend_products.map((data, index) => (
-                  <li>
-                    <div className="product">
-                      <div className="productImgInfo">
-                        <img
-                          className="productImg"
-                          src={data.image_url}
-                          alt="상품 이미지"
-                        />
-                        <div className="productInfo">
-                          <div>{data.name}</div>
-                          <div>{data.price.toLocaleString()}</div>
-                        </div>
-                      </div>
-                      <div className="shoppingBtn">
-                        <button>
-                          <FiShoppingBag size="28" />
-                        </button>
-                      </div>
-                    </div>
-                  </li>
-                ))}
-              </ul>
             </div>
           )}
+          <div className="chatIcon">
+            <button>
+              <BsChat size="24" />
+            </button>
+          </div>
+          <div className="replyIcon">
+            {this.state.isShareModalView && (
+              <ShareModal shareHandleModal={this.shareHandleModal} />
+            )}
+            <button onClick={this.shareHandleModal}>
+              <BsReply size="32" />
+            </button>
+          </div>
         </div>
-      </>
+        <div className="feedLikeCount">
+          좋아요{" "}
+          <span className="feedLikeCountUpDown">{this.props.like_count}</span>개
+        </div>
+        <p className="feedContentTitle"> {this.props.title}</p>
+        <p className="feedContent">{this.props.content}</p>
+        <div className="feedReplyBox">
+          <button onClick={this.goToFeedDetail} className="feedReplyBoxBtn">
+            <div className="feedReplyCount">
+              댓글{" "}
+              <span className="feedReplyCountUpDown">
+                {this.props.reply_count}
+              </span>
+              개
+            </div>
+            <ul className="replyList">
+              <span className="userName">{this.props.reply_username}</span>
+              <p className="content">{this.props.reply}</p>
+              {/* <li className="reply">{this.props.reply_username} {this.props.reply}</li> */}
+            </ul>
+            <div className="replyInput">
+              <textarea placeholder="댓글을 달아주세요." />
+            </div>
+          </button>
+        </div>
+        {this.props.recommend_products.length > 0 && (
+          <div className="productList">
+            <ul>
+              {this.props.recommend_products.map((data, index) => (
+                <li>
+                  <div className="product">
+                    <div className="productImgInfo">
+                      <img
+                        className="productImg"
+                        src={data.image_url}
+                        alt="상품 이미지"
+                      />
+                      <div className="productInfo">
+                        <div>{data.name}</div>
+                        <div>{data.price.toLocaleString()}</div>
+                      </div>
+                    </div>
+                    <div className="shoppingBtn">
+                      <button>
+                        <FiShoppingBag size="28" />
+                      </button>
+                    </div>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+      </div>
     );
   }
 }
