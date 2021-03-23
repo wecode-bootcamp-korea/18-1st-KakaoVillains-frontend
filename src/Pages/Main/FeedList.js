@@ -13,37 +13,6 @@ import { FiShoppingBag } from "react-icons/fi";
 import "./FeedList.scss";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-
-const StyledSlider = styled(Slider)`
-  ul.slick-dots {
-    margin-bottom: -20px;
-  }
-
-  .slick-prev {
-    poacity: 0.6;
-    margin-left: 45px;
-    z-index: 9;
-  }
-
-  .slick-next {
-    margin-right: 60px;
-    poactiy: 0.6;
-  }
-
-  .slick-prev:before {
-    color: black;
-    font-size: 30px;
-  }
-  .slick-next:before {
-    color: black;
-    font-size: 30px;
-  }
-
-  .slick-disabled {
-    display: none !important;
-  }
-`;
-
 class FeedList extends React.Component {
   constructor() {
     super();
@@ -196,3 +165,33 @@ class FeedList extends React.Component {
 }
 
 export default withRouter(FeedList);
+
+const StyledSlider = styled(Slider)`
+  ul.slick-dots {
+    margin-bottom: -20px;
+  }
+
+  .slick-prev {
+    poacity: 0.6;
+    margin-left: 45px;
+    z-index: 9;
+  }
+
+  .slick-next {
+    margin-right: 60px;
+    poactiy: 0.6;
+  }
+
+  .slick-prev:before {
+    color: black;
+    font-size: 30px;
+  }
+  .slick-next:before {
+    color: black;
+    font-size: 30px;
+  }
+
+  .slick-disabled {
+    display: none !important;
+  }
+`;
