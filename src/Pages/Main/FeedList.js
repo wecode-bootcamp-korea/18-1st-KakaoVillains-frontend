@@ -44,7 +44,6 @@ class FeedList extends React.Component {
   };
 
   goToFeedDetail = () => {
-    console.log(this.props.id);
     this.props.history.push(`/feed/${this.props.id}`);
   };
 
