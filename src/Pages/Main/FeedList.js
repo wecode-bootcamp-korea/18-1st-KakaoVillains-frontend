@@ -45,7 +45,7 @@ class FeedList extends React.Component {
 
   goToFeedDetail = () => {
     console.log(this.props.id);
-    this.props.history.push(`/today/feed/${this.props.id}`);
+    this.props.history.push(`/feed/${this.props.id}`);
   };
 
   render() {
@@ -73,8 +73,8 @@ class FeedList extends React.Component {
           </div>
         </div>
         <StyledSlider className="feedBoxImg" {...settings}>
-          {this.props.image_url.map(list => (
-            <img className="mainImg" src={list} alt="이미지" />
+          {this.props.image_url.map((list, index) => (
+            <img key={index} className="mainImg" src={list} alt="이미지" />
           ))}
         </StyledSlider>
         <div className="feedBoxIcon">
@@ -93,7 +93,7 @@ class FeedList extends React.Component {
             </div>
           )}
           <div className="chatIcon">
-            <button>
+            <button onClick={this.goToFeedDetail}>
               <BsChat size="24" />
             </button>
           </div>
@@ -110,7 +110,7 @@ class FeedList extends React.Component {
           좋아요{" "}
           <span className="feedLikeCountUpDown">{this.props.like_count}</span>개
         </div>
-        <p className="feedContentTitle"> {this.props.title}</p>
+        <p className="feedContentTitle">{this.props.title}</p>
         <p className="feedContent">{this.props.content}</p>
         <div className="feedReplyBox">
           <button onClick={this.goToFeedDetail} className="feedReplyBoxBtn">
@@ -121,11 +121,10 @@ class FeedList extends React.Component {
               </span>
               개
             </div>
-            <ul className="replyList">
-              <span className="userName">{this.props.reply_username}</span>
+            <div className="replyList">
+              <span className="userName">{this.props.reply_username} </span>
               <p className="content">{this.props.reply}</p>
-              {/* <li className="reply">{this.props.reply_username} {this.props.reply}</li> */}
-            </ul>
+            </div>
             <div className="replyInput">
               <textarea placeholder="댓글을 달아주세요." />
             </div>
@@ -135,7 +134,7 @@ class FeedList extends React.Component {
           <div className="productList">
             <ul>
               {this.props.recommend_products.map((data, index) => (
-                <li>
+                <li key={index}>
                   <div className="product">
                     <div className="productImgInfo">
                       <img

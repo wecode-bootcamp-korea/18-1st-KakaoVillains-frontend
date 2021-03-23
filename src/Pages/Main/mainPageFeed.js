@@ -2,7 +2,6 @@
 import React from "react";
 import FeedList from "./FeedList";
 import InfiniteScroll from "react-infinite-scroll-component";
-// import "./mainPageFeed.scss";
 
 class MainPageFeed extends React.Component {
   constructor() {
@@ -29,7 +28,7 @@ class MainPageFeed extends React.Component {
       );
   };
   // nextData = () => {
-  //   fetch(`http://10.58.5.183:8000/feed/feeds/${this.state.page}`, {
+  //   fetch(`http://10.58.5.183:8000/feed?page=${this.state.page}`, {
   //     method: 'GET'
   //   })
   //   .then(res => res.json())

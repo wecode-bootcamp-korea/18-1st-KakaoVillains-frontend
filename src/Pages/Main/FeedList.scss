@@ -89,15 +89,19 @@
   }
 
   .replyList {
+    display: flex;
     margin-top: 13px;
 
-    .userNAme {
+    .userName {
       font-weight: bold;
       font-size: 14px;
+      color: #000000;
     }
 
     .content {
+      margin-left: 5px;
       font-size: 14px;
+      color: #666666;
     }
   }
 
