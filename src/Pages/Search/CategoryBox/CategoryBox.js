@@ -1,18 +1,20 @@
 import React from 'react';
+import { withRouter } from 'react-router';
 import './categoryBox.scss';
 
 class CategoryBox extends React.Component {
+  goToCategory = e => {
+    const id = e.target.id;
+    this.props.history.push(`/category/subject?categorySeq=${id}`);
+  };
+
   render() {
     return (
       <section className="category">
         <h4>카테고리</h4>
         <ul>
           {CATEGORY.map(data => (
-            <button
-              id={data.id}
-              key={data.id}
-              onClick={this.props.goToCategory}
-            >
+            <button id={data.id} key={data.id} onClick={this.goToCategory}>
               {data.name}
             </button>
           ))}
@@ -22,7 +24,7 @@ class CategoryBox extends React.Component {
   }
 }
 
-export default CategoryBox;
+export default withRouter(CategoryBox);
 
 const CATEGORY = [
   { id: 1, name: '전체' },
