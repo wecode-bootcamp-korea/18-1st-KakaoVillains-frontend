@@ -1,6 +1,5 @@
 import React from 'react';
-import SubNav from '../../Components/SubNav';
-import CommentBox from '../Comment/Components/CommentBox/CommetBox';
+//import CommentBox from '../Comment/Components/CommentBox/CommetBox';
 import { FaArrowAltCircleUp, FaSort } from 'react-icons/fa';
 import './Comment.scss';
 
@@ -9,7 +8,7 @@ class Comment extends React.Component {
     super();
 
     this.state = {
-      id: '아무개',
+      id: '',
       value: '',
       commentList: [],
       btnChangeValue: '',
@@ -18,11 +17,20 @@ class Comment extends React.Component {
   }
 
   inputComment = e => {
-    //console.log(e.target.value);
     this.setState({ value: e.target.value });
   };
 
-  pressEnter = e => {
+  pressEnter = async e => {
+    await fetch('http://10.58.4.39:8000/feed/reply?feed_id=1', {
+      method: 'POST',
+      body: JSON.stringify({
+        id: this.state.id,
+        content: this.state.value,
+      }),
+    })
+      .then(res => res.json())
+      .then(res => res.status);
+
     e.preventDefault();
     if (this.state.value === '') {
       alert('내용을 입력해주세요');
@@ -49,13 +57,9 @@ class Comment extends React.Component {
   };
 
   render() {
-    //console.log(this.state.content);
-    console.log(this.state.commentList);
-    const title = '게시물';
     const changeHandleBtnColor = this.state.value.length >= 1;
     return (
       <>
-        <SubNav title={title} />
         <div className="commentContainer">
           <textarea
             placeholder="댓글을 달아주세요."
@@ -77,21 +81,6 @@ class Comment extends React.Component {
               <FaSort className="sortIcon" />
             </span>
           </button>
-        </div>
-        <div className="textBox">
-          {this.state.commentList.map((comment, index) => {
-            return (
-              <CommentBox
-                index={index}
-                key={comment.id}
-                name={comment.userId}
-                text={comment.content}
-                likeCount={comment.likeCount}
-                createdAt={comment.createdAt}
-                handleCommentDelete={this.handleCommentDelete}
-              />
-            );
-          })}
         </div>
       </>
     );

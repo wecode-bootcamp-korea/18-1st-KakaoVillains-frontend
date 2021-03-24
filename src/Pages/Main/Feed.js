@@ -13,18 +13,20 @@ import { BsReply } from 'react-icons/bs';
 import './Feed.scss';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-//import { info } from 'node-sass';
 
 class Feed extends React.Component {
   constructor() {
     super();
     this.state = {
+      id: '',
+      value: '',
+      commentList: [],
       content: [],
     };
   }
 
   componentDidMount() {
-    fetch(`http://10.58.0.64:8000/feed/${this.props.match.params.id}`)
+    fetch(`http://10.58.4.39:8000/feed/${this.props.match.params.id}`)
       .then(res => res.json())
       .then(data => this.setState({ content: data.result }));
   }
@@ -37,32 +39,30 @@ class Feed extends React.Component {
       slidesToShow: 1,
       slidesToScroll: 1,
     };
-    // console.log("state;", data.result);
-    // console.log("props;", this.props);
-    // console.log(this.state.content[0]?.username);
-
+    const title = '게시물';
+    //console.log(this.state.content);
     return (
       <>
-        <SubNav />
+        <SubNav title={title} />
         <div className="feedPage">
           <div className="feedBox">
             <div className="feedBoxHeader">
               <div className="feedBoxHeaderImg">
                 <img
                   className="headerImg"
-                  src={this.state.content[0]?.profile_picture}
+                  src={this.state.content?.[0]?.profile_picture}
                   alt="이미지"
                 />
               </div>
               <div className="nameAndTime">
                 <div className="characterName">
-                  {this.state.content[0]?.username}
+                  {this.state.content?.username}
                 </div>
-                <div className="time">{this.state.content[0]?.datetime}</div>
+                <div className="time">{this.state.content?.[0]?.datetime}</div>
               </div>
             </div>
             <StyledSlider className="feedBoxImg" {...settings}>
-              {this.state.content[0]?.image_url.map((list, index) => (
+              {this.state.content?.[0]?.image_url.map((list, index) => (
                 <img key={index} className="mainImg" src={list} alt="이미지" />
               ))}
             </StyledSlider>
@@ -98,21 +98,21 @@ class Feed extends React.Component {
             <div className="feedLikeCount">
               좋아요
               <span className="feedLikeCountUpDown">
-                {this.state.content[0]?.like_count}
+                {this.state.content?.[0]?.like_count}
               </span>
               개
             </div>
-            <p className="feedContentTitle">{this.state.content[0]?.title}</p>
-            <p className="feedContent">{this.state.content[0]?.content}</p>
+            <p className="feedContentTitle">{this.state.content?.[0]?.title}</p>
+            <p className="feedContent">{this.state.content?.[0]?.content}</p>
           </div>
           <Comment />
-          {this.state.content[0]?.reply.map(el => (
+          {this.state.content?.[0]?.reply.map(comment => (
             <CommentBox
-              key={el.id}
-              content={el.reply_content}
-              name={el.reply_username}
-              likeCount={el.like_count}
-              dateTime={el.datetime}
+              key={comment.id}
+              name={comment.reply_username}
+              text={comment.reply_content}
+              likeCount={comment.like_count}
+              createdAt={comment.datetime}
             />
           ))}
         </div>
