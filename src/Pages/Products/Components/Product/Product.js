@@ -8,7 +8,6 @@ import {
 } from 'react-icons/fa';
 import { RiKakaoTalkFill } from 'react-icons/ri';
 import Slider from 'react-slick';
-import './Product.scss';
 
 class Product extends React.Component {
   constructor() {

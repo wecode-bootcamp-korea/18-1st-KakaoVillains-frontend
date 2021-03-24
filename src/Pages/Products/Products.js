@@ -33,6 +33,15 @@ class Products extends React.Component {
     });
   };
 
+  getStars = value => {
+    const stars = [];
+    const [whole, part] = parseFloat(value).toString().split('.');
+    for (let i = 0; i < whole; i++) stars.push(100);
+    if (part) stars.push(50);
+    for (let i = whole; i < (part ? 4 : 5); i++) stars.push(0);
+    return stars;
+  };
+
   componentDidMount() {
     fetch('/data/ProductData.json', {
       methhod: 'GET',
@@ -48,23 +57,13 @@ class Products extends React.Component {
   render() {
     const title = '제품상세';
 
-    const detailModal = this.state.detailModal && (
-      <div className="detailInfo">
-        <img src="/images/masimaro.jpg" alt="easter egg" />
-      </div>
-    );
-
-    const deliveryModal = this.state.deliveryModal && (
-      <div className="deliveryInfo">
-        <img src="/images/delivery.jpg" alt="easter egg" />
-      </div>
-    );
+    const productInfo = this.state.productInfo;
 
     return (
       <div className="productsWrap">
         <article>
           <SubNav title={title} />
-          {this.state.productInfo.map(info => {
+          {productInfo.map(info => {
             return (
               <Product
                 name={info.name}
@@ -83,7 +82,11 @@ class Products extends React.Component {
                 <FaAngleDown className="downArrowIcon" />
               </div>
             </button>
-            {detailModal}
+            {this.state.detailModal && (
+              <div className="detailInfo">
+                <img src="/images/masimaro.jpg" alt="easter egg" />
+              </div>
+            )}
           </div>
           <div className="productDeliveryBox">
             <button className="productDelivery">
@@ -96,7 +99,11 @@ class Products extends React.Component {
                 <FaAngleDown className="downArrowIcon" />
               </div>
             </button>
-            {deliveryModal}
+            {this.state.deliveryModal && (
+              <div className="deliveryInfo">
+                <img src="/images/delivery.jpg" alt="easter egg" />
+              </div>
+            )}
           </div>
           <div className="productConsult">
             <div className="consultBox">
@@ -107,7 +114,7 @@ class Products extends React.Component {
               </button>
             </div>
           </div>
-          {this.state.productInfo.map(info => {
+          {productInfo.map(info => {
             return (
               <ReviewList
                 average_rating={info.average_rating}
@@ -116,12 +123,12 @@ class Products extends React.Component {
               />
             );
           })}
-          {this.state.productInfo.map(info => {
+          {productInfo.map(info => {
             return <Relative related_products={info.related_products} />;
           })}
           <Footer />
         </article>
-        {this.state.productInfo.map(info => {
+        {productInfo.map(info => {
           return <BuyBtn price={info.price} />;
         })}
       </div>

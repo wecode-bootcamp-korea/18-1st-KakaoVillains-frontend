@@ -19,7 +19,6 @@ class Relative extends React.Component {
             <p className="recommendPrice">{product.price.toLocaleString()}원</p>
           </div>
         ))}
-        ;
       </div>
     );
   }
