@@ -3,10 +3,10 @@ import SubNav from '../../Components/SubNav';
 import Footer from '../../Components/Footer';
 import Product from './Components/Product/Product';
 import ReviewList from './Components/ReviewList/ReviewList';
+import Relative from './Components/Relative/Relative';
 import BuyBtn from './Components/BuyBtn/BuyBtn';
 import { FaAngleDown } from 'react-icons/fa';
 import { BsDot, BsFillChatFill } from 'react-icons/bs';
-import { FiShoppingBag } from 'react-icons/fi';
 import './Products.scss';
 import './_slick-theme.scss';
 import './_slick.scss';
@@ -116,28 +116,14 @@ class Products extends React.Component {
               />
             );
           })}
-          <div className="productRecommend">
-            <p className="recommendTitle">
-              잠깐만,
-              <br />이 상품은 어때요?
-            </p>
-            <div className="recommendProduct">
-              <img
-                src="https://t1.daumcdn.net/friends/prod/product/20210308161640410_8809721507544_AW_02.jpg"
-                alt="productImg1"
-              />
-              <div className="nameBuyBox">
-                <p className="recommendName">제품 이름</p>
-                <FiShoppingBag className="shoppingIcon" />
-              </div>
-              <p className="recommendPrice">가격</p>
-            </div>
-          </div>
-          <Footer />
           {this.state.productInfo.map(info => {
-            return <BuyBtn price={info.price} />;
+            return <Relative related_products={info.related_products} />;
           })}
+          <Footer />
         </article>
+        {this.state.productInfo.map(info => {
+          return <BuyBtn price={info.price} />;
+        })}
       </div>
     );
   }

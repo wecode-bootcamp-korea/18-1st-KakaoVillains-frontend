@@ -1,12 +1,12 @@
 import React from 'react';
 import { FiShoppingBag } from 'react-icons/fi';
-import './BuyBtn.scss';
 
 class BuyBtn extends React.Component {
   constructor() {
     super();
     this.state = {
       buyModal: false,
+      select: '',
     };
   }
 
@@ -18,27 +18,36 @@ class BuyBtn extends React.Component {
 
   selectNum = () => {
     let numArr = [];
-    for (let num = 1; num <= 99; num++) {
+    for (let num = 0; num <= 99; num++) {
       numArr.push(num);
     }
     return numArr;
   };
 
+  selectValue = e => {
+    const { value } = e.target;
+    this.setState({
+      select: value,
+    });
+  };
+
   render() {
     const numValue = this.selectNum();
 
+    const multiply = Number(this.state.select) * this.props.price;
+
     const buyModal = this.state.buyModal && (
       <div className="checkProduct">
-        <select>
+        <select onChange={this.selectValue}>
           {numValue.map((num, index) => {
             return (
-              <option key={index} value="num">
+              <option key={index} value={num}>
                 {num}
               </option>
             );
           })}
         </select>
-        <p>{this.props.price.toLocaleString()}원</p>
+        <p>{multiply.toLocaleString()}원</p>
       </div>
     );
 

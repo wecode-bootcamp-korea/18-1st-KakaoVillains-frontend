@@ -24,6 +24,57 @@
                 "created_at": "2021-03-18",
                 "content": "라이언노란색",
                 "like_count": 0
+            },
+            {
+                "reviewer": "허정원",
+                "rating": 4,
+                "created_at": "2021-03-18",
+                "content": "라이언노란색",
+                "like_count": 0
+            }
+        ],
+        "related_products": [
+            {
+                "image_url": "https://t1.daumcdn.net/friends/prod/product/20210308161640410_8809721507544_AW_02.jpg",
+                "name": "라이언텀블러",
+                "price": 20000.00,
+                "discount_rate": "0.0"
+            },
+            {
+                "image_url": "https://t1.daumcdn.net/friends/prod/product/20210308161640410_8809721507544_AW_02.jpg",
+                "name": "조르디 큰컵",
+                "price": 10000.00,
+                "discount_rate": "0.0"
+            },
+            {
+                "image_url": "https://t1.daumcdn.net/friends/prod/product/20210308161640410_8809721507544_AW_02.jpg",
+                "name": "조르디 작은컵",
+                "price": 5000.00,
+                "discount_rate": "0.0"
+            },
+            {
+                "image_url": "https://t1.daumcdn.net/friends/prod/product/20210308161640410_8809721507544_AW_02.jpg",
+                "name": "앙몬드 뜨거운 텀블러",
+                "price": 15000.00,
+                "discount_rate": "0.0"
+            },
+            {
+                "image_url": "https://t1.daumcdn.net/friends/prod/product/20210308161640410_8809721507544_AW_02.jpg",
+                "name": "앙몬드 차가운 텀블러",
+                "price": 15000.00,
+                "discount_rate": "0.0"
+            },
+            {
+                "image_url": "https://t1.daumcdn.net/friends/prod/product/20210308161640410_8809721507544_AW_02.jpg",
+                "name": "조르디 인형",
+                "price": 30000.00,
+                "discount_rate": "0.0"
+            },
+            {
+                "image_url": "https://t1.daumcdn.net/friends/prod/product/20210308161640410_8809721507544_AW_02.jpg",
+                "name": "조르디 얼굴쿠션",
+                "price": 25000.00,
+                "discount_rate": "0.0"
             }
         ]
     }

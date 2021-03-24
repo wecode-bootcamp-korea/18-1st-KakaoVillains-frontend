@@ -24,8 +24,8 @@ class ReviewList extends React.Component {
           <button className="sortLike">좋아요순</button>
           <button className="sortNew">최신순</button>
         </div>
-        {review_list.map(product => (
-          <div className="productComment">
+        {review_list.map((product, idx) => (
+          <div key={idx} className="productComment">
             <p className="commentUser">{product.reviewer}</p>
             <div className="productUserGrade">
               <Rating value={product.rating} />

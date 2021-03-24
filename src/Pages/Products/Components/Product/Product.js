@@ -65,8 +65,8 @@ class Product extends React.Component {
       <div>
         <header>
           <Slider {...settings}>
-            {image_list.map(imgList => {
-              return <img src={imgList} alt="이미지" />;
+            {image_list.map((imgList, idx) => {
+              return <img key={idx} src={imgList} alt="이미지" />;
             })}
           </Slider>
           <p className="headTitle">{name}</p>

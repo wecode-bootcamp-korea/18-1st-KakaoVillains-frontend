@@ -1,5 +1,6 @@
 .productsWrap {
   display: flex;
+  justify-content: center;
 
   article {
     display: flex;
@@ -343,56 +344,56 @@
         }
       }
     }
+  }
 
-    .buyBox {
-      position: fixed;
-      bottom: 0;
-      width: 640px;
-      z-index: 12;
+  .buyBox {
+    position: fixed;
+    bottom: 0;
+    width: 640px;
+    z-index: 12;
 
-      .checkProduct {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 0 20px;
-        height: 62px;
-        background-color: white;
-        font-size: 20px;
+    .checkProduct {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 20px;
+      height: 62px;
+      background-color: white;
+      font-size: 20px;
 
-        select {
-          width: 80px;
-          height: 36px;
-          text-align-last: center;
-          border: 1px solid #dddddd;
-          border-radius: 3px;
-          outline: none;
-        }
+      select {
+        width: 80px;
+        height: 36px;
+        text-align-last: center;
+        border: 1px solid #dddddd;
+        border-radius: 3px;
+        outline: none;
+      }
+    }
+
+    .buyBtn {
+      display: flex;
+      justify-content: space-between;
+      height: 62px;
+      background-color: rgba(251, 57, 87, 0.9);
+
+      .orderBtn {
+        padding: 0;
+        margin-left: 235px;
+        width: 170px;
+        background-color: rgba(251, 57, 87, 0.1);
+        color: white;
+        font-size: 18px;
+        font-weight: bold;
       }
 
-      .buyBtn {
-        display: flex;
-        justify-content: space-between;
-        height: 62px;
-        background-color: rgba(251, 57, 87, 0.9);
-
-        .orderBtn {
-          padding: 0;
-          margin-left: 235px;
-          width: 170px;
-          background-color: rgba(251, 57, 87, 0.1);
-          color: white;
-          font-size: 18px;
-          font-weight: bold;
-        }
-
-        .basketBtn {
-          padding: 0;
-          width: 62px;
-          background-color: rgba(251, 57, 87, 0.1);
-          color: white;
-          font-size: 18px;
-          font-weight: bold;
-        }
+      .basketBtn {
+        padding: 0;
+        width: 62px;
+        background-color: rgba(251, 57, 87, 0.1);
+        color: white;
+        font-size: 18px;
+        font-weight: bold;
       }
     }
   }
