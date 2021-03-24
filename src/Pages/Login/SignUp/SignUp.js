@@ -1,15 +1,15 @@
-import React from 'react';
-import PublicFooter from '../Components/PublicFooter';
-import './SignUp.scss';
+import React from "react";
+import PublicFooter from "../Components/PublicFooter";
+import "./SignUp.scss";
 
 class SignUp extends React.Component {
   constructor() {
     super();
     this.state = {
-      id: '',
-      pw: '',
-      user: '',
-      pwR: '',
+      id: "",
+      pw: "",
+      user: "",
+      pwR: "",
     };
   }
 
@@ -58,7 +58,7 @@ class SignUp extends React.Component {
 
   render() {
     const isValidInput =
-      this.state.id.includes('@') &&
+      this.state.id.includes("@") &&
       this.state.pw.length >= 8 &&
       this.state.user.length >= 2;
     return (
@@ -70,8 +70,8 @@ class SignUp extends React.Component {
             <div
               className={`idBox ${
                 this.state.borderColor
-                  ? 'borderColorChange'
-                  : 'borderColorOrigin'
+                  ? "borderColorChange"
+                  : "borderColorOrigin"
               }`}
             >
               <p>
@@ -149,7 +149,7 @@ class SignUp extends React.Component {
               </div>
               <button
                 className={`finishBtn ${
-                  isValidInput ? 'changeBtnColor' : 'originBtnColor'
+                  isValidInput ? "changeBtnColor" : "originBtnColor"
                 }`}
                 onClick={this.signUpFinish}
               >
