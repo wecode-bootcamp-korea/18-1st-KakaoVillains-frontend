@@ -1,5 +1,5 @@
-import React from "react";
-import MainPageFeed from "./mainPageFeed";
+import React from 'react';
+import MainPageFeed from './mainPageFeed';
 
 class Main extends React.Component {
   render() {
