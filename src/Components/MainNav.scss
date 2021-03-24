@@ -1,11 +1,13 @@
 .wrapMain {
+  // display: flex , justfi-content center 추가
+  display: flex;
+  justify-content: center;
   position: relative;
 
   .mainNav {
     position: fixed;
     z-index: 10;
     width: 640px;
-    background-color: white;
 
     .navBarFirst {
       display: flex;
@@ -24,10 +26,12 @@
     .navBarSecond {
       display: flex;
       justify-content: space-around;
-      width: 100%;
       max-width: 640px;
-      margin-top: 20px;
-      height: 40px;
+      margin-top: 15px;
+      background-color: white;
+      width: 100%;
+      padding: 0px 10px;
+      height: 30px;
 
       ul {
         list-style: none;
@@ -37,7 +41,9 @@
 
       .width {
         display: flex;
-        width: 125%;
+        justify-content: center;
+        align-items: center;
+        width: 25%;
         font-size: 16px;
       }
 

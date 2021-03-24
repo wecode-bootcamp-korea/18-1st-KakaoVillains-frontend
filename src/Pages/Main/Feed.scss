@@ -1,0 +1,85 @@
+.feedBox {
+  max-width: 640px;
+  margin: 0px auto;
+  padding: 20px 20px 30px;
+
+  .feedBoxHeader {
+    display: flex;
+
+    .feedBoxHeaderImg {
+      width: 40px;
+      height: 40px;
+      margin-right: 10px;
+
+      .headerImg {
+        width: 100%;
+      }
+    }
+
+    .nameAndTime {
+      display: flex;
+      flex-direction: column;
+
+      .characterName {
+        margin-top: 3px;
+        font-weight: bold;
+      }
+
+      .time {
+        margin-top: 3px;
+        font-size: 13px;
+        color: #9a9a9e;
+      }
+    }
+  }
+
+  .feedBoxImg {
+    margin-top: 15px;
+
+    .mainImg {
+      width: 100%;
+    }
+  }
+
+  .feedBoxIcon {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    margin-top: 13px;
+
+    .heartIcon {
+      margin-left: -5px;
+    }
+
+    .heartIconColorChange {
+      margin-left: -5px;
+    }
+
+    .chatIcon {
+      margin-left: 5px;
+    }
+
+    .replyIcon {
+      margin-left: auto;
+    }
+  }
+
+  .feedLikeCount {
+    margin-top: 13px;
+
+    .feedLikeCountUpDown {
+      font-weight: bold;
+    }
+  }
+
+  .feedContentTitle {
+    margin-top: 10px;
+    font-size: 24px;
+    font-weight: bold;
+  }
+
+  .feedContent {
+    margin-top: 13px;
+  }
+}

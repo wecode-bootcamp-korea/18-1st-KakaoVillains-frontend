@@ -1,6 +1,6 @@
-import React from 'react';
-import { BiSearch } from 'react-icons/bi';
-import './searchBox.scss';
+import React from "react";
+import { BiSearch } from "react-icons/bi";
+import "./searchBox.scss";
 
 class SearchBox extends React.Component {
   render() {

@@ -1,15 +1,15 @@
-import React from 'react';
-import CharacterBox from './CharacterBox/CharacterBox';
-import CategoryBox from './CategoryBox/CategoryBox';
-import SearchBox from './SearchBox/SearchBox';
-import SearchDataList from './SearchDataList/SearchDataList';
-import './search.scss';
+import React from "react";
+import CharacterBox from "./CharacterBox/CharacterBox";
+import CategoryBox from "./CategoryBox/CategoryBox";
+import SearchBox from "./SearchBox/SearchBox";
+import SearchDataList from "./SearchDataList/SearchDataList";
+import "./search.scss";
 
 class Search extends React.Component {
   constructor() {
     super();
     this.state = {
-      keyWord: '',
+      keyWord: "",
       keyWordList: [],
     };
   }
@@ -23,12 +23,12 @@ class Search extends React.Component {
 
   keyWordDelete = () => {
     this.setState({
-      keyWord: '',
+      keyWord: "",
     });
   };
 
   filterKeyword = () => {
-    fetch('/data/searchData.json')
+    fetch("/data/searchData.json")
       // ?filter=${this.state.keyword}*/
       .then(res => res.json())
       .then(res =>

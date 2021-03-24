@@ -1,8 +1,8 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { FaSearch, FaChevronLeft, FaHome } from 'react-icons/fa';
-import { FiGlobe } from 'react-icons/fi';
-import './SubNav.scss';
+import React from "react";
+import { Link } from "react-router-dom";
+import { FaSearch, FaChevronLeft, FaHome } from "react-icons/fa";
+import { FiGlobe } from "react-icons/fi";
+import "./SubNav.scss";
 
 class SubNav extends React.Component {
   render() {

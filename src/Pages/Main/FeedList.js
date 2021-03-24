@@ -17,15 +17,11 @@ class FeedList extends React.Component {
   constructor() {
     super();
     this.state = {
-      heartColor: true,
+      heartColorAndLike: true,
       isShareModalView: false,
       isLoginModalView: false,
     };
   }
-
-  colorChangeBtn = () => {
-    this.setState({ heartColor: !this.state.heartColor });
-  };
 
   shareHandleModal = () => {
     this.setState({ isShareModalView: !this.state.isShareModalView }, () => {
@@ -42,6 +38,10 @@ class FeedList extends React.Component {
         : "unset";
     });
   };
+  // likeCount: Number(`${this.props.like_count}`) + 1
+  colorChangeBtn = e => {
+    this.setState({ heartColorAndLike: !this.state.heartColorAndLike });
+  };
 
   goToFeedDetail = () => {
     this.props.history.push(`/feed/${this.props.id}`);
@@ -55,7 +55,7 @@ class FeedList extends React.Component {
       slidesToShow: 1,
       slidesToScroll: 1,
     };
-
+    console.log(this.state.likeCount);
     return (
       <div className="feedBox">
         <div className="feedBoxHeader">
@@ -78,7 +78,7 @@ class FeedList extends React.Component {
         </StyledSlider>
         <div className="feedBoxIcon">
           {this.state.isLoginModalView ? "" : ""}
-          {this.state.heartColor ? (
+          {this.state.heartColorAndLike ? (
             <div className="heartIcon">
               <button onClick={this.colorChangeBtn}>
                 <FaRegHeart size="24" />

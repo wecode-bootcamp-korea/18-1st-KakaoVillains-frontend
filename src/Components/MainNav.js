@@ -1,21 +1,22 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { FaSearch } from 'react-icons/fa';
-import { FiMenu } from 'react-icons/fi';
-import { FiGlobe } from 'react-icons/fi';
-import './MainNav.scss';
+import React from "react";
+import { Link } from "react-router-dom";
+import { FaSearch } from "react-icons/fa";
+import { FiMenu } from "react-icons/fi";
+import { FiGlobe } from "react-icons/fi";
+import "./MainNav.scss";
 
 class MainPageNav extends React.Component {
   constructor() {
     super();
     this.state = {
-      btnChange: '',
+      btnChange: "",
       toggleOn: false,
+      menuToggle: true,
     };
   }
 
   changeHandleBtn = () => {
-    return this.state.btnChangeValue ? 'trueColor' : 'falseColor';
+    return this.state.btnChangeValue ? "trueColor" : "falseColor";
   };
 
   toggleOn = () => {
@@ -65,4 +66,4 @@ class MainPageNav extends React.Component {
 
 export default MainPageNav;
 
-const menuList = ['오늘', '신규', '인기', '마이'];
+const menuList = ["오늘", "신규", "인기", "마이"];

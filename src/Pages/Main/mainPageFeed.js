@@ -1,8 +1,8 @@
 /* eslint-disable prettier/prettier */
 import React from "react";
 import FeedList from "./FeedList";
+// import Feed from "./Feed";
 import InfiniteScroll from "react-infinite-scroll-component";
-
 class MainPageFeed extends React.Component {
   constructor() {
     super();
@@ -15,6 +15,11 @@ class MainPageFeed extends React.Component {
   componentDidMount() {
     this.nextData();
   }
+
+  likeCount = likeNum => {
+    this.setState({ feedList: this.state.feedList.concat() });
+  };
+
   nextData = () => {
     fetch(`/data/data${this.state.page}.json`, {
       method: "GET",
@@ -27,6 +32,8 @@ class MainPageFeed extends React.Component {
         })
       );
   };
+
+  handleLikteCount = () => {};
   // nextData = () => {
   //   fetch(`http://10.58.5.183:8000/feed?page=${this.state.page}`, {
   //     method: 'GET'
