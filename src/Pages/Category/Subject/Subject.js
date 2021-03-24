@@ -3,6 +3,7 @@ import Option from './Option/Option';
 import Products from './Products/Products';
 import SubCategory from './SubCategory/SubCategory';
 import Filter from './Filter/Filter';
+import Footer from '../../../Components/Footer';
 import './subject.scss';
 
 class Subject extends React.Component {
@@ -14,7 +15,9 @@ class Subject extends React.Component {
   }
 
   componentDidMount() {
-    fetch(`/data/카테고리전체.json`)
+    fetch(
+      `http://10.58.2.121:8000/product/category/subject&sort=creatDatetime,desc`
+    )
       .then(res => res.json())
       .then(res =>
         this.setState({
@@ -76,17 +79,20 @@ class Subject extends React.Component {
   render() {
     console.log(this.state.characterData);
     return (
-      <main class="subject">
-        <div>
-          <Option changeSubject={this.changeSubject} />
-          <SubCategory sortingSubCategory={this.sortingSubCategory} />
-          <Filter
-            sortingCharacter={this.sortingCharacter}
-            sortingSequence={this.sortingSequence}
-          />
-          <Products data={this.state.characterData} />
-        </div>
-      </main>
+      <>
+        <main class="subject">
+          <div>
+            <Option changeSubject={this.changeSubject} />
+            <SubCategory sortingSubCategory={this.sortingSubCategory} />
+            <Filter
+              sortingCharacter={this.sortingCharacter}
+              sortingSequence={this.sortingSequence}
+            />
+            <Products data={this.state.characterData} />
+          </div>
+        </main>
+        <Footer />
+      </>
     );
   }
 }
