@@ -38,13 +38,23 @@ class FeedList extends React.Component {
         : "unset";
     });
   };
-  // likeCount: Number(`${this.props.like_count}`) + 1
-  colorChangeBtn = e => {
+  colorChangeBtn = async () => {
+    await fetch(`http://10.58.4.39:8000/feed/like/${this.props.id}`, {
+      method: "POST",
+    })
+      .then(res => res.json())
+      .then(data => console.log(data));
+
     this.setState({ heartColorAndLike: !this.state.heartColorAndLike });
   };
 
   goToFeedDetail = () => {
     this.props.history.push(`/feed/${this.props.id}`);
+  };
+
+  goToProductDetail = index => {
+    const id = this.props.recommend_products[index].id;
+    this.props.history.push(`/product/${id}`);
   };
 
   render() {
@@ -55,7 +65,7 @@ class FeedList extends React.Component {
       slidesToShow: 1,
       slidesToScroll: 1,
     };
-    console.log(this.state.likeCount);
+    console.log(this.props.heart);
     return (
       <div className="feedBox">
         <div className="feedBoxHeader">
@@ -135,7 +145,10 @@ class FeedList extends React.Component {
               {this.props.recommend_products.map((data, index) => (
                 <li key={index}>
                   <div className="product">
-                    <div className="productImgInfo">
+                    <div
+                      onClick={() => this.goToProductDetail(index)}
+                      className="productImgInfo"
+                    >
                       <img
                         className="productImg"
                         src={data.image_url}

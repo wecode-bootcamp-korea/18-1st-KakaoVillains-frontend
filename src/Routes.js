@@ -5,9 +5,11 @@ import MainNav from "./Components/MainNav";
 import SubNav from "./Components/SubNav";
 import Login from "./Pages/Login/Login";
 import SignUp from "./Pages/Login/SignUp/SignUp";
+import Feed from "./Pages/Main/Feed";
 import Search from "./Pages/Search/Search";
 import Footer from "./Components/Footer";
-import Feed from "./Pages/Main/Feed";
+import Products from "../src/Pages/Products/Products";
+import Cart from "./Pages/Cart/Cart";
 
 class Routes extends React.Component {
   render() {
@@ -23,8 +25,9 @@ class Routes extends React.Component {
           <Route exact path="/footer" component={Footer} />
           <Route exact path="/feed" component={Feed} />
           <Route exact path="/feed/:id" component={Feed} />
-          {/* <Route exact path="/product" component={} */}
-          {/* <Route exact path="/product/:id" component={} */}
+          <Route exact path="/product" component={Products} />
+          <Route exact path="/product/:id" component={Products} />
+          <Route exact path="/cart" component={Cart} />
         </Switch>
       </Router>
     );

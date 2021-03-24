@@ -1,7 +1,7 @@
-import React from 'react';
-import { BsX } from 'react-icons/bs';
-import { BsFillChatFill } from 'react-icons/bs';
-import './LoginModal.scss';
+import React from "react";
+import { BsX } from "react-icons/bs";
+import { BsFillChatFill } from "react-icons/bs";
+import "./LoginModal.scss";
 
 class LoginModal extends React.Component {
   render() {

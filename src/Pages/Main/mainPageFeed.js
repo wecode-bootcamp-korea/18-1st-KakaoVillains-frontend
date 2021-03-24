@@ -3,6 +3,7 @@ import React from "react";
 import FeedList from "./FeedList";
 // import Feed from "./Feed";
 import InfiniteScroll from "react-infinite-scroll-component";
+import { BsThreeDotsVertical } from "react-icons/bs";
 class MainPageFeed extends React.Component {
   constructor() {
     super();
@@ -15,10 +16,6 @@ class MainPageFeed extends React.Component {
   componentDidMount() {
     this.nextData();
   }
-
-  likeCount = likeNum => {
-    this.setState({ feedList: this.state.feedList.concat() });
-  };
 
   nextData = () => {
     fetch(`/data/data${this.state.page}.json`, {
@@ -33,18 +30,17 @@ class MainPageFeed extends React.Component {
       );
   };
 
-  handleLikteCount = () => {};
   // nextData = () => {
-  //   fetch(`http://10.58.5.183:8000/feed?page=${this.state.page}`, {
-  //     method: 'GET'
+  //   fetch(`http://10.58.4.39:8000/feed?page=${this.state.page}`, {
+  //     method: "GET",
   //   })
-  //   .then(res => res.json())
-  //   .then(data =>
-  //     this.setState({
-  //       feedList: this.state.feedList.concat(data.result),
-  //       page: this.state.page + 1,
-  //     })
-  //   );
+  //     .then(res => res.json())
+  //     .then(data =>
+  //       this.setState({
+  //         feedList: this.state.feedList.concat(data.result),
+  //         page: this.state.page + 1,
+  //       })
+  //     );
   // };
 
   render() {
@@ -72,6 +68,7 @@ class MainPageFeed extends React.Component {
                   reply={list.reply}
                   image_url={list.image_url}
                   recommend_products={list.recommend_products}
+                  heart={list.heart}
                 />
               );
             })}

@@ -13,10 +13,12 @@
         "image_url": ["https://t1.kakaocdn.net/friends/prod/main_tab/feed/media/media_0_20210317160433.jpg","https://t1.kakaocdn.net/friends/prod/main_tab/feed/media/media_1_20210317160433.jpg","https://t1.kakaocdn.net/friends/prod/main_tab/feed/media/media_2_20210317160433.jpg","https://t1.kakaocdn.net/friends/prod/main_tab/feed/media/media_6_20210317160434.jpg"],
         "recommend_products": [
             {
+                "id": 3,
                 "name": "왕록님라이언",
                 "price": "300000.00",
                 "image_url": "https://t1.daumcdn.net/friends/prod/product/20210308161640247_8809721507544_AW_00.jpg"
             },            {
+                "id": 4,
                 "name": "왕록님라이언",
                 "price": "300000.00",
                 "image_url": "https://t1.daumcdn.net/friends/prod/product/20210308161640247_8809721507544_AW_00.jpg"
