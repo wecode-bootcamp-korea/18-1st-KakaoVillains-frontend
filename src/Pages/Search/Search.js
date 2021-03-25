@@ -5,6 +5,7 @@ import SearchBox from './SearchBox/SearchBox';
 import SearchDataList from './SearchDataList/SearchDataList';
 import './search.scss';
 
+const IP = '';
 class Search extends React.Component {
   constructor() {
     super();
@@ -18,7 +19,7 @@ class Search extends React.Component {
     this.setState({
       keyWord: e.target.value,
     });
-    this.filterKeyword();
+    this.filterKeyword(e);
   };
 
   keyWordDelete = () => {
@@ -27,30 +28,19 @@ class Search extends React.Component {
     });
   };
 
-  filterKeyword = () => {
-    fetch('/data/searchData.json')
-      // ?filter=${this.state.keyword}*/
+  filterKeyword = e => {
+    fetch(`http://${IP}:8000/product/search?keyword=${e.target.value}`)
       .then(res => res.json())
       .then(res =>
         this.setState({
-          keyWordList: res,
+          keyWordList: res.result,
         })
       );
   };
 
-  goToCharacter = e => {
-    const id = e.target.parentNode.parentNode.id;
-    this.props.history.push(`/category/character?characterSeq=${id}`);
-  };
-
-  goToCategory = e => {
-    const id = e.target.id;
-    this.props.history.push(`/category/subject?categorySeq=${id}`);
-  };
-
   render() {
     const { keyWord, keyWordList } = this.state;
-    const { keyWordDelete, keyWordInput, goToCharacter, goToCategory } = this;
+    const { keyWordDelete, keyWordInput } = this;
     return (
       <main className="search">
         <SearchBox
@@ -63,8 +53,8 @@ class Search extends React.Component {
           <SearchDataList keyWordList={keyWordList} />
         ) : (
           <div className="CategoryBox">
-            <CharacterBox goToCharacter={goToCharacter} />
-            <CategoryBox goToCategory={goToCategory} />
+            <CharacterBox />
+            <CategoryBox />
           </div>
         )}
       </main>

@@ -1,15 +1,15 @@
 [
-  { "id": 1, "name": "죠르디 사원증 케이스" },
-  { "id": 2, "name": "죠르디" },
-  { "id": 3, "name": "그립폰케이스_죠르디" },
-  { "id": 4, "name": "실리콘에어팟케이스_죠르디" },
-  { "id": 5, "name": "실리콘에어팟케이스_죠르디" },
-  { "id": 6, "name": "실리콘에어팟케이스_죠르디" },
-  { "id": 7, "name": "실리콘에어팟케이스_죠르디" },
-  { "id": 8, "name": "실리콘에어팟케이스_죠르디" },
-  { "id": 9, "name": "실리콘에어팟케이스_죠르디" },
-  { "id": 10, "name": "실리콘에어팟케이스_죠르디" },
-  { "id": 11, "name": "실리콘에어팟케이스_죠르디" },
-  { "id": 12, "name": "실리콘에어팟케이스_죠르디" },
-  { "id": 13, "name": "실리콘에어팟케이스_죠르디" }
+  { "product_id": 1, "product_name": "죠르디 사원증 케이스" },
+  { "product_id": 2, "product_name": "죠르디" },
+  { "product_id": 3, "product_name": "그립폰케이스_죠르디" },
+  { "product_id": 4, "product_name": "실리콘에어팟케이스_죠르디" },
+  { "product_id": 5, "product_name": "실리콘에어팟케이스_죠르디" },
+  { "product_id": 6, "product_name": "실리콘에어팟케이스_죠르디" },
+  { "product_id": 7, "product_name": "실리콘에어팟케이스_죠르디" },
+  { "product_id": 8, "product_name": "실리콘에어팟케이스_죠르디" },
+  { "product_id": 9, "product_name": "실리콘에어팟케이스_죠르디" },
+  { "product_id": 10, "product_name": "실리콘에어팟케이스_죠르디" },
+  { "product_id": 11, "product_name": "실리콘에어팟케이스_죠르디" },
+  { "product_id": 12, "product_name": "실리콘에어팟케이스_죠르디" },
+  { "product_id": 13, "product_name": "실리콘에어팟케이스_죠르디" }
 ]
