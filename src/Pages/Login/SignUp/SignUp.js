@@ -20,41 +20,41 @@ class SignUp extends React.Component {
     });
   };
 
-  // signUpFinish = () => {
-  //   fetch('http://10.58.1.220:8000/account/signup', {
-  //     method: 'POST',
-  //     body: JSON.stringify({
-  //       email: this.state.id,
-  //       username: this.state.user,
-  //       password: this.state.pw,
-  //     }),
-  //   })
-  //     .then(res => res.json())
-  //     .then(res => {
-  //       if (
-  //         res.message === `email must contain the '@' symbol and the period'.'`
-  //       ) {
-  //         alert('이메일을 다시 확인해 주세요.');
-  //       }
+  signUpFinish = () => {
+    fetch("http://10.58.0.65:8000/account/signup", {
+      method: "POST",
+      body: JSON.stringify({
+        email: this.state.id,
+        username: this.state.user,
+        password: this.state.pw,
+      }),
+    })
+      .then(res => res.json())
+      .then(res => {
+        if (
+          res.message === `email must contain the '@' symbol and the period'.'`
+        ) {
+          alert("이메일을 다시 확인해 주세요.");
+        }
 
-  //       if (res.message === 'password must be at least 8 characters') {
-  //         alert('비밀번호는 8자리 이상이여야 합니다.');
-  //       }
+        if (res.message === "password must be at least 8 characters") {
+          alert("비밀번호는 8자리 이상이여야 합니다.");
+        }
 
-  //       if (res.message === 'That email is taken. Try another') {
-  //         alert('이미 존재하는 이메일입니다.');
-  //       }
+        if (res.message === "That email is taken. Try another") {
+          alert("이미 존재하는 이메일입니다.");
+        }
 
-  //       if (res.message === 'Please provide username') {
-  //         alert('닉네임을 확인해 주세요');
-  //       }
+        if (res.message === "Please provide username") {
+          alert("닉네임을 확인해 주세요");
+        }
 
-  //       if (res.message === 'SUCCESS') {
-  //         this.props.history.push('/login');
-  //         alert('회원가입이 완료되었습니다.');
-  //       }
-  //     });
-  // };
+        if (res.message === "SUCCESS") {
+          this.props.history.push("/login");
+          alert("회원가입이 완료되었습니다.");
+        }
+      });
+  };
 
   render() {
     const isValidInput =

@@ -3,6 +3,9 @@
   display: flex;
   justify-content: center;
   position: relative;
+  display: flex;
+  justify-content: center;
+
   .mainNav {
     position: fixed;
     z-index: 10;
@@ -26,11 +29,7 @@
       display: flex;
       justify-content: space-around;
       max-width: 640px;
-      margin-top: 15px;
-      background-color: white;
-      width: 100%;
-      padding: 0px 10px;
-      height: 30px;
+      height: 40px;
 
       ul {
         list-style: none;
@@ -41,13 +40,12 @@
       .width {
         display: flex;
         justify-content: center;
-        align-items: center;
-        width: 25%;
+        width: 160px;
         font-size: 16px;
-      }
-
-      .truecolor {
-        background-color: red;
+        line-height: 40px;
+        &:hover {
+          border-bottom: black solid 4px;
+        }
       }
     }
   }

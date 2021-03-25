@@ -15,7 +15,7 @@ class Feed extends React.Component {
     super();
     this.state = {
       heartColor: true,
-      content: {},
+      content: [],
     };
   }
 
@@ -24,7 +24,7 @@ class Feed extends React.Component {
   //   .then(data => this.setState({ content: data.result }));
 
   componentDidMount() {
-    fetch(`http://10.58.4.39:8000/feed/${this.props.match.params.id}`)
+    fetch(`http://10.58.0.65:8000/feed/${this.props.match.params.id}`)
       .then(res => res.json())
       .then(data => this.setState({ content: data.result }));
   }
@@ -41,8 +41,7 @@ class Feed extends React.Component {
       slidesToShow: 1,
       slidesToScroll: 1,
     };
-
-    console.log(this.state.content?.image_url);
+    console.log(this.state.content.images?.map);
     return (
       <>
         <div className="feedPage">
@@ -51,19 +50,19 @@ class Feed extends React.Component {
               <div className="feedBoxHeaderImg">
                 <img
                   className="headerImg"
-                  src={this.state.content?.[0]?.profile_picture}
+                  src={this.state.content?.profile_picture}
                   alt="이미지"
                 />
               </div>
               <div className="nameAndTime">
                 <div className="characterName">
-                  {this.state.content?.[0]?.username}
+                  {this.state.content?.username}
                 </div>
-                <div className="time">{this.state.content?.[0]?.datetime}</div>
+                <div className="time">{this.state.content?.datetime}</div>
               </div>
             </div>
             <StyledSlider className="feedBoxImg" {...settings}>
-              {this.state.content?.[0]?.image_url.map((list, index) => (
+              {this.state.content.image_url?.map((list, index) => (
                 <img key={index} className="mainImg" src={list} alt="이미지" />
               ))}
             </StyledSlider>
@@ -99,12 +98,12 @@ class Feed extends React.Component {
             <div className="feedLikeCount">
               좋아요{" "}
               <span className="feedLikeCountUpDown">
-                {this.state.content?.[0]?.like_count}
+                {this.state.content?.like_count}
               </span>
               개
             </div>
-            <p className="feedContentTitle">{this.state.content?.[0]?.title}</p>
-            <p className="feedContent">{this.state.content?.[0]?.content}</p>
+            <p className="feedContentTitle">{this.state.content?.title}</p>
+            <p className="feedContent">{this.state.content?.content}</p>
           </div>
         </div>
       </>

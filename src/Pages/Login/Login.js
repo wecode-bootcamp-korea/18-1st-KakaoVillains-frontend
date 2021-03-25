@@ -24,22 +24,22 @@ class Login extends React.Component {
     this.props.history.push("/signup");
   };
 
-  // goToMain = () => {
-  //   fetch('http://10.58.59.83:8000/account/signin', {
-  //     method: 'POST',
-  //     body: JSON.stringify({
-  //       email: this.state.id,
-  //       password: this.state.pw,
-  //     }),
-  //   })
-  //     .then(res => res.json())
-  //     .then(res => {
-  //       if (res.message === 'SUCCESS') {
-  //         localStorage.setItem('키값', res.access_token);
-  //         this.props.history.push('/');
-  //       }
-  //     });
-  // };
+  goToMain = () => {
+    fetch("http://10.58.0.65:8000/account/signin", {
+      method: "POST",
+      body: JSON.stringify({
+        email: this.state.id,
+        password: this.state.pw,
+      }),
+    })
+      .then(res => res.json())
+      .then(res => {
+        if (res.result === "SUCCESS") {
+          sessionStorage.setItem("userid", res.token);
+          this.props.history.push("/");
+        }
+      });
+  };
 
   render() {
     const isValidInput =

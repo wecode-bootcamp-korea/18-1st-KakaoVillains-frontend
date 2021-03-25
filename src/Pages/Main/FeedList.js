@@ -4,7 +4,7 @@ import styled from "styled-components";
 import Slider from "react-slick";
 import ShareModal from "./Modal/ShareModal";
 import { withRouter } from "react-router-dom";
-// import LoginModal from './Modal/LoginModal';
+// import LoginModal from "./Modal/LoginModal";
 import { FaRegHeart } from "react-icons/fa";
 import { FaHeart } from "react-icons/fa";
 import { BsChat } from "react-icons/bs";
@@ -17,6 +17,7 @@ class FeedList extends React.Component {
   constructor() {
     super();
     this.state = {
+      login: {},
       heartColorAndLike: true,
       isShareModalView: false,
       isLoginModalView: false,
@@ -32,20 +33,11 @@ class FeedList extends React.Component {
   };
 
   loginHandleModal = () => {
-    this.setState({ isLoginModalView: !this.state.isLoginModalView }, () => {
+    this.setState({ login: !this.state.isLoginModalView }, () => {
       document.body.style.overflow = this.state.isLoginModalView
         ? "hidden"
         : "unset";
     });
-  };
-  colorChangeBtn = async () => {
-    await fetch(`http://10.58.4.39:8000/feed/like/${this.props.id}`, {
-      method: "POST",
-    })
-      .then(res => res.json())
-      .then(data => console.log(data));
-
-    this.setState({ heartColorAndLike: !this.state.heartColorAndLike });
   };
 
   goToFeedDetail = () => {
@@ -65,7 +57,7 @@ class FeedList extends React.Component {
       slidesToShow: 1,
       slidesToScroll: 1,
     };
-    console.log(this.props.heart);
+    console.log(this.state.login);
     return (
       <div className="feedBox">
         <div className="feedBoxHeader">
@@ -87,17 +79,17 @@ class FeedList extends React.Component {
           ))}
         </StyledSlider>
         <div className="feedBoxIcon">
-          {this.state.isLoginModalView ? "" : ""}
-          {this.state.heartColorAndLike ? (
-            <div className="heartIcon">
-              <button onClick={this.colorChangeBtn}>
-                <FaRegHeart size="24" />
+          {/* {this.state.login.message?.length < 15 && <LoginModal />} */}
+          {this.props.heart ? (
+            <div className="heartIconColorChange">
+              <button onClick={() => this.props.colorChangeBtn}>
+                <FaHeart color="red" size="24" />
               </button>
             </div>
           ) : (
-            <div className="heartIconColorChange">
-              <button onClick={this.colorChangeBtn}>
-                <FaHeart color="red" size="24" />
+            <div className="heartIcon">
+              <button onClick={() => this.props.colorChangeBtn}>
+                <FaRegHeart size="24" />
               </button>
             </div>
           )}

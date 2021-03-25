@@ -1,4 +1,5 @@
 import React from "react";
+import Search from "../Pages/Search/Search";
 import { Link } from "react-router-dom";
 import { FaSearch } from "react-icons/fa";
 import { FiMenu } from "react-icons/fi";
@@ -9,15 +10,10 @@ class MainPageNav extends React.Component {
   constructor() {
     super();
     this.state = {
-      btnChange: "",
       toggleOn: false,
       menuToggle: true,
     };
   }
-
-  changeHandleBtn = () => {
-    return this.state.btnChangeValue ? "trueColor" : "falseColor";
-  };
 
   toggleOn = () => {
     this.setState({
@@ -33,32 +29,33 @@ class MainPageNav extends React.Component {
   render() {
     return (
       <div className="wrapMain">
-        <div className="mainNav">
-          <div className="navBarFirst">
-            <Link to="/login">
-              <FiMenu size="24" />
-            </Link>
-            <h1 className="name"> Kakao Villains </h1>
-            <div>
-              <button className="navIcon" onClick={this.toggleOn}>
-                {this.state.toggleOn && <div>ddd</div>}
-                <FaSearch size="20" />
-              </button>
-              <button className="navIcon">
-                <FiGlobe size="20" />
-              </button>
-            </div>
-          </div>
-          <ul className="navBarSecond">
-            {menuList.map(menu => (
-              <Link to="/">
-                <li className="width" onClick={this.changeHandleBtn}>
-                  {menu}
-                </li>
+        {this.state.toggleOn ? (
+          <Search toggleOff={this.toggleOff} />
+        ) : (
+          <div className="mainNav">
+            <div className="navBarFirst">
+              <Link to="/login">
+                <FiMenu size="24" />
               </Link>
-            ))}
-          </ul>
-        </div>
+              <h1 className="name"> Kakao Villains </h1>
+              <div>
+                <button className="navIcon" onClick={this.toggleOn}>
+                  <FaSearch size="20" />
+                </button>
+                <button className="navIcon">
+                  <FiGlobe size="20" />
+                </button>
+              </div>
+            </div>
+            <ul className="navBarSecond">
+              {menuList.map(menu => (
+                <Link to="/">
+                  <li className="width">{menu}</li>
+                </Link>
+              ))}
+            </ul>
+          </div>
+        )}
       </div>
     );
   }

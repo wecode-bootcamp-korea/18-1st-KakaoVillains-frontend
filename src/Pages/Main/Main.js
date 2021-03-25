@@ -1,5 +1,5 @@
 import React from "react";
-import MainPageNav from "../../Components/MainNav";
+import MainNav from "../../Components/MainNav";
 import MainPageFeed from "./mainPageFeed";
 import "./Main.scss";
 
@@ -8,7 +8,7 @@ class Main extends React.Component {
     return (
       <>
         <div className="feedPage">
-          <MainPageNav />
+          <MainNav />
           <div className="line"></div>
           <MainPageFeed />
         </div>

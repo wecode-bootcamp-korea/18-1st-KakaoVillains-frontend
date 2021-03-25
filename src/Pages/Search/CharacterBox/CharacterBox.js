@@ -1,13 +1,18 @@
 import React from "react";
+import { withRouter } from "react-router";
 import "./characterBox.scss";
 
 class CharacterBox extends React.Component {
+  goToCharacter = e => {
+    const id = e.target.parentNode.parentNode.id;
+    this.props.history.push(`/category/character?characterSeq=${id}`);
+  };
   render() {
     return (
       <section className="characterBox">
         {CHARACTER.map(data => (
           <div className="character" id={data.id} key={data.id}>
-            <button onClick={this.props.goToCharacter}>
+            <button onClick={this.goToCharacter}>
               <img alt={data.name} src={data.img} />
             </button>
             <p>{data.name}</p>
@@ -18,7 +23,7 @@ class CharacterBox extends React.Component {
   }
 }
 
-export default CharacterBox;
+export default withRouter(CharacterBox);
 
 const CHARACTER = [
   {
