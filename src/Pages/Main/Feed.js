@@ -22,14 +22,56 @@ class Feed extends React.Component {
       value: '',
       commentList: [],
       content: [],
+      btnChangeValue: '',
     };
   }
+
+  inputComment = e => {
+    this.setState({ value: e.target.value });
+  };
 
   componentDidMount() {
     fetch(`http://10.58.4.39:8000/feed/${this.props.match.params.id}`)
       .then(res => res.json())
       .then(data => this.setState({ content: data.result }));
   }
+
+  pressEnter = async e => {
+    await fetch('http://10.58.4.39:8000/feed/reply?feed_id=1', {
+      method: 'POST',
+      body: JSON.stringify({
+        id: this.state.id,
+        content: this.state.value,
+      }),
+    })
+      .then(res => res.json())
+      .then(res => res.status);
+
+    e.preventDefault();
+    if (this.state.value === '') {
+      alert('내용을 입력해주세요');
+      return;
+    }
+
+    this.setState({
+      commentList: this.state.commentList.concat([
+        {
+          userId: this.state.id,
+          content: this.state.value,
+        },
+      ]),
+    });
+  };
+
+  changeHandleBtnColor = () => {
+    return this.state.btnChangeValue ? 'trueColor' : 'falseColor';
+  };
+
+  handleCommentDelete = index => {
+    this.setState({
+      commentList: this.state.commentList.filter((_, idx) => idx !== index),
+    });
+  };
 
   render() {
     const settings = {
@@ -40,7 +82,7 @@ class Feed extends React.Component {
       slidesToScroll: 1,
     };
     const title = '게시물';
-    //console.log(this.state.content);
+    const changeHandleBtnColor = this.state.value.length >= 1;
     return (
       <>
         <SubNav title={title} />
@@ -105,7 +147,14 @@ class Feed extends React.Component {
             <p className="feedContentTitle">{this.state.content?.[0]?.title}</p>
             <p className="feedContent">{this.state.content?.[0]?.content}</p>
           </div>
-          <Comment />
+
+          <Comment
+            value={this.state.value}
+            inputComment={this.inputComment}
+            changeHandleBtnColor={changeHandleBtnColor}
+            pressEnter={this.pressEnter}
+          />
+
           {this.state.content?.[0]?.reply.map(comment => (
             <CommentBox
               key={comment.id}
@@ -113,6 +162,7 @@ class Feed extends React.Component {
               text={comment.reply_content}
               likeCount={comment.like_count}
               createdAt={comment.datetime}
+              handleCommentDelete={this.handleCommentDelete}
             />
           ))}
         </div>

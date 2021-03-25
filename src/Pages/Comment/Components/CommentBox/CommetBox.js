@@ -12,14 +12,12 @@ class CommentBox extends React.Component {
   };
 
   render() {
+    //console.log(this.props);
     const { name, text, createdAt } = this.props;
     return (
       <div className="textContainer">
         <div className="name">{name}</div>
-        <div
-          className="delete"
-          onClick={() => this.props.handleCommentDelete(this.props.index)}
-        >
+        <div className="delete" onClick={() => this.props.handleCommentDelete}>
           x
         </div>
         <div className="textBox">
