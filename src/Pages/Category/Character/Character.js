@@ -1,5 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router';
+import SubNav from '../../../Components/SubNav';
 import Option from './Option/Option';
 import Products from './Products/Products';
 import SubCategory from './SubCategory/SubCategory';
@@ -50,6 +51,7 @@ const SUBJECT = {
   '폰 액세서리': 10,
   식품: 11,
 };
+
 class Character extends React.Component {
   constructor() {
     super();
@@ -148,6 +150,7 @@ class Character extends React.Component {
     } = this;
     return (
       <>
+        <SubNav title="캐릭터" />
         <main className="character">
           <Option changeCategory={changeCategory} category={category} />
           {!subCategory && (
