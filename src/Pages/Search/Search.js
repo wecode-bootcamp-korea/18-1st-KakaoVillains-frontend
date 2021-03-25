@@ -1,11 +1,9 @@
 import React from 'react';
-
 import CharacterBox from './CharacterBox/CharacterBox';
 import CategoryBox from './CategoryBox/CategoryBox';
 import SearchBox from './SearchBox/SearchBox';
 import SearchDataList from './SearchDataList/SearchDataList';
 import './search.scss';
-import { withRouter } from 'react-router';
 
 const IP = '';
 class Search extends React.Component {
@@ -41,7 +39,6 @@ class Search extends React.Component {
   };
 
   render() {
-    console.log(this.props.history);
     const { keyWord, keyWordList } = this.state;
     const { keyWordDelete, keyWordInput } = this;
     return (
@@ -65,4 +62,4 @@ class Search extends React.Component {
   }
 }
 
-export default withRouter(Search);
+export default Search;
