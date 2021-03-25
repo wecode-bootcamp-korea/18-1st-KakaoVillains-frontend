@@ -24,22 +24,23 @@ class Login extends React.Component {
     this.props.history.push('/signup');
   };
 
-  // goToMain = () => {
-  //   fetch('http://10.58.59.83:8000/account/signin', {
-  //     method: 'POST',
-  //     body: JSON.stringify({
-  //       email: this.state.id,
-  //       password: this.state.pw,
-  //     }),
-  //   })
-  //     .then(res => res.json())
-  //     .then(res => {
-  //       if (res.message === 'SUCCESS') {
-  //         localStorage.setItem('키값', res.access_token);
-  //         this.props.history.push('/');
-  //       }
-  //     });
-  // };
+  goToMain = () => {
+    fetch('http://10.58.6.130:8000/account/signin', {
+      method: 'POST',
+      body: JSON.stringify({
+        email: this.state.id,
+        password: this.state.pw,
+      }),
+    })
+      .then(res => res.json())
+      .then(res => {
+        console.log(res);
+        if (res.result === 'SUCCESS') {
+          sessionStorage.setItem('kakao-token', res.token);
+          this.props.history.push('/');
+        }
+      });
+  };
 
   render() {
     const isValidInput =
@@ -68,9 +69,7 @@ class Login extends React.Component {
               <p>로그인 상태 유지</p>
             </div>
             <button
-              className={`loginBtn ${
-                isValidInput ? 'changeBtnColor' : 'originBtnColor'
-              }`}
+              className={`loginBtn ${isValidInput && 'changeBtnColor'}`}
               onClick={this.goToMain}
             >
               로그인

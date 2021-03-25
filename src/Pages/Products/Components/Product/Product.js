@@ -64,7 +64,7 @@ class Product extends React.Component {
       <div>
         <header>
           <Slider {...settings}>
-            {image_list.map((imgList, idx) => {
+            {image_list?.map((imgList, idx) => {
               return <img key={idx} src={imgList} alt="이미지" />;
             })}
           </Slider>
@@ -75,7 +75,7 @@ class Product extends React.Component {
               <FaShareAlt className="shareIcon" />
             </button>
           </div>
-          <p className="headPrice">{price.toLocaleString()}원</p>
+          <p className="headPrice">{price}원</p>
           <div className="productGrade">
             <Rating value={average_rating} />
             <p>({review_count})</p>

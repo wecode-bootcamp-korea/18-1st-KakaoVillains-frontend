@@ -10,11 +10,10 @@ class Rating extends React.Component {
     return stars;
   };
   render() {
-    console.log(this.getStars());
     return (
       <div className="star">
-        {this.getStars(this.props.value).map(value => (
-          <img src={`/images/${value}.png`} alt="stars" />
+        {this.getStars(this.props.value).map((value, idx) => (
+          <img src={`/images/${value}.png`} key={idx} alt="stars" />
         ))}
       </div>
     );

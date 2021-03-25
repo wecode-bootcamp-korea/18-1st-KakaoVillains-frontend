@@ -24,7 +24,7 @@ class ReviewList extends React.Component {
           <button className="sortLike">좋아요순</button>
           <button className="sortNew">최신순</button>
         </div>
-        {review_list.map((product, idx) => (
+        {review_list?.map((product, idx) => (
           <div key={idx} className="productComment">
             <p className="commentUser">{product.reviewer}</p>
             <div className="productUserGrade">
@@ -32,10 +32,13 @@ class ReviewList extends React.Component {
               <span className="commentDate">{product.created_at}</span>
             </div>
             <p className="commentValue">{product.content}</p>
-            <div className="commentLike">
+            <div
+              className={`commentLike ${product.liked && 'changeBtnColor'}`}
+              // onClick={}
+            >
               <button>
                 <FaFreebsd className="likeBtnIcon" />
-                좋아요 {product.like_count}명
+                좋아요 {product['like_count']}명
               </button>
             </div>
           </div>
