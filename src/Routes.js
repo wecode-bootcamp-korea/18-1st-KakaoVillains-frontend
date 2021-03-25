@@ -1,15 +1,15 @@
-import React from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Character from "./Pages/Category/Character/Character";
-import Main from "./Pages/Main/Main";
-import MainNav from "./Components/MainNav";
-import SubNav from "./Components/SubNav";
-import Login from "./Pages/Login/Login";
-import SignUp from "./Pages/Login/SignUp/SignUp";
-import Search from "./Pages/Search/Search";
-import Footer from "./Components/Footer";
-import Products from "../src/Pages/Products/Products";
-import Feed from "./Pages/Main/Feed";
+import React from 'react';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import Character from './Pages/Category/Character/Character';
+import Main from './Pages/Main/Main';
+import MainNav from './Components/MainNav';
+import SubNav from './Components/SubNav';
+import Login from './Pages/Login/Login';
+import SignUp from './Pages/Login/SignUp/SignUp';
+import Search from './Pages/Search/Search';
+import Footer from './Components/Footer';
+import Products from '../src/Pages/Products/Products';
+import Feed from './Pages/Main/Feed';
 
 class Routes extends React.Component {
   render() {

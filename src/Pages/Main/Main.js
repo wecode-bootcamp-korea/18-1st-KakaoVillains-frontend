@@ -1,7 +1,7 @@
-import React from "react";
-import MainNav from "../../Components/MainNav";
-import MainPageFeed from "./mainPageFeed";
-import "./Main.scss";
+import React from 'react';
+import MainNav from '../../Components/MainNav';
+import MainPageFeed from './mainPageFeed';
+import './Main.scss';
 
 class Main extends React.Component {
   render() {

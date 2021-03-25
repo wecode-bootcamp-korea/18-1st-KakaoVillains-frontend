@@ -1,18 +1,18 @@
 /* eslint-disable prettier/prettier */
-import React from "react";
-import styled from "styled-components";
-import Slider from "react-slick";
-import ShareModal from "./Modal/ShareModal";
-import { withRouter } from "react-router-dom";
+import React from 'react';
+import styled from 'styled-components';
+import Slider from 'react-slick';
+import ShareModal from './Modal/ShareModal';
+import { withRouter } from 'react-router-dom';
 // import LoginModal from "./Modal/LoginModal";
-import { FaRegHeart } from "react-icons/fa";
-import { FaHeart } from "react-icons/fa";
-import { BsChat } from "react-icons/bs";
-import { BsReply } from "react-icons/bs";
-import { FiShoppingBag } from "react-icons/fi";
-import "./FeedList.scss";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+import { FaRegHeart } from 'react-icons/fa';
+import { FaHeart } from 'react-icons/fa';
+import { BsChat } from 'react-icons/bs';
+import { BsReply } from 'react-icons/bs';
+import { FiShoppingBag } from 'react-icons/fi';
+import './FeedList.scss';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 class FeedList extends React.Component {
   constructor() {
     super();
@@ -27,16 +27,16 @@ class FeedList extends React.Component {
   shareHandleModal = () => {
     this.setState({ isShareModalView: !this.state.isShareModalView }, () => {
       document.body.style.overflow = this.state.isShareModalView
-        ? "hidden"
-        : "unset";
+        ? 'hidden'
+        : 'unset';
     });
   };
 
   loginHandleModal = () => {
     this.setState({ login: !this.state.isLoginModalView }, () => {
       document.body.style.overflow = this.state.isLoginModalView
-        ? "hidden"
-        : "unset";
+        ? 'hidden'
+        : 'unset';
     });
   };
 
@@ -57,7 +57,7 @@ class FeedList extends React.Component {
       slidesToShow: 1,
       slidesToScroll: 1,
     };
-    console.log(this.state.login);
+
     return (
       <div className="feedBox">
         <div className="feedBoxHeader">
@@ -108,7 +108,7 @@ class FeedList extends React.Component {
           </div>
         </div>
         <div className="feedLikeCount">
-          좋아요{" "}
+          좋아요{' '}
           <span className="feedLikeCountUpDown">{this.props.like_count}</span>개
         </div>
         <p className="feedContentTitle">{this.props.title}</p>
@@ -116,7 +116,7 @@ class FeedList extends React.Component {
         <div className="feedReplyBox">
           <button onClick={this.goToFeedDetail} className="feedReplyBoxBtn">
             <div className="feedReplyCount">
-              댓글{" "}
+              댓글{' '}
               <span className="feedReplyCountUpDown">
                 {this.props.reply_count}
               </span>
