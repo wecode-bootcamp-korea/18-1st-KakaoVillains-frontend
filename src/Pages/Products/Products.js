@@ -15,7 +15,7 @@ class Products extends React.Component {
   constructor() {
     super();
     this.state = {
-      productInfo: [],
+      productInfo: {},
       detailModal: false,
       deliveryModal: false,
     };
@@ -32,44 +32,45 @@ class Products extends React.Component {
       deliveryModal: !this.state.deliveryModal,
     });
   };
-  componentDidMount() {
-    fetch(`http://10.58.6.130:8000/product/${this.props.match.params.id}`)
-      .then(res => res.json())
-      .then(data => this.setState({ productInfo: data.result }));
+
+  componentDidUpdate(prevProps) {
+    if (prevProps.match.params.id !== this.props.match.params.id) {
+      fetch(`http://54.180.24.190:8000/product/${this.props.match.params.id}`)
+        .then(res => res.json())
+        .then(res => this.setState({ productInfo: res.result }));
+    }
+    window.scrollTo(0, 0);
   }
-  // componentDidMount() {
-  //   fetch("/data/ProductData.json", {
-  //     methhod: "GET",
-  //   })
-  //     .then(res => res.json())
-  //     .then(res =>
-  //       this.setState({
-  //         productInfo: res,
-  //       })
-  //     );
-  // }
+
+  componentDidMount() {
+    fetch("http://54.180.24.190:8000/product/11", {
+      methhod: "GET",
+    })
+      .then(res => res.json())
+      .then(res => {
+        this.setState({
+          productInfo: res.result,
+        });
+      });
+  }
 
   render() {
     const title = "제품상세";
 
-    const productInfo = this.state.productInfo;
-    console.log(this.state.productInfo?.[0]?.average_rating);
+    const { productInfo } = this.state;
+
     return (
       <div className="productsWrap">
         <article>
           <SubNav title={title} />
-          {productInfo.map(info => {
-            return (
-              <Product
-                name={info.name}
-                price={info.price}
-                average_rating={info.average_rating}
-                description={info.description}
-                review_count={info.review_count}
-                image_list={info.image_list}
-              />
-            );
-          })}
+          <Product
+            name={productInfo.name}
+            price={productInfo.price}
+            average_rating={productInfo.average_rating}
+            description={productInfo.description}
+            review_count={productInfo.review_count}
+            image_list={productInfo.image_list}
+          />
           <div className="productDetailBox">
             <button className="productDetail">
               <div className="detailBtn" onClick={this.openDetailModal}>
@@ -109,23 +110,15 @@ class Products extends React.Component {
               </button>
             </div>
           </div>
-          {productInfo.map(info => {
-            return (
-              <ReviewList
-                average_rating={info.average_rating}
-                review_count={info.review_count}
-                review_list={info.review_list}
-              />
-            );
-          })}
-          {productInfo.map(info => {
-            return <Relative related_products={info.related_products} />;
-          })}
+          <ReviewList
+            average_rating={productInfo.average_rating}
+            review_count={productInfo.review_count}
+            review_list={productInfo.review_list}
+          />
+          <Relative related_products={productInfo.related_products} />
           <Footer />
         </article>
-        {productInfo.map(info => {
-          return <BuyBtn price={info.price} />;
-        })}
+        <BuyBtn price={productInfo.price} />
       </div>
     );
   }
