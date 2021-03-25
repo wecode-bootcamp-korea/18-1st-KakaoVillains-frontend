@@ -1,16 +1,16 @@
-import React from 'react';
-import CharacterBox from './CharacterBox/CharacterBox';
-import CategoryBox from './CategoryBox/CategoryBox';
-import SearchBox from './SearchBox/SearchBox';
-import SearchDataList from './SearchDataList/SearchDataList';
-import './search.scss';
+import React from "react";
+import CharacterBox from "./CharacterBox/CharacterBox";
+import CategoryBox from "./CategoryBox/CategoryBox";
+import SearchBox from "./SearchBox/SearchBox";
+import SearchDataList from "./SearchDataList/SearchDataList";
+import "./search.scss";
 
-const IP = '';
+const IP = "54.180.24.190";
 class Search extends React.Component {
   constructor() {
     super();
     this.state = {
-      keyWord: '',
+      keyWord: "",
       keyWordList: [],
     };
   }
@@ -24,7 +24,7 @@ class Search extends React.Component {
 
   keyWordDelete = () => {
     this.setState({
-      keyWord: '',
+      keyWord: "",
     });
   };
 

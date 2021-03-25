@@ -1,0 +1,50 @@
+{
+	"result": [{
+		"id": 1,
+		"username": "\uc544\ubaac\ub4dc",
+		"title": "\ud06c\uc73c \ub0b4\uac00 \uc0dd\uac01\ud574\ub3c4 \ub0b4\uac00 \ucacc \uba4b\uc788\ub294 \uc21c\uac04!",
+		"content": "\"\"1. \uc0e4\uc6cc\ud558\uace0 \uac70\uc6b8 \ubcfc \ub54c \"\"\"\"\uc624 \ub098 \ucacc \uac20\ucc2e\uc740\ub370?\"\"",
+		"image_url": ["https://t1.kakaocdn.net/friends/prod/main_tab/feed/media/media_0_20201231213914.jpg", "https://t1.kakaocdn.net/friends/prod/main_tab/feed/media/media_1_20201231213914.jpg", "https://t1.kakaocdn.net/friends/prod/main_tab/feed/media/media_2_20201231213915.jpg", "https://t1.kakaocdn.net/friends/prod/main_tab/feed/media/media_3_20201231213915.jpg"],
+		"profile_picture": "https://i.imgur.com/g6EO7M8.jpeg",
+		"like_count": 1,
+		"reply_count": 1,
+		"recommend_products": [{
+			"name": "\uc655\ub85d\ub2d8\ub77c\uc774\uc5b8",
+			"price": 30000,
+			"image_url": "dkfjdkfjdkfjdfsdf"
+		}, {
+			"name": "\uc5b4\ud53c\uce58\uce58\uce58",
+			"price": 23000,
+			"image_url": "dkfjdkfjdkfjdfsdf"
+		}],
+		"reply": [{
+			"id": 31,
+			"reply_content": "\ub0b4\uc6a9 \uc218\uc815!!",
+			"reply_username": "wonny",
+			"like_count": 1,
+			"reply_id": 3,
+			"datetime": "2021-03-22"
+		}, {
+			"id": 30,
+			"reply_content": "\ubc31\uc5d4\ub4dc \ub108\ubb34 \uc88b\uc544\uc694!!!",
+			"reply_username": "wonny",
+			"like_count": 0,
+			"reply_id": null,
+			"datetime": "2021-03-22"
+		}, {
+			"id": 26,
+			"reply_content": "\uc88b\uc544\uc694",
+			"reply_username": "\uc544\ubaac\ub4dc",
+			"like_count": 0,
+			"reply_id": null,
+			"datetime": "2021-03-20"
+		}, {
+			"id": 18,
+			"reply_content": "\uc88b\uc544\uc6a9\u3147\uc694\uc694\uc694",
+			"reply_username": "\uc544\ubaac\ub4dc",
+			"like_count": 0,
+			"reply_id": null,
+			"datetime": "2021-03-19"
+		}]
+	}]
+}

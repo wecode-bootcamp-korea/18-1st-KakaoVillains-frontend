@@ -1,28 +1,28 @@
-import React from 'react';
-import styled from 'styled-components';
-import Slider from 'react-slick';
-import ShareModal from './Modal/ShareModal';
-import SubNav from '../../Components/SubNav';
-import Comment from '../Comment/Comment';
-import CommentBox from '../Comment/Components/CommentBox/CommetBox';
-import Footer from '../../Components/Footer';
-import { FaRegHeart } from 'react-icons/fa';
-import { FaHeart } from 'react-icons/fa';
-import { BsChat } from 'react-icons/bs';
-import { BsReply } from 'react-icons/bs';
-import './Feed.scss';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
+import React from "react";
+import styled from "styled-components";
+import Slider from "react-slick";
+import ShareModal from "./Modal/ShareModal";
+import SubNav from "../../Components/SubNav";
+import Comment from "../Comment/Comment";
+import CommentBox from "../Comment/Components/CommentBox/CommetBox";
+import Footer from "../../Components/Footer";
+import { FaRegHeart } from "react-icons/fa";
+import { FaHeart } from "react-icons/fa";
+import { BsChat } from "react-icons/bs";
+import { BsReply } from "react-icons/bs";
+import "./Feed.scss";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 class Feed extends React.Component {
   constructor() {
     super();
     this.state = {
-      id: '',
-      value: '',
+      id: "",
+      value: "",
       commentList: [],
       content: [],
-      btnChangeValue: '',
+      btnChangeValue: "",
     };
   }
 
@@ -40,7 +40,7 @@ class Feed extends React.Component {
     await fetch(
       `http://10.58.0.65:8000/feed/reply?feed_${this.props.match.params.id}`,
       {
-        method: 'POST',
+        method: "POST",
         body: JSON.stringify({
           id: this.state.id,
           content: this.state.value,
@@ -51,8 +51,8 @@ class Feed extends React.Component {
       .then(res => res.status);
 
     e.preventDefault();
-    if (this.state.value === '') {
-      alert('내용을 입력해주세요');
+    if (this.state.value === "") {
+      alert("내용을 입력해주세요");
       return;
     }
 
@@ -67,21 +67,8 @@ class Feed extends React.Component {
   };
 
   changeHandleBtnColor = () => {
-    return this.state.btnChangeValue ? 'trueColor' : 'falseColor';
+    return this.state.btnChangeValue ? "trueColor" : "falseColor";
   };
-
-  // handleCommentDelete = async () => {
-  //   console.log('hello');
-  //   await fetch('http://10.58.0.65:8000/feed/reply?reply_id=141', {
-  //     method: 'DELETE',
-  //   })
-  //     .then(res => res.json())
-  //     .then(data => console.log(data));
-
-  //   // this.setState({
-  //   //  commentList: this.state.commentList.filter((_, idx) => idx !== index),
-  //   // });
-  // };
 
   render() {
     const settings = {
@@ -91,7 +78,7 @@ class Feed extends React.Component {
       slidesToShow: 1,
       slidesToScroll: 1,
     };
-    const title = '게시물';
+    const title = "게시물";
     const {
       content,
       isLoginModalView,
@@ -123,7 +110,7 @@ class Feed extends React.Component {
               ))}
             </StyledSlider>
             <div className="feedBoxIcon">
-              {isLoginModalView ? '' : ''}
+              {isLoginModalView ? "" : ""}
               {heartColor ? (
                 <div className="heartIcon">
                   <button onClick={this.colorChangeBtn}>
@@ -178,9 +165,6 @@ class Feed extends React.Component {
             />
           ))}
         </div>
-        {/* <div className="moreContainer">
-          <button id="moreBtn">더보기+</button>
-        </div> */}
         <Footer />
       </>
     );

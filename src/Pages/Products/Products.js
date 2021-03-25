@@ -1,15 +1,15 @@
-import React from 'react';
-import SubNav from '../../Components/SubNav';
-import Footer from '../../Components/Footer';
-import Product from './Components/Product/Product';
-import ReviewList from './Components/ReviewList/ReviewList';
-import Relative from './Components/Relative/Relative';
-import BuyBtn from './Components/BuyBtn/BuyBtn';
-import { FaAngleDown } from 'react-icons/fa';
-import { BsDot, BsFillChatFill } from 'react-icons/bs';
-import './Products.scss';
-import './_slick-theme.scss';
-import './_slick.scss';
+import React from "react";
+import SubNav from "../../Components/SubNav";
+import Footer from "../../Components/Footer";
+import Product from "./Components/Product/Product";
+import ReviewList from "./Components/ReviewList/ReviewList";
+import Relative from "./Components/Relative/Relative";
+import BuyBtn from "./Components/BuyBtn/BuyBtn";
+import { FaAngleDown } from "react-icons/fa";
+import { BsDot, BsFillChatFill } from "react-icons/bs";
+import "./Products.scss";
+import "./_slick-theme.scss";
+import "./_slick.scss";
 
 class Products extends React.Component {
   constructor() {
@@ -32,24 +32,28 @@ class Products extends React.Component {
       deliveryModal: !this.state.deliveryModal,
     });
   };
-
   componentDidMount() {
-    fetch('/data/ProductData.json', {
-      methhod: 'GET',
-    })
+    fetch(`http://10.58.6.130:8000/product/${this.props.match.params.id}`)
       .then(res => res.json())
-      .then(res =>
-        this.setState({
-          productInfo: res,
-        })
-      );
+      .then(data => this.setState({ productInfo: data.result }));
   }
+  // componentDidMount() {
+  //   fetch("/data/ProductData.json", {
+  //     methhod: "GET",
+  //   })
+  //     .then(res => res.json())
+  //     .then(res =>
+  //       this.setState({
+  //         productInfo: res,
+  //       })
+  //     );
+  // }
 
   render() {
-    const title = '제품상세';
+    const title = "제품상세";
 
     const productInfo = this.state.productInfo;
-
+    console.log(this.state.productInfo?.[0]?.average_rating);
     return (
       <div className="productsWrap">
         <article>

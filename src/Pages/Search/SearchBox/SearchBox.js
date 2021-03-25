@@ -1,7 +1,7 @@
-import React from 'react';
-import { BiSearch } from 'react-icons/bi';
-import { withRouter } from 'react-router';
-import './searchBox.scss';
+import React from "react";
+import { BiSearch } from "react-icons/bi";
+import { withRouter } from "react-router";
+import "./searchBox.scss";
 
 class SearchBox extends React.Component {
   goToSearchResult = e => {
@@ -10,7 +10,7 @@ class SearchBox extends React.Component {
   };
 
   pressEnter = e => {
-    if (e.key === 'Enter') {
+    if (e.key === "Enter") {
       this.goToSearchResult(e);
     }
   };

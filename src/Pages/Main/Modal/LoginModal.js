@@ -1,7 +1,7 @@
-import React from 'react';
-import { BsX } from 'react-icons/bs';
-import { BsFillChatFill } from 'react-icons/bs';
-import './LoginModal.scss';
+import React from "react";
+import { BsX } from "react-icons/bs";
+import { BsFillChatFill } from "react-icons/bs";
+import "./LoginModal.scss";
 
 class LoginModal extends React.Component {
   render() {
@@ -9,7 +9,7 @@ class LoginModal extends React.Component {
       <section className="modal">
         <div className="modalBox">
           <div className="xMark">
-            <button>
+            <button onClick={this.props.loginHandleModal}>
               <BsX size="32" color="gray" />
             </button>
           </div>

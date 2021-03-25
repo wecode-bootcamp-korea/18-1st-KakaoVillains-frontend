@@ -1,0 +1,131 @@
+{
+  "result": [
+      {
+          "id": 1,
+          "username": "아몬드",
+          "title": "크으 내가 생각해도 내가 쫌 멋있는 순간!",
+          "content": "\"\"1. 샤워하고 거울 볼 때 \"\"\"\"오 나 쫌 갠찮은데?\"\"",
+          "image_url": [
+              "https://t1.kakaocdn.net/friends/prod/main_tab/feed/media/media_0_20201231213914.jpg",
+              "https://t1.kakaocdn.net/friends/prod/main_tab/feed/media/media_1_20201231213914.jpg",
+              "https://t1.kakaocdn.net/friends/prod/main_tab/feed/media/media_2_20201231213915.jpg",
+              "https://t1.kakaocdn.net/friends/prod/main_tab/feed/media/media_3_20201231213915.jpg"
+          ],
+          "profile_picture": "https://i.imgur.com/g6EO7M8.jpeg",
+          "like_count": 0,
+          "reply_count": 0,
+          "reply_username": "아몬드",
+          "reply": "좋아요",
+          "recommend_products": [
+              {
+                  "name": "왕록님라이언",
+                  "price": "30000.00",
+                  "image_url": "dkfjdkfjdkfjdfsdf"
+              },
+              {
+                  "name": "어피치치치",
+                  "price": "23000.00",
+                  "image_url": "dkfjdkfjdkfjdfsdf"
+              }
+          ]
+      },
+      {
+          "id": 2,
+          "username": "자이제",
+          "title": "집이야? 브런치 카페야?",
+          "content": "우리와 함께라면 집도 카페처럼 ",
+          "image_url": [
+              "https://t1.kakaocdn.net/friends/new_store/prod/main_tab/feed/media/media_0_20210311111702.jpg",
+              "https://t1.kakaocdn.net/friends/prod/main_tab/feed/media/media_0_20210315113851.jpg",
+              "https://t1.kakaocdn.net/friends/prod/main_tab/feed/media/media_1_20210315113851.jpg",
+              "https://t1.kakaocdn.net/friends/prod/main_tab/feed/media/media_2_20210315113851.jpg",
+              "https://t1.kakaocdn.net/friends/prod/main_tab/feed/media/media_3_20210315113851.jpg",
+              "https://t1.kakaocdn.net/friends/prod/main_tab/feed/media/media_4_20210315113851.jpg",
+              "https://t1.kakaocdn.net/friends/prod/main_tab/feed/media/media_5_20210315113851.jpg",
+              "https://t1.kakaocdn.net/friends/prod/main_tab/feed/media/media_6_20210315113851.jpg"
+          ],
+          "profile_picture": "https://i.imgur.com/SmnwZ5k.jpeg",
+          "like_count": 0,
+          "reply_count": 0,
+          "reply_username": "준식",
+          "reply": "좋아요",
+          "recommend_products": []
+      },
+      {
+          "id": 3,
+          "username": "준식",
+          "title": "피치피치 어피치! 핑크빛 만남",
+          "content": "어피치의 이뻐지기 프로젝트어피치 X 에스더버니.",
+          "image_url": [
+              "https://t1.kakaocdn.net/friends/prod/main_tab/feed/media/media_0_20210308175813.jpg",
+              "https://t1.kakaocdn.net/friends/prod/main_tab/feed/media/media_0_20210308175948.jpg",
+              "https://t1.kakaocdn.net/friends/prod/main_tab/feed/media/media_1_20210308175948.jpg",
+              "https://t1.kakaocdn.net/friends/prod/main_tab/feed/media/media_2_20210308175948.jpg",
+              "https://t1.kakaocdn.net/friends/prod/main_tab/feed/media/media_3_20210308175948.jpg",
+              "https://t1.kakaocdn.net/friends/prod/main_tab/feed/media/media_4_20210308175948.jpg",
+              "https://t1.kakaocdn.net/friends/prod/main_tab/feed/media/media_5_20210308175949.jpg",
+              "https://t1.kakaocdn.net/friends/prod/main_tab/feed/media/media_6_20210308175949.jpg",
+              "https://t1.kakaocdn.net/friends/prod/main_tab/feed/media/media_7_20210308175949.jpg"
+          ],
+          "profile_picture": "https://i.imgur.com/afE3B1w.jpeg",
+          "like_count": 0,
+          "reply_count": 0,
+          "reply_username": "아몬드",
+          "reply": "좋아요",
+          "recommend_products": []
+      },
+      {
+          "id": 4,
+          "username": "죠르디",
+          "title": "지구를 사랑하는 마음을",
+          "content": "일회용 컵 사용은 줄이고우리와 함께 시작해볼래?",
+          "image_url": [
+              "https://t1.kakaocdn.net/friends/prod/main_tab/feed/media/media_0_20210308152636.jpg",
+              "https://t1.kakaocdn.net/friends/prod/main_tab/feed/media/media_1_20210308152636.jpg",
+              "https://t1.kakaocdn.net/friends/prod/main_tab/feed/media/media_2_20210308152636.jpg"
+          ],
+          "profile_picture": "https://i.imgur.com/0D7b1Gt.jpeg",
+          "like_count": 0,
+          "reply_count": 0,
+          "reply_username": "준식",
+          "reply": "좋아요",
+          "recommend_products": []
+      },
+      {
+          "id": 5,
+          "username": "칸",
+          "title": "커피 한 잔 할래요",
+          "content": "커피 한 잔 할래요",
+          "image_url": [
+              "https://t1.kakaocdn.net/friends/prod/main_tab/feed/media/media_0_20210218165255.jpg",
+              "https://t1.kakaocdn.net/friends/prod/main_tab/feed/media/media_0_20210218165301.jpg",
+              "https://t1.kakaocdn.net/friends/prod/main_tab/feed/media/media_1_20210218165301.jpg",
+              "https://t1.kakaocdn.net/friends/prod/main_tab/feed/media/media_2_20210218165301.jpg",
+              "https://t1.kakaocdn.net/friends/prod/main_tab/feed/media/media_3_20210218165301.jpg",
+              "https://t1.kakaocdn.net/friends/prod/main_tab/feed/media/media_4_20210218165301.jpg",
+              "https://t1.kakaocdn.net/friends/prod/main_tab/feed/media/media_5_20210218165302.jpg",
+              "https://t1.kakaocdn.net/friends/prod/main_tab/feed/media/media_6_20210218165302.jpg",
+              "https://t1.kakaocdn.net/friends/prod/main_tab/feed/media/media_7_20210218165302.jpg"
+          ],
+          "profile_picture": "https://i.imgur.com/aBgta2g.jpeg",
+          "like_count": 0,
+          "reply_count": 0,
+          "reply_username": "자이제",
+          "reply": "좋아요",
+          "recommend_products": []
+      },
+      {
+          "id": 6,
+          "username": "준식",
+          "title": "허정원이최고야",
+          "content": "모달창은귀엽네요",
+          "image_url": [],
+          "profile_picture": "https://i.imgur.com/afE3B1w.jpeg",
+          "like_count": 0,
+          "reply_count": 0,
+          "reply_username": "",
+          "reply": "",
+          "recommend_products": []
+      }
+  ]
+}

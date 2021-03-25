@@ -1,6 +1,6 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import './searchDataList.scss';
+import React from "react";
+import { Link } from "react-router-dom";
+import "./searchDataList.scss";
 
 class SearchDataList extends React.Component {
   render() {

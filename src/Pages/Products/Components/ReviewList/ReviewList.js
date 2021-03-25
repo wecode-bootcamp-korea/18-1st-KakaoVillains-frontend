@@ -1,7 +1,7 @@
-import React from 'react';
-import Rating from '../Rating/Rating';
-import { FaFreebsd } from 'react-icons/fa';
-import { BsPencil } from 'react-icons/bs';
+import React from "react";
+import Rating from "../Rating/Rating";
+import { FaFreebsd } from "react-icons/fa";
+import { BsPencil } from "react-icons/bs";
 
 class ReviewList extends React.Component {
   render() {

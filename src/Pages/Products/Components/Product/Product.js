@@ -1,13 +1,13 @@
-import React from 'react';
-import Rating from '../Rating/Rating';
+import React from "react";
+import Rating from "../Rating/Rating";
 import {
   FaShareAlt,
   FaFacebookF,
   FaTwitter,
   FaGithubAlt,
-} from 'react-icons/fa';
-import { RiKakaoTalkFill } from 'react-icons/ri';
-import Slider from 'react-slick';
+} from "react-icons/fa";
+import { RiKakaoTalkFill } from "react-icons/ri";
+import Slider from "react-slick";
 
 class Product extends React.Component {
   constructor() {

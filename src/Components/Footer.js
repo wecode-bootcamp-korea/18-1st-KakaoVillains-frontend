@@ -1,19 +1,21 @@
-import React from 'react';
-import { FaAngleDown } from 'react-icons/fa';
-import './Footer.scss';
+import React from "react";
+import { FaAngleDown } from "react-icons/fa";
+import "./Footer.scss";
 
 class Footer extends React.Component {
   render() {
     return (
       <div className="FooterContainer">
         <div className="Footer">
-          <span className="info1">제휴문의 </span>
-          <span className="line">|</span>
-          <span className="info2">고객문의 </span>
-          <span className="line">|</span>
-          <span className="info3">이용약관 </span>
-          <span className="line">|</span>
-          <span className="info4">개인정보처리방침</span>
+          <ul>
+            <li className="info1">제휴문의 </li>
+            <li className="line">|</li>
+            <li className="info2">고객문의 </li>
+            <li className="line">|</li>
+            <li className="info3">이용약관 </li>
+            <li className="line">|</li>
+            <li className="info4">개인정보처리방침</li>
+          </ul>
         </div>
         <div className="Footer2">
           <div className="FooterSuper">

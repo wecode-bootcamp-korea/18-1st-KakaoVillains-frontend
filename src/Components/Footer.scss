@@ -11,12 +11,20 @@
 
   .Footer {
     display: flex;
-    align-items: center;
     width: 100%;
     margin-top: 20px;
     margin-bottom: 40px;
     background-color: white;
 
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    li {
+      float: left;
+    }
     .info1,
     .info2,
     .info3 {
