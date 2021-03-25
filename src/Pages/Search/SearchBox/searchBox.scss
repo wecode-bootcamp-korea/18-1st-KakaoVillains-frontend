@@ -28,7 +28,6 @@ $border-style: solid 1px rgb(239, 240, 244);
     }
 
     button {
-      display: none;
       position: absolute;
       right: 10px;
       padding: 1px;
@@ -39,11 +38,6 @@ $border-style: solid 1px rgb(239, 240, 244);
       color: white;
       background-color: #c8c9cc;
     }
-
-    .btnOn {
-      display: inline;
-    }
-
     input {
       border-radius: 30px;
       padding: 13px 13px 13px 38px;
