@@ -1,16 +1,85 @@
+$전체: burlywood;
+$아몬드: #858f92;
+$자이제: #7888c3;
+$준식: #ffe480;
+$죠르디: #a6dca0;
+$칸: #80d07f;
+$타이거: #ffc780;
+$토끼: #fdf067;
+
 .option {
   padding: 100px;
   height: 220px;
-  background-color: #a6dca0;
+  background-color: $전체;
+  &.전체,
+  &.팬다어덜트,
+  &.두부,
+  &.식품 {
+    background-color: $전체;
+    option {
+      background-color: $전체;
+    }
+  }
+  &.아몬드,
+  &.프라다,
+  &.생활테크,
+  &.토이 {
+    background-color: $아몬드;
+    option {
+      background-color: $아몬드;
+    }
+  }
+  &.자이제,
+  &.피치피치,
+  &.파자마 {
+    background-color: $자이제;
+    option {
+      background-color: $자이제;
+    }
+  }
+  &.준식,
+  &.고냥이,
+  &.의류 {
+    background-color: $준식;
+    option {
+      background-color: $준식;
+    }
+  }
+  &.죠르디,
+  &.꾀돌이,
+  &.문구 {
+    background-color: $죠르디;
+    option {
+      background-color: $죠르디;
+    }
+  }
+  &.칸,
+  &.단무지,
+  &.잡화 {
+    background-color: $칸;
+    option {
+      background-color: $칸;
+    }
+  }
+  &.타이거,
+  &.토끼,
+  &.리빙 {
+    background-color: $타이거;
+    option {
+      background-color: $타이거;
+    }
+  }
 
   select {
-    background-color: #a6dca0;
+    background-color: transparent;
     color: white;
     font-size: 25px;
     font-weight: bold;
 
     option {
       font-size: 20px;
+      color: white;
+      background-color: burlywood;
     }
   }
 
