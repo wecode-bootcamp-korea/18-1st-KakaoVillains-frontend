@@ -37,13 +37,16 @@ class Feed extends React.Component {
   }
 
   pressEnter = async e => {
-    await fetch('http://10.58.0.65:8000/feed/reply?feed_id=4', {
-      method: 'POST',
-      body: JSON.stringify({
-        id: this.state.id,
-        content: this.state.value,
-      }),
-    })
+    await fetch(
+      `http://10.58.0.65:8000/feed/reply?feed_${this.props.match.params.id}`,
+      {
+        method: 'POST',
+        body: JSON.stringify({
+          id: this.state.id,
+          content: this.state.value,
+        }),
+      }
+    )
       .then(res => res.json())
       .then(res => res.status);
 
