@@ -5,6 +5,7 @@ import SearchBox from './SearchBox/SearchBox';
 import SearchDataList from './SearchDataList/SearchDataList';
 import './search.scss';
 
+const IP = '';
 class Search extends React.Component {
   constructor() {
     super();
@@ -15,12 +16,10 @@ class Search extends React.Component {
   }
 
   keyWordInput = e => {
-    this.setState(
-      {
-        keyWord: e.target.value,
-      },
-      () => this.filterKeyword()
-    );
+    this.setState({
+      keyWord: e.target.value,
+    });
+    this.filterKeyword(e);
   };
 
   keyWordDelete = () => {
@@ -29,10 +28,8 @@ class Search extends React.Component {
     });
   };
 
-  filterKeyword = () => {
-    fetch(
-      `http://10.58.2.247:8000/product/search?keyword=${this.state.keyWord}`
-    )
+  filterKeyword = e => {
+    fetch(`http://${IP}:8000/product/search?keyword=${e.target.value}`)
       .then(res => res.json())
       .then(res =>
         this.setState({
