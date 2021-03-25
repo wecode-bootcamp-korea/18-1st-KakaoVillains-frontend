@@ -1,0 +1,11 @@
+[
+  {
+    "id": 1,
+    "img": "https://i.imgur.com/0D7b1Gt.jpeg",
+    "name": "죠르디 선풍기",
+    "discount": true,
+    "rate": 10,
+    "discountPrice": 9000,
+    "price": 10000
+  }
+]
