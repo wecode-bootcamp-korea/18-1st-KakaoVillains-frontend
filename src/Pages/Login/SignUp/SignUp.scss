@@ -1,24 +1,24 @@
 %box-Routine {
-	margin-top: 40px;
+  margin-top: 40px;
   font-size: 12px;
   font-weight: bold;
 }
 
 %input-Routine {
-	width: 440px;
+  width: 440px;
   height: 47px;
   border-bottom: 1px solid #cccccc;
   font-size: 15px;
   font-weight: bold;
-          
+
   &::placeholder {
-    color: #cccccc;  
+    color: #cccccc;
   }
 
   &:focus {
     border-bottom: 3px solid #fec300;
     border-radius: 3px;
-  }  
+  }
 }
 
 .signUpWrap {
@@ -26,25 +26,25 @@
 
   article {
     display: flex;
-    flex-direction: column;    
-    
+    flex-direction: column;
+
     .headName {
       margin: 40px auto;
-      font-size: 35px;    
-    } 
+      font-size: 35px;
+    }
 
     .inforBox {
-      width: 580px;      
+      width: 580px;
       margin: auto;
       margin-bottom: 30px;
-      padding: 60px 70px 30px; 
+      padding: 60px 70px 30px;
       border: 1px solid #cccccc;
-      border-radius: 3px;  
-      
+      border-radius: 3px;
+
       .necessary {
         color: red;
       }
-      
+
       .headText {
         font-size: 24px;
         font-weight: bold;
@@ -54,15 +54,15 @@
         border-bottom: 1px solid red;
       }
 
-      .idBox {        
+      .idBox {
         @extend %box-Routine;
 
         .id {
           @extend %input-Routine;
         }
-      }      
+      }
 
-      .pwBox {        
+      .pwBox {
         @extend %box-Routine;
 
         .pw {
@@ -91,12 +91,12 @@
       }
 
       .birthAndSexBox {
-        @extend %box-Routine;        
+        @extend %box-Routine;
 
         .birthDay {
-          margin-top: 10px; 
+          margin-top: 10px;
           border-bottom: 1px solid #cccccc;
-          
+
           .year {
             width: 120px;
             border: none;
@@ -118,8 +118,8 @@
             font-size: 16px;
           }
         }
-        
-        .sex {          
+
+        .sex {
           height: 52px;
           font-size: 15px;
           font-weight: 400;
@@ -144,7 +144,7 @@
         border-radius: 5px;
         background-color: #eeeeee;
         font-size: 15px;
-        font-weight: bold; 
+        font-weight: bold;
       }
 
       .changeBtnColor {

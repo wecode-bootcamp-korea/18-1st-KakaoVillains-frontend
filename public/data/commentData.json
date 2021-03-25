@@ -1,0 +1,55 @@
+[
+  {
+    "id": 1,
+    "userId": "양지은",
+    "content": "죠르디는 귀여워.",
+    "likeCount": "좋아요 1개",
+    "createdAt": "방금",
+    "replyId": "죠르디"
+  },
+
+  {
+    "id": 2,
+    "userId": "송나은",
+    "content": "죠르디는 내 최애 캐릭터!",
+    "likeCount": "좋아요 1개",
+    "createdAt": "방금",
+    "replyId": "죠르디"
+  },
+
+  {
+    "id": 3,
+    "userId": "킹록",
+    "content": "죠르디가 누군데?",
+    "likeCount": "좋아요 1개",
+    "createdAt": "5시간 전",
+    "replyId": "죠르디"
+  },
+
+  {
+    "id": 4,
+    "userId": "허정원",
+    "content": "오케이~",
+    "likeCount": "좋아요 1개",
+    "createdAt": "1일 전",
+    "replyId": "죠르디"
+  },
+
+  {
+    "id": 5,
+    "userId": "준우",
+    "content": "롤로노아 조로",
+    "likeCount": "좋아요 1개",
+    "createdAt": "2일 전",
+    "replyId": "죠르디"
+  },
+
+  {
+    "id": 6,
+    "userId": "배성훈",
+    "content": "아 맞나~",
+    "likeCount": "좋아요 1개",
+    "createdAt": "3일 전",
+    "replyId": "죠르디"
+  }
+]

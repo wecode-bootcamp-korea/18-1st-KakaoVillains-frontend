@@ -8,6 +8,7 @@ import SignUp from './Pages/Login/SignUp/SignUp';
 import Search from './Pages/Search/Search';
 import Footer from './Components/Footer';
 import Products from '../src/Pages/Products/Products';
+import Feed from './Pages/Main/Feed';
 
 class Routes extends React.Component {
   render() {
@@ -22,6 +23,8 @@ class Routes extends React.Component {
           <Route exact path="/login" component={Login} />
           <Route exact path="/signup" component={SignUp} />
           <Route exact path="/footer" component={Footer} />
+          <Route exact path="/feed" component={Feed} />
+          <Route exact path="/feed/:id" component={Feed} />
         </Switch>
       </Router>
     );

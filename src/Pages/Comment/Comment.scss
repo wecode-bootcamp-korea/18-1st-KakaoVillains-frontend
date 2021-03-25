@@ -1,0 +1,56 @@
+body {
+  display: flex;
+  justify-content: center;
+
+  .commentContainer {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: 640px;
+    height: 70px;
+    margin-top: 20px;
+    border-bottom: solid 1px rgb(216, 216, 216);
+
+    .inputBox {
+      cursor: auto;
+      width: 600px;
+      height: 50px;
+      margin: auto;
+      resize: none;
+      background-color: rgb(240, 241, 244);
+      border-radius: 0px 6.4vw 6.4vw;
+    }
+
+    .commentBtn {
+      position: absolute;
+      cursor: pointer;
+      top: 18px;
+      right: 25px;
+      font-size: 30px;
+      color: #acaaaa;
+    }
+
+    .trueColor {
+      color: black;
+    }
+
+    .falseColor {
+      color: #acaaaa;
+    }
+  }
+
+  .replyContainer {
+    width: 640px;
+    margin-top: 25px;
+
+    .replyBtn {
+      margin-bottom: 10px;
+      background-color: white;
+
+      .recently {
+        font-size: 14px;
+        font-weight: bold;
+      }
+    }
+  }
+}
