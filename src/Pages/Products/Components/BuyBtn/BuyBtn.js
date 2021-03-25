@@ -1,12 +1,12 @@
-import React from 'react';
-import { FiShoppingBag } from 'react-icons/fi';
+import React from "react";
+import { FiShoppingBag } from "react-icons/fi";
 
 class BuyBtn extends React.Component {
   constructor() {
     super();
     this.state = {
       buyModal: false,
-      select: '',
+      select: "",
     };
   }
 

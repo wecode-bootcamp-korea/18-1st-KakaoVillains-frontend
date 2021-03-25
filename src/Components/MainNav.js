@@ -1,16 +1,17 @@
-import React from 'react';
-import Search from '../Pages/Search/Search';
-import { Link } from 'react-router-dom';
-import { FaSearch } from 'react-icons/fa';
-import { FiMenu } from 'react-icons/fi';
-import { FiGlobe } from 'react-icons/fi';
-import './MainNav.scss';
+import React from "react";
+import Search from "../Pages/Search/Search";
+import { Link } from "react-router-dom";
+import { FaSearch } from "react-icons/fa";
+import { FiMenu } from "react-icons/fi";
+import { FiGlobe } from "react-icons/fi";
+import "./MainNav.scss";
 
 class MainPageNav extends React.Component {
   constructor() {
     super();
     this.state = {
       toggleOn: false,
+      menuToggle: true,
     };
   }
 
@@ -62,4 +63,4 @@ class MainPageNav extends React.Component {
 
 export default MainPageNav;
 
-const menuList = ['오늘', '신규', '인기', '마이'];
+const menuList = ["오늘", "신규", "인기", "마이"];

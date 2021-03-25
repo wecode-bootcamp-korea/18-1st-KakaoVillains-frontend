@@ -4,7 +4,7 @@ import styled from "styled-components";
 import Slider from "react-slick";
 import ShareModal from "./Modal/ShareModal";
 import { withRouter } from "react-router-dom";
-// import LoginModal from './Modal/LoginModal';
+// import LoginModal from "./Modal/LoginModal";
 import { FaRegHeart } from "react-icons/fa";
 import { FaHeart } from "react-icons/fa";
 import { BsChat } from "react-icons/bs";
@@ -17,15 +17,12 @@ class FeedList extends React.Component {
   constructor() {
     super();
     this.state = {
-      heartColor: true,
+      login: {},
+      heartColorAndLike: true,
       isShareModalView: false,
       isLoginModalView: false,
     };
   }
-
-  colorChangeBtn = () => {
-    this.setState({ heartColor: !this.state.heartColor });
-  };
 
   shareHandleModal = () => {
     this.setState({ isShareModalView: !this.state.isShareModalView }, () => {
@@ -36,7 +33,7 @@ class FeedList extends React.Component {
   };
 
   loginHandleModal = () => {
-    this.setState({ isLoginModalView: !this.state.isLoginModalView }, () => {
+    this.setState({ login: !this.state.isLoginModalView }, () => {
       document.body.style.overflow = this.state.isLoginModalView
         ? "hidden"
         : "unset";
@@ -47,6 +44,11 @@ class FeedList extends React.Component {
     this.props.history.push(`/feed/${this.props.id}`);
   };
 
+  goToProductDetail = index => {
+    const id = this.props.recommend_products[index].id;
+    this.props.history.push(`/product/${id}`);
+  };
+
   render() {
     const settings = {
       dots: true,
@@ -55,7 +57,7 @@ class FeedList extends React.Component {
       slidesToShow: 1,
       slidesToScroll: 1,
     };
-
+    console.log(this.state.login);
     return (
       <div className="feedBox">
         <div className="feedBoxHeader">
@@ -77,17 +79,17 @@ class FeedList extends React.Component {
           ))}
         </StyledSlider>
         <div className="feedBoxIcon">
-          {this.state.isLoginModalView ? "" : ""}
-          {this.state.heartColor ? (
-            <div className="heartIcon">
-              <button onClick={this.colorChangeBtn}>
-                <FaRegHeart size="24" />
+          {/* {this.state.login.message?.length < 15 && <LoginModal />} */}
+          {this.props.heart ? (
+            <div className="heartIconColorChange">
+              <button onClick={() => this.props.colorChangeBtn}>
+                <FaHeart color="red" size="24" />
               </button>
             </div>
           ) : (
-            <div className="heartIconColorChange">
-              <button onClick={this.colorChangeBtn}>
-                <FaHeart color="red" size="24" />
+            <div className="heartIcon">
+              <button onClick={() => this.props.colorChangeBtn}>
+                <FaRegHeart size="24" />
               </button>
             </div>
           )}
@@ -135,7 +137,10 @@ class FeedList extends React.Component {
               {this.props.recommend_products.map((data, index) => (
                 <li key={index}>
                   <div className="product">
-                    <div className="productImgInfo">
+                    <div
+                      onClick={() => this.goToProductDetail(index)}
+                      className="productImgInfo"
+                    >
                       <img
                         className="productImg"
                         src={data.image_url}

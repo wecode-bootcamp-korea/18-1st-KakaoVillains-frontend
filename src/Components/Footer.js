@@ -1,6 +1,6 @@
-import React from 'react';
-import { FaAngleDown } from 'react-icons/fa';
-import './Footer.scss';
+import React from "react";
+import { FaAngleDown } from "react-icons/fa";
+import "./Footer.scss";
 
 class Footer extends React.Component {
   render() {

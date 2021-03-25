@@ -29,8 +29,18 @@
       display: flex;
       padding: 23px 0px 40px;
 
-      .img {
+      .img1 {
         width: 60px;
+        border-radius: 30px;
+      }
+      .img2 {
+        width: 60px;
+        margin-left: 10px;
+        border-radius: 30px;
+      }
+      .img3 {
+        width: 60px;
+        margin-left: 10px;
         border-radius: 30px;
       }
     }

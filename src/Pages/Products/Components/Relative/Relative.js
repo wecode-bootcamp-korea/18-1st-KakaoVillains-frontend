@@ -1,5 +1,5 @@
-import React from 'react';
-import { FiShoppingBag } from 'react-icons/fi';
+import React from "react";
+import { FiShoppingBag } from "react-icons/fi";
 
 class Relative extends React.Component {
   render() {
