@@ -1,9 +1,12 @@
-import React from "react";
-import { BsX } from "react-icons/bs";
-import { BsFillChatFill } from "react-icons/bs";
-import "./LoginModal.scss";
-
+import React from 'react';
+import { withRouter } from 'react-router-dom';
+import { BsX } from 'react-icons/bs';
+import { BsFillChatFill } from 'react-icons/bs';
+import './LoginModal.scss';
 class LoginModal extends React.Component {
+  goToLoginPage = () => {
+    this.props.history.push('/login');
+  };
   render() {
     return (
       <section className="modal">
@@ -24,12 +27,13 @@ class LoginModal extends React.Component {
           </p>
           <div className="loginBtnBox">
             <BsFillChatFill className="chatIcon" size="24" color="#3C1E1E" />
-            <button className="loginBtn">로그인하기</button>
+            <button onClick={this.goToLoginPage} className="loginBtn">
+              로그인하기
+            </button>
           </div>
         </div>
       </section>
     );
   }
 }
-
-export default LoginModal;
+export default withRouter(LoginModal);

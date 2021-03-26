@@ -3,17 +3,17 @@ import { withRouter } from 'react-router';
 import SubNav from '../../../Components/SubNav';
 import Option from './Option/Option';
 import Products from './Products/Products';
-import SubCategory from './SubCategory/SubCategory';
+// import SubCategory from './SubCategory/SubCategory';
 import Filter from './Filter/Filter';
 import Footer from '../../../Components/Footer';
 import './character.scss';
 
-const IP = '10.58.0.85';
-const PATHNAME = `window.location.pathname === '/category/character'`;
-const BROWSER_URL =
-  window.location.pathname === '/category/character'
-    ? `/category/character`
-    : `/category/subject`;
+const IP = '54.180.24.190';
+// const PATHNAME = `window.location.pathname === '/category/character'`;
+const BROWSER_URL = '/category/character';
+// window.location.pathname === '/category/character'
+//   ? `/category/character`
+//   : `/category/subject`;
 const API_URL = `http://${IP}:8000/product${BROWSER_URL}`;
 const SORTDATA = {
   신상품순: 'createDatetime,desc',
@@ -38,19 +38,19 @@ const CHARACTER = {
   두부: 14,
 };
 
-const SUBJECT = {
-  '테마 기획전': 1,
-  토이: 2,
-  리빙: 3,
-  잡화: 4,
-  문구: 5,
-  의류: 6,
-  파자마: 7,
-  '여행/레저': 8,
-  생활테크: 9,
-  '폰 액세서리': 10,
-  식품: 11,
-};
+// const SUBJECT = {
+//   '테마 기획전': 1,
+//   토이: 2,
+//   리빙: 3,
+//   잡화: 4,
+//   문구: 5,
+//   의류: 6,
+//   파자마: 7,
+//   '여행/레저': 8,
+//   생활테크: 9,
+//   '폰 액세서리': 10,
+//   식품: 11,
+// };
 
 class Character extends React.Component {
   constructor() {
@@ -58,7 +58,7 @@ class Character extends React.Component {
     this.state = {
       characterData: [],
       category: '전체',
-      subCategory: [],
+      // subCategory: [],
     };
   }
 
@@ -67,19 +67,28 @@ class Character extends React.Component {
     this.dataRender(query);
   }
 
+  componentDidUpdate(prevProps, _) {
+    if (prevProps.location !== this.props.location) {
+      this.dataRender(this.props.location.search.slice(1));
+    }
+  }
+
   dataRender(query) {
     fetch(`${API_URL}?${query}`)
       .then(res => res.json())
       .then(res =>
-        !res.result.sub_categories
-          ? this.setState({
-              characterData: res.result.product,
-            })
-          : this.setState({
-              characterData: res.result.product,
-              subCategory: res.result.sub_categories,
-            })
+        this.setState({
+          characterData: res.result.product,
+        })
       );
+    // !res.result.sub_categories
+    //   ? this.setState({
+    //       characterData: res.result.product,
+    //     })
+    //   : this.setState({
+    //       characterData: res.result.product,
+    //       subCategory: res.result.sub_categories,
+    //     })
   }
 
   changeCategory = e => {
@@ -99,24 +108,25 @@ class Character extends React.Component {
 
   goToCategorySeq(e) {
     const characterId = CHARACTER[e.target.value];
-    const subjectId = SUBJECT[e.target.value];
-    const categoryId = PATHNAME ? characterId : subjectId;
-    const query = PATHNAME
-      ? `characterSeq=${categoryId}&sort=createDatetime,desc`
-      : `subCategorySeq=${categoryId}&sort=createDatetime,desc`;
+    // const subjectId = SUBJECT[e.target.value];
+    const categoryId = characterId; /*PATHNAME ? characterId : subjectId;*/
+    const query = `characterSeq=${categoryId}&sort=createDatetime,desc`;
+    // PATHNAME
+    //   ? `characterSeq=${categoryId}&sort=createDatetime,desc`
+    //   : `subCategorySeq=${categoryId}&sort=createDatetime,desc`;
     this.props.history.push(`${BROWSER_URL}?${query}`);
     this.dataRender(query);
   }
 
-  goToSubCategory(e) {
-    const subCategoryId = e.target.dataset.idx;
-    const subCategoryName = e.target.dataset.value;
-    const query =
-      subCategoryName === '전체'
-        ? '&sort=createDatetime,desc'
-        : `subCategorySeq=${subCategoryId}&sort=createDatetime,desc`;
-    this.props.history.push(`${BROWSER_URL}?${query}`);
-  }
+  // goToSubCategory(e) {
+  //   const subCategoryId = e.target.dataset.idx;
+  //   const subCategoryName = e.target.dataset.value;
+  //   const query =
+  //     subCategoryName === '전체'
+  //       ? '&sort=createDatetime,desc'
+  //       : `subCategorySeq=${subCategoryId}&sort=createDatetime,desc`;
+  //   this.props.history.push(`${BROWSER_URL}?${query}`);
+  // }
 
   sortingSequence = e => {
     const characterId = CHARACTER[this.state.category];
@@ -129,36 +139,36 @@ class Character extends React.Component {
     this.dataRender(query);
   };
 
-  sortingCharacter = e => {
-    const characterId = CHARACTER[e.target.value];
-    const sortId = SORTDATA[e.target.value];
-    let query;
-    e.target.value === '캐릭터 전체'
-      ? (query = `sort=${sortId}`)
-      : (query = `&characterSeq=${characterId}&sort=${sortId}`);
-    this.props.history.push(`${BROWSER_URL}?${query}`);
-    this.dataRender(query);
-  };
+  // sortingCharacter = e => {
+  //   const characterId = CHARACTER[e.target.value];
+  //   const sortId = SORTDATA[e.target.value];
+  //   let query;
+  //   e.target.value === '캐릭터 전체'
+  //     ? (query = `sort=${sortId}`)
+  //     : (query = `&characterSeq=${characterId}&sort=${sortId}`);
+  //   this.props.history.push(`${BROWSER_URL}?${query}`);
+  //   this.dataRender(query);
+  // };
 
   render() {
-    const { category, characterData, subCategory } = this.state;
+    const { category, characterData } = this.state;
     const {
       sortingSequence,
       sortingCharacter,
       changeCategory,
-      goToSubCategory,
+      // goToSubCategory,
     } = this;
     return (
       <>
-        <SubNav title="캐릭터" />
+        <SubNav title={'캐릭터'} />
         <main className="character">
           <Option changeCategory={changeCategory} category={category} />
-          {!subCategory && (
+          {/* {!subCategory && (
             <SubCategory
               subCategory={subCategory}
               goToSubCategory={goToSubCategory}
             />
-          )}
+          )} */}
           <Filter
             sortingSequence={sortingSequence}
             sortingCharacter={sortingCharacter}

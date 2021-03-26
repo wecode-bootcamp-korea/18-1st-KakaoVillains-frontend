@@ -1,9 +1,8 @@
-/* eslint-disable prettier/prettier */
-import React from "react";
-import FeedList from "./FeedList";
+import React from 'react';
+import FeedList from './FeedList';
 // import Feed from "./Feed";
-import InfiniteScroll from "react-infinite-scroll-component";
-import { BsThreeDotsVertical } from "react-icons/bs";
+import InfiniteScroll from 'react-infinite-scroll-component';
+// import { BsThreeDotsVertical } from 'react-icons/bs';
 class MainPageFeed extends React.Component {
   constructor() {
     super();
@@ -39,8 +38,8 @@ class MainPageFeed extends React.Component {
   // };
 
   nextData = () => {
-    fetch(`http://10.58.0.65:8000/feed?page=${this.state.page}`, {
-      method: "GET",
+    fetch(`http://54.180.24.190:8000/feed?page=${this.state.page}`, {
+      method: 'GET',
     })
       .then(res => res.json())
       .then(data =>
@@ -53,9 +52,9 @@ class MainPageFeed extends React.Component {
 
   colorChangeBtn = async index => {
     await fetch(
-      `http://10.58.0.65:8000/feed/like/${this.state.feedList?.[index]?.id}`,
+      `http://54.180.24.190:8000/feed/like/${this.state.feedList?.[index]?.id}`,
       {
-        method: "POST",
+        method: 'POST',
         headers: {
           Authorization: token,
         },
@@ -104,4 +103,4 @@ class MainPageFeed extends React.Component {
 
 export default MainPageFeed;
 
-let token = sessionStorage.getItem("userid") || "";
+let token = sessionStorage.getItem('userid') || '';

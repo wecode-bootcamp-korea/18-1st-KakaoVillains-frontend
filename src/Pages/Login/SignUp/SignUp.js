@@ -1,15 +1,15 @@
-import React from "react";
-import PublicFooter from "../Components/PublicFooter";
-import "./SignUp.scss";
+import React from 'react';
+import PublicFooter from '../Components/PublicFooter';
+import './SignUp.scss';
 
 class SignUp extends React.Component {
   constructor() {
     super();
     this.state = {
-      id: "",
-      pw: "",
-      user: "",
-      pwR: "",
+      id: '',
+      pw: '',
+      user: '',
+      pwR: '',
     };
   }
 
@@ -21,8 +21,8 @@ class SignUp extends React.Component {
   };
 
   signUpFinish = () => {
-    fetch("http://10.58.0.65:8000/account/signup", {
-      method: "POST",
+    fetch('http://54.180.24.190:8000/account/signup', {
+      method: 'POST',
       body: JSON.stringify({
         email: this.state.id,
         username: this.state.user,
@@ -34,31 +34,31 @@ class SignUp extends React.Component {
         if (
           res.message === `email must contain the '@' symbol and the period'.'`
         ) {
-          alert("이메일을 다시 확인해 주세요.");
+          alert('이메일을 다시 확인해 주세요.');
         }
 
-        if (res.message === "password must be at least 8 characters") {
-          alert("비밀번호는 8자리 이상이여야 합니다.");
+        if (res.message === 'password must be at least 8 characters') {
+          alert('비밀번호는 8자리 이상이여야 합니다.');
         }
 
-        if (res.message === "That email is taken. Try another") {
-          alert("이미 존재하는 이메일입니다.");
+        if (res.message === 'That email is taken. Try another') {
+          alert('이미 존재하는 이메일입니다.');
         }
 
-        if (res.message === "Please provide username") {
-          alert("닉네임을 확인해 주세요");
+        if (res.message === 'Please provide username') {
+          alert('닉네임을 확인해 주세요');
         }
 
-        if (res.message === "SUCCESS") {
-          this.props.history.push("/login");
-          alert("회원가입이 완료되었습니다.");
+        if (res.result === 'SUCCESS') {
+          this.props.history.push('/login');
+          alert('회원가입이 완료되었습니다.');
         }
       });
   };
 
   render() {
     const isValidInput =
-      this.state.id.includes("@") &&
+      this.state.id.includes('@') &&
       this.state.pw.length >= 8 &&
       this.state.user.length >= 2;
     return (
@@ -70,8 +70,8 @@ class SignUp extends React.Component {
             <div
               className={`idBox ${
                 this.state.borderColor
-                  ? "borderColorChange"
-                  : "borderColorOrigin"
+                  ? 'borderColorChange'
+                  : 'borderColorOrigin'
               }`}
             >
               <p>
@@ -149,7 +149,7 @@ class SignUp extends React.Component {
               </div>
               <button
                 className={`finishBtn ${
-                  isValidInput ? "changeBtnColor" : "originBtnColor"
+                  isValidInput ? 'changeBtnColor' : 'originBtnColor'
                 }`}
                 onClick={this.signUpFinish}
               >

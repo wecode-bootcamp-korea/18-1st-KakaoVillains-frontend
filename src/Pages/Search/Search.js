@@ -1,16 +1,16 @@
-import React from "react";
-import CharacterBox from "./CharacterBox/CharacterBox";
-import CategoryBox from "./CategoryBox/CategoryBox";
-import SearchBox from "./SearchBox/SearchBox";
-import SearchDataList from "./SearchDataList/SearchDataList";
-import "./search.scss";
+import React from 'react';
+import CharacterBox from './CharacterBox/CharacterBox';
+import CategoryBox from './CategoryBox/CategoryBox';
+import SearchBox from './SearchBox/SearchBox';
+import SearchDataList from './SearchDataList/SearchDataList';
+import './search.scss';
 
-const IP = "";
+const IP = '54.180.24.190';
 class Search extends React.Component {
   constructor() {
     super();
     this.state = {
-      keyWord: "",
+      keyWord: '',
       keyWordList: [],
     };
   }
@@ -24,12 +24,16 @@ class Search extends React.Component {
 
   keyWordDelete = () => {
     this.setState({
-      keyWord: "",
+      keyWord: '',
     });
   };
 
   filterKeyword = e => {
-    fetch(`http://${IP}:8000/product/search?keyword=${e.target.value}`)
+    let keyword = e.target.value;
+    if (keyword === '') {
+      keyword = '준';
+    }
+    fetch(`http://${IP}:8000/product/search?keyword=${keyword}`)
       .then(res => res.json())
       .then(res =>
         this.setState({
@@ -50,11 +54,14 @@ class Search extends React.Component {
           toggleOff={this.props.toggleOff}
         />
         {keyWord ? (
-          <SearchDataList keyWordList={keyWordList} />
+          <SearchDataList
+            keyWordList={keyWordList}
+            toggleOff={this.props.toggleOff}
+          />
         ) : (
           <div className="CategoryBox">
-            <CharacterBox />
-            <CategoryBox />
+            <CharacterBox toggleOff={this.props.toggleOff} />
+            <CategoryBox toggleOff={this.props.toggleOff} />
           </div>
         )}
       </main>

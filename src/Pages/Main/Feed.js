@@ -1,36 +1,89 @@
-import React from "react";
-import styled from "styled-components";
-import Slider from "react-slick";
-import ShareModal from "./Modal/ShareModal";
-import { FaRegHeart } from "react-icons/fa";
-import { FaHeart } from "react-icons/fa";
-import { BsChat } from "react-icons/bs";
-import { BsReply } from "react-icons/bs";
-import "./Feed.scss";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+import React from 'react';
+import styled from 'styled-components';
+import Slider from 'react-slick';
+import ShareModal from './Modal/ShareModal';
+import SubNav from '../../Components/SubNav';
+import Comment from '../Comment/Comment';
+import CommentBox from '../Comment/Components/CommentBox/CommetBox';
+import Footer from '../../Components/Footer';
+import { FaRegHeart } from 'react-icons/fa';
+import { FaHeart } from 'react-icons/fa';
+import { BsChat } from 'react-icons/bs';
+import { BsReply } from 'react-icons/bs';
+import './Feed.scss';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
 class Feed extends React.Component {
   constructor() {
     super();
     this.state = {
-      heartColor: true,
+      id: '아무개',
+      value: '',
+      commentList: [],
       content: [],
+      btnChangeValue: '',
     };
   }
 
-  // fetch(`http://localhost:3000/feed/1.json`)
-  //   .then(res => res.json())
-  //   .then(data => this.setState({ content: data.result }));
+  inputComment = e => {
+    console.log(this.state.value);
+    this.setState({ value: e.target.value });
+  };
 
-  componentDidMount() {
-    fetch(`http://10.58.0.65:8000/feed/${this.props.match.params.id}`)
-      .then(res => res.json())
-      .then(data => this.setState({ content: data.result }));
+  handleCommentDelete = index => {
+    this.setState({
+      commentList: this.state.commentList.filter((_, idx) => idx !== index),
+    });
+  };
+
+  componentDidUpdate(prevProps) {
+    console.log('안녕');
+    if (prevProps.match.params.id !== this.props.match.params.id) {
+      fetch(`http://54.180.24.190:8000/feed/${this.props.match.params.id}`)
+        .then(res => res.json())
+        .then(res => this.setState({ productInfo: res.result }));
+    }
   }
 
-  colorChangeBtn = () => {
-    this.setState({ heartColor: !this.state.heartColor });
+  componentDidMount() {
+    fetch(`http://54.180.24.190:8000/feed/${this.props.match.params.id}`)
+      .then(res => res.json())
+      .then(res => this.setState({ content: res.result }));
+  }
+
+  pressEnter = async e => {
+    await fetch(
+      `http://54.180.24.190:8000/feed/reply?feed_${this.props.match.params.id}`,
+      {
+        method: 'POST',
+        body: JSON.stringify({
+          id: this.state.id,
+          content: this.state.value,
+        }),
+      }
+    )
+      .then(res => res.json())
+      .then(res => res.status);
+
+    e.preventDefault();
+    if (this.state.value === '') {
+      alert('내용을 입력해주세요');
+      return;
+    }
+
+    this.setState({
+      commentList: this.state.commentList.concat([
+        {
+          userId: this.state.id,
+          content: this.state.value,
+        },
+      ]),
+    });
+  };
+
+  changeHandleBtnColor = () => {
+    return this.state.btnChangeValue ? 'trueColor' : 'falseColor';
   };
 
   render() {
@@ -41,34 +94,40 @@ class Feed extends React.Component {
       slidesToShow: 1,
       slidesToScroll: 1,
     };
-    console.log(this.state.content.images?.map);
+    const title = '게시물';
+    const {
+      content,
+      isLoginModalView,
+      heartColor,
+      isShareModalView,
+    } = this.state;
+    const changeHandleBtnColor = this.state.value.length >= 1;
     return (
       <>
+        <SubNav title={title} />
         <div className="feedPage">
           <div className="feedBox">
             <div className="feedBoxHeader">
               <div className="feedBoxHeaderImg">
                 <img
                   className="headerImg"
-                  src={this.state.content?.profile_picture}
+                  src={content?.profile_picture}
                   alt="이미지"
                 />
               </div>
               <div className="nameAndTime">
-                <div className="characterName">
-                  {this.state.content?.username}
-                </div>
-                <div className="time">{this.state.content?.datetime}</div>
+                <div className="characterName">{content?.username}</div>
+                <div className="time">{content?.datetime}</div>
               </div>
             </div>
             <StyledSlider className="feedBoxImg" {...settings}>
-              {this.state.content.image_url?.map((list, index) => (
+              {content.image_url?.map((list, index) => (
                 <img key={index} className="mainImg" src={list} alt="이미지" />
               ))}
             </StyledSlider>
             <div className="feedBoxIcon">
-              {this.state.isLoginModalView ? "" : ""}
-              {this.state.heartColor ? (
+              {isLoginModalView ? '' : ''}
+              {heartColor ? (
                 <div className="heartIcon">
                   <button onClick={this.colorChangeBtn}>
                     <FaRegHeart size="24" />
@@ -87,7 +146,7 @@ class Feed extends React.Component {
                 </button>
               </div>
               <div className="replyIcon">
-                {this.state.isShareModalView && (
+                {isShareModalView && (
                   <ShareModal shareHandleModal={this.shareHandleModal} />
                 )}
                 <button onClick={this.shareHandleModal}>
@@ -96,16 +155,33 @@ class Feed extends React.Component {
               </div>
             </div>
             <div className="feedLikeCount">
-              좋아요{" "}
-              <span className="feedLikeCountUpDown">
-                {this.state.content?.like_count}
-              </span>
+              좋아요
+              <span className="feedLikeCountUpDown">{content?.like_count}</span>
               개
             </div>
-            <p className="feedContentTitle">{this.state.content?.title}</p>
-            <p className="feedContent">{this.state.content?.content}</p>
+            <p className="feedContentTitle">{content?.title}</p>
+            <p className="feedContent">{content?.content}</p>
           </div>
+
+          <Comment
+            value={this.state.value}
+            inputComment={this.inputComment}
+            changeHandleBtnColor={changeHandleBtnColor}
+            pressEnter={this.pressEnter}
+          />
+
+          {content.reply?.map(comment => (
+            <CommentBox
+              key={comment.id}
+              name={comment.reply_username}
+              text={comment.reply_content}
+              likeCount={comment.like_count}
+              createdAt={comment.datetime}
+              handleCommentDelete={this.handleCommentDelete}
+            />
+          ))}
         </div>
+        <Footer />
       </>
     );
   }

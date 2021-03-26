@@ -1,50 +1,16 @@
 .FooterContainer {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  width: 100%;
-  height: 130px;
-  margin-top: 20px;
-  margin-bottom: 30px;
-  background-color: white;
-  border-top: solid 1px rgb(216, 216, 216);
+  padding: 0 16px;
+  width: 640px;
+  height: 175px;
+  background-color: #fafafa;
+  border-top: 1px solid #eeeeee;
 
   .Footer {
     display: flex;
-    width: 100%;
-    margin-top: 20px;
-    margin-bottom: 40px;
-    background-color: white;
-
-    ul {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-    }
-
-    li {
-      float: left;
-    }
-    .info1,
-    .info2,
-    .info3 {
-      margin-left: 5px;
-      color: gray;
-      font-size: 12px;
-    }
-
-    .line {
-      margin-left: 5px;
-      color: rgb(221, 221, 221);
-      font-size: 12px;
-    }
-
-    .info4 {
-      margin-left: 5px;
-      color: gray;
-      font-size: 12px;
-      font-weight: bold;
-    }
+    align-items: center;
+    height: 80px;
+    color: #666666;
+    font-size: 12px;
   }
 
   .Footer2 {
@@ -52,10 +18,8 @@
     justify-content: space-between;
     width: 100%;
     height: 30px;
-    background-color: white;
 
     .FooterSuper {
-      background-color: white;
       display: flex;
 
       .Kakao {

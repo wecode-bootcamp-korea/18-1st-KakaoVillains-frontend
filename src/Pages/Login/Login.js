@@ -1,15 +1,15 @@
-import React from "react";
-import PublicFooter from "./Components/PublicFooter";
-import { FaQrcode } from "react-icons/fa";
-import "./Login.scss";
-import "./Components/PublicFooter.scss";
+import React from 'react';
+import PublicFooter from './Components/PublicFooter';
+import { FaQrcode } from 'react-icons/fa';
+import './Login.scss';
+import './Components/PublicFooter.scss';
 
 class Login extends React.Component {
   constructor() {
     super();
     this.state = {
-      id: "",
-      pw: "",
+      id: '',
+      pw: '',
     };
   }
 
@@ -21,12 +21,12 @@ class Login extends React.Component {
   };
 
   goToSignUp = () => {
-    this.props.history.push("/signup");
+    this.props.history.push('/signup');
   };
 
   goToMain = () => {
-    fetch("http://10.58.0.65:8000/account/signin", {
-      method: "POST",
+    fetch('http://54.180.24.190:8000/account/signin', {
+      method: 'POST',
       body: JSON.stringify({
         email: this.state.id,
         password: this.state.pw,
@@ -34,16 +34,16 @@ class Login extends React.Component {
     })
       .then(res => res.json())
       .then(res => {
-        if (res.result === "SUCCESS") {
-          sessionStorage.setItem("userid", res.token);
-          this.props.history.push("/");
+        if (res.result === 'SUCCESS') {
+          sessionStorage.setItem('userid', res.token);
+          this.props.history.push('/');
         }
       });
   };
 
   render() {
     const isValidInput =
-      this.state.id.includes("@") && this.state.pw.length >= 8;
+      this.state.id.includes('@') && this.state.pw.length >= 8;
     return (
       <div className="loginWrap">
         <article>
@@ -69,7 +69,7 @@ class Login extends React.Component {
             </div>
             <button
               className={`loginBtn ${
-                isValidInput ? "changeBtnColor" : "originBtnColor"
+                isValidInput ? 'changeBtnColor' : 'originBtnColor'
               }`}
               onClick={this.goToMain}
             >

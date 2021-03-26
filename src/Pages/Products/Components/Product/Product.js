@@ -1,13 +1,13 @@
-import React from "react";
-import Rating from "../Rating/Rating";
+import React from 'react';
+import Rating from '../Rating/Rating';
 import {
   FaShareAlt,
   FaFacebookF,
   FaTwitter,
   FaGithubAlt,
-} from "react-icons/fa";
-import { RiKakaoTalkFill } from "react-icons/ri";
-import Slider from "react-slick";
+} from 'react-icons/fa';
+import { RiKakaoTalkFill } from 'react-icons/ri';
+import Slider from 'react-slick';
 
 class Product extends React.Component {
   constructor() {
@@ -64,7 +64,7 @@ class Product extends React.Component {
       <div>
         <header>
           <Slider {...settings}>
-            {image_list.map((imgList, idx) => {
+            {image_list?.map((imgList, idx) => {
               return <img key={idx} src={imgList} alt="이미지" />;
             })}
           </Slider>
@@ -75,7 +75,7 @@ class Product extends React.Component {
               <FaShareAlt className="shareIcon" />
             </button>
           </div>
-          <p className="headPrice">{price.toLocaleString()}원</p>
+          <p className="headPrice">{price}원</p>
           <div className="productGrade">
             <Rating value={average_rating} />
             <p>({review_count})</p>

@@ -15,10 +15,7 @@ class Products extends React.Component {
         </div>
         <div class="productData">
           {data.map(data => (
-            <Link
-              to={`/category/character/?characterSeq=${data.product_id}`}
-              key={data.product_id}
-            >
+            <Link to={`/product/${data.product_id}`} key={data.product_id}>
               <div class="product">
                 <img alt="catagoryimg" src={data.image_url} />
                 <div className="productName">

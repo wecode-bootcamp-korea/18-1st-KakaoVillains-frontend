@@ -299,6 +299,24 @@
             }
           }
         }
+
+        .changeBtnColor {
+          display: flex;
+          align-items: center;
+          margin-top: 20px;
+
+          button {
+            color: #fec300;
+
+            .likeBtnIcon {
+              color: #fec300;
+            }
+
+            &:hover {
+              background-color: #ffeaa7;
+            }
+          }
+        }
       }
     }
 
@@ -324,6 +342,7 @@
         position: relative;
         width: 290px;
         height: 390px;
+        cursor: pointer;
 
         img {
           width: 290px;
