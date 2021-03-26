@@ -23,7 +23,7 @@ class Comment extends React.Component {
             className={`${
               changeHandleBtnColor ? 'trueColor' : 'falseColor'
             } commentBtn`}
-            onClick={pressEnter}
+            onClick={() => pressEnter}
           />
         </div>
         <div className="replyContainer">

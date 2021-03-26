@@ -3,10 +3,13 @@ import { withRouter } from 'react-router';
 import './categoryBox.scss';
 
 class CategoryBox extends React.Component {
-  goToCategory = e => {
-    const id = e.target.id;
-    this.props.history.push(`/category/subject?categorySeq=${id}`);
-  };
+  // goToCategory = e => {
+  //   const id = e.target.id;
+  //   this.props.history
+  //     .push(`/category/subject?categorySeq=${id}&sort=createDatetime,desc
+  //   `);
+  //   // this.props.toggleOff();
+  // };
 
   render() {
     return (

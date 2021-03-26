@@ -21,7 +21,7 @@ class SignUp extends React.Component {
   };
 
   signUpFinish = () => {
-    fetch('http://10.58.0.65:8000/account/signup', {
+    fetch('http://54.180.24.190:8000/account/signup', {
       method: 'POST',
       body: JSON.stringify({
         email: this.state.id,
@@ -49,7 +49,7 @@ class SignUp extends React.Component {
           alert('닉네임을 확인해 주세요');
         }
 
-        if (res.message === 'SUCCESS') {
+        if (res.result === 'SUCCESS') {
           this.props.history.push('/login');
           alert('회원가입이 완료되었습니다.');
         }

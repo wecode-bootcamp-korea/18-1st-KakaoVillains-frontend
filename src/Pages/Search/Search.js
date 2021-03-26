@@ -29,7 +29,11 @@ class Search extends React.Component {
   };
 
   filterKeyword = e => {
-    fetch(`http://${IP}:8000/product/search?keyword=${e.target.value}`)
+    let keyword = e.target.value;
+    if (keyword === '') {
+      keyword = '준';
+    }
+    fetch(`http://${IP}:8000/product/search?keyword=${keyword}`)
       .then(res => res.json())
       .then(res =>
         this.setState({
@@ -50,11 +54,14 @@ class Search extends React.Component {
           toggleOff={this.props.toggleOff}
         />
         {keyWord ? (
-          <SearchDataList keyWordList={keyWordList} />
+          <SearchDataList
+            keyWordList={keyWordList}
+            toggleOff={this.props.toggleOff}
+          />
         ) : (
           <div className="CategoryBox">
-            <CharacterBox />
-            <CategoryBox />
+            <CharacterBox toggleOff={this.props.toggleOff} />
+            <CategoryBox toggleOff={this.props.toggleOff} />
           </div>
         )}
       </main>

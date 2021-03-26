@@ -18,7 +18,7 @@ class Feed extends React.Component {
   constructor() {
     super();
     this.state = {
-      id: '',
+      id: '아무개',
       value: '',
       commentList: [],
       content: [],
@@ -27,13 +27,29 @@ class Feed extends React.Component {
   }
 
   inputComment = e => {
+    console.log(this.state.value);
     this.setState({ value: e.target.value });
   };
+
+  handleCommentDelete = index => {
+    this.setState({
+      commentList: this.state.commentList.filter((_, idx) => idx !== index),
+    });
+  };
+
+  componentDidUpdate(prevProps) {
+    console.log('안녕');
+    if (prevProps.match.params.id !== this.props.match.params.id) {
+      fetch(`http://54.180.24.190:8000/feed/${this.props.match.params.id}`)
+        .then(res => res.json())
+        .then(res => this.setState({ productInfo: res.result }));
+    }
+  }
 
   componentDidMount() {
     fetch(`http://54.180.24.190:8000/feed/${this.props.match.params.id}`)
       .then(res => res.json())
-      .then(data => this.setState({ content: data.result }));
+      .then(res => this.setState({ content: res.result }));
   }
 
   pressEnter = async e => {

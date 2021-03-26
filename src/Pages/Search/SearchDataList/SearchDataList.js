@@ -4,7 +4,7 @@ import './searchDataList.scss';
 
 class SearchDataList extends React.Component {
   render() {
-    const keyWordList = this.props;
+    const { keyWordList, toggleOff } = this.props;
     return (
       <section className="searchDataList">
         {keyWordList.length === 0 ? (
@@ -12,7 +12,7 @@ class SearchDataList extends React.Component {
         ) : (
           <ul>
             {keyWordList.map(data => (
-              <li key={data.product_id}>
+              <li key={data.product_id} onClick={toggleOff}>
                 <Link to={`/product/${data.product_id}`}>
                   {data.product_name}
                 </Link>

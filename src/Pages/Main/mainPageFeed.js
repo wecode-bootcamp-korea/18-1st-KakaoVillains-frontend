@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */
 import React from 'react';
 import FeedList from './FeedList';
 // import Feed from "./Feed";
@@ -39,7 +38,7 @@ class MainPageFeed extends React.Component {
   // };
 
   nextData = () => {
-    fetch(`http://10.58.0.65:8000/feed?page=${this.state.page}`, {
+    fetch(`http://54.180.24.190:8000/feed?page=${this.state.page}`, {
       method: 'GET',
     })
       .then(res => res.json())
@@ -53,7 +52,7 @@ class MainPageFeed extends React.Component {
 
   colorChangeBtn = async index => {
     await fetch(
-      `http://10.58.0.65:8000/feed/like/${this.state.feedList?.[index]?.id}`,
+      `http://54.180.24.190:8000/feed/like/${this.state.feedList?.[index]?.id}`,
       {
         method: 'POST',
         headers: {

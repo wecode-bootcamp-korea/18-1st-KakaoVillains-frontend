@@ -20,6 +20,7 @@ class MainPageNav extends React.Component {
       toggleOn: true,
     });
   };
+
   toggleOff = () => {
     this.setState({
       toggleOn: false,
@@ -49,7 +50,7 @@ class MainPageNav extends React.Component {
             </div>
             <ul className="navBarSecond">
               {menuList.map(menu => (
-                <Link to="/">
+                <Link to="/finish">
                   <li className="width">{menu}</li>
                 </Link>
               ))}

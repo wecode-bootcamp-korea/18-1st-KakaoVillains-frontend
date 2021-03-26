@@ -1,0 +1,13 @@
+select {
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+.searchResult {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: auto;
+  max-width: 640px;
+}

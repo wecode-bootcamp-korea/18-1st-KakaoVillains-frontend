@@ -4,16 +4,16 @@ import { withRouter } from 'react-router';
 import './searchBox.scss';
 
 class SearchBox extends React.Component {
-  goToSearchResult = e => {
-    const keyword = e.target.value;
-    this.props.history.push(`/?keyword=${keyword}`); // 검색결과 페이지로 이동
-  };
+  // goToSearchResult = e => {
+  //   const keyword = e.target.value;
+  //   this.props.history.push(`/category/character?keyword=${keyword}`); // 검색결과 페이지로 이동
+  // };
 
-  pressEnter = e => {
-    if (e.key === 'Enter') {
-      this.goToSearchResult(e);
-    }
-  };
+  // pressEnter = e => {
+  //   if (e.key === 'Enter') {
+  //     this.goToSearchResult(e);
+  //   }
+  // };
 
   render() {
     const { keyWord, keyWordInput, keyWordDelete, toggleOff } = this.props;

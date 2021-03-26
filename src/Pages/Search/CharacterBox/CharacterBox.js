@@ -5,7 +5,10 @@ import './characterBox.scss';
 class CharacterBox extends React.Component {
   goToCharacter = e => {
     const id = e.target.parentNode.parentNode.id;
-    this.props.history.push(`/category/character?characterSeq=${id}`);
+    this.props.toggleOff();
+    this.props.history.push(
+      `/category/character?characterSeq=${id}&sort=createDatetime,desc`
+    );
   };
   render() {
     return (

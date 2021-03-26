@@ -25,7 +25,7 @@ class Login extends React.Component {
   };
 
   goToMain = () => {
-    fetch('http://10.58.0.65:8000/account/signin', {
+    fetch('http://54.180.24.190:8000/account/signin', {
       method: 'POST',
       body: JSON.stringify({
         email: this.state.id,

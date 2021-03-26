@@ -43,7 +43,7 @@ class Products extends React.Component {
   }
 
   componentDidMount() {
-    fetch('http://54.180.24.190:8000/product/11', {
+    fetch(`http://54.180.24.190:8000/product/${this.props.match.params.id}`, {
       methhod: 'GET',
     })
       .then(res => res.json())
